@@ -15,6 +15,12 @@ module.exports = {
         sans: ["var(--font-sans)"],
         mono: ["var(--font-mono)"],
       },
+      gridTemplateColumns: {
+        desktop: "250px 1fr",
+      },
+      gridTemplateRows: {
+        custom: "50px 500px 1fr",
+      },
     },
   },
   plugins: [],
