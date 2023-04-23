@@ -1,7 +1,5 @@
-import "./globals.css";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import "@/styles/globals.css";
+import { fontMono, fontSans } from "@/styles/fonts";
 
 export const metadata = {
   title: "Mathew Bushuru",
@@ -15,7 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${fontSans.variable} ${fontMono.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }
