@@ -8,7 +8,7 @@ const Header: FC = () => {
       <Code className="text-xs font-extralight sm:text-sm sm:font-light">
         Hi, my name is
       </Code>
-      <Code className="text-xl sm:-mx-0.5 sm:font-normal lg:text-2xl">
+      <Code className="text-xl font-normal sm:-mx-0.5 lg:text-2xl">
         Mathew Bushuru
       </Code>
     </div>
