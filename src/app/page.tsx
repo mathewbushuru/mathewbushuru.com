@@ -1,8 +1,6 @@
-import Header from "@/components/Header";
-import Nav from "@/components/Nav";
 
 export default function Home() {
   return (
-    <div className="border h-full"></div>
+    <div className=" h-full"></div>
   );
 }
