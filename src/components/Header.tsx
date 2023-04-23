@@ -1,17 +1,17 @@
-import { H1 ,H2,H3, H4, H5, H6} from "@/components/ui/Typography";
+import { H1, Code, H2, H3 } from "@/components/ui/Typography";
 
 import { FC } from "react";
 
 const Header: FC = () => {
   return (
-    <>
-    <H1>Mathew Bushuru</H1>
-    <H2>Mathew Bushuru</H2>
-    <H3>Mathew Bushuru</H3>
-    <H4>Mathew Bushuru</H4>
-    <H5>Mathew Bushuru</H5>
-    <H6>Mathew Bushuru</H6>
-    </>
+    <div className="flex flex-col gap-0 sm:gap-1">
+      <Code className="text-xs font-extralight sm:text-sm sm:font-light">
+        Hi, my name is
+      </Code>
+      <Code className="text-xl sm:-mx-0.5 sm:font-normal lg:text-2xl">
+        Mathew Bushuru
+      </Code>
+    </div>
   );
 };
 
