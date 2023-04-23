@@ -7,8 +7,10 @@
     "start": "next dev",
     "build": "next build",
     "preview": "next start",
+    "lint": "next lint",
     "serve": "npx serve@latest out",
-    "lint": "next lint"
+    "deploy": "git add out && git commit -m 'Deploying ...' && git subtree push --prefix out origin gh-pages",
+    "build-deploy": "yarn build && yarn deploy"
   },
   "dependencies": {
     "@types/node": "18.15.13",
@@ -20,7 +22,10 @@
   },
   "devDependencies": {
     "autoprefixer": "10.4.14",
+    "class-variance-authority": "^0.5.2",
+    "clsx": "^1.2.1",
     "postcss": "8.4.23",
+    "tailwind-merge": "^1.12.0",
     "tailwindcss": "^3.3.1",
     "typescript": "5.0.4"
   }
