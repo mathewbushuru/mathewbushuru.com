@@ -15,9 +15,13 @@ const Nav: React.FC<NavProps> = ({ className, ...props }) => {
       {...props}
     >
       {NavItems.map((item, index) => {
-        return <NavItem key={index}>{item}</NavItem>;
+        return (
+          <NavItem key={index} isActive={item === "Home"}>
+            {item}
+          </NavItem>
+        );
       })}
-      <Button size="sm" variant={"outline"} className="rounded-lg px-2  mt-2">
+      <Button size="sm" variant={"outline"} className="mt-2 rounded-lg  px-2">
         <LinkedinIcon className="h-5 w-5" />
       </Button>
       <Button variant="outline" size="sm" className="rounded-lg px-2">
@@ -27,11 +31,21 @@ const Nav: React.FC<NavProps> = ({ className, ...props }) => {
   );
 };
 
-function NavItem({ children }: { children: React.ReactNode }) {
+function NavItem({
+  children,
+  isActive,
+}: {
+  children: React.ReactNode;
+  isActive: boolean;
+}) {
+  if (isActive) {
+    return <div className="h-2 w-2 bg-foreground rounded-full my-1" />;
+  }
   return (
-    <H6 className="text-sm font-normal tracking-wide sm:text-base">
-      {children}
-    </H6>
+    // <H6 className="text-sm font-normal tracking-wide sm:text-base">
+    //   {children}
+    // </H6>
+    <Button variant={"link"} size="sm" className="px-0 h-auto tracking-wide sm:text-base">{children}</Button>
   );
 }
 
