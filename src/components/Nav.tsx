@@ -1,7 +1,6 @@
 import { LinkedinIcon, GithubIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { H6 } from "@/components/ui/Typography";
 import { Button } from "@/components/ui/Button";
 
 const NavItems = ["Home", "Projects", "Resume", "Docs", "Thoughts"];
@@ -42,9 +41,6 @@ function NavItem({
     return <div className="h-2 w-2 bg-foreground rounded-full my-1" />;
   }
   return (
-    // <H6 className="text-sm font-normal tracking-wide sm:text-base">
-    //   {children}
-    // </H6>
     <Button variant={"link"} size="sm" className="px-0 h-auto tracking-wide sm:text-base">{children}</Button>
   );
 }
