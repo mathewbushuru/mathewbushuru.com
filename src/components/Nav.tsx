@@ -1,13 +1,20 @@
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { LinkedinIcon, GithubIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 
-const NavItems = ["Home", "Projects", "Resume", "Docs", "Thoughts"];
+const NavItems = ["home", "info", "projects", "writing"];
 
 interface NavProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const Nav: React.FC<NavProps> = ({ className, ...props }) => {
+  const pathname = usePathname();
+  let currentLocation = pathname.split("/")[1];
+  if (pathname === "/") currentLocation = "home";
+
   return (
     <div
       className={cn("flex flex-col items-start gap-2", className)}
@@ -15,9 +22,11 @@ const Nav: React.FC<NavProps> = ({ className, ...props }) => {
     >
       {NavItems.map((item, index) => {
         return (
-          <NavItem key={index} isActive={item === "Home"}>
-            {item}
-          </NavItem>
+          <NavItem
+            key={index}
+            isActive={item === currentLocation}
+            item={item}
+          />
         );
       })}
       <Button
@@ -40,24 +49,20 @@ const Nav: React.FC<NavProps> = ({ className, ...props }) => {
   );
 };
 
-function NavItem({
-  children,
-  isActive,
-}: {
-  children: React.ReactNode;
-  isActive: boolean;
-}) {
+function NavItem({ item, isActive }: { item: string; isActive: boolean }) {
   if (isActive) {
     return <div className="my-1 h-2 w-2 rounded-full bg-foreground" />;
   }
   return (
-    <Button
-      variant={"link"}
-      size="sm"
-      className="h-auto px-0 tracking-wide sm:text-base"
-    >
-      {children}
-    </Button>
+    <Link href={`/${item === "home" ? "/" : item}`}>
+      <Button
+        variant={"link"}
+        size="sm"
+        className="h-auto px-0 capitalize tracking-wide sm:text-base"
+      >
+        {item}
+      </Button>
+    </Link>
   );
 }
 

@@ -34,7 +34,7 @@ const showcaseItems = [
   }
 ];
 
-export default function Home() {
+export default function HomePage() {
   return (
     <div className="scrollbar-hide flex h-full flex-col items-end overflow-y-auto overflow-x-hidden pt-60 sm:flex-row sm:overflow-x-auto sm:overflow-y-hidden">
       {showcaseItems.map((item, index) => {
