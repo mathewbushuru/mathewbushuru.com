@@ -13,7 +13,7 @@ const workExperienceItems = [
     jobLocation: "Vancouver, Canada",
     jobType: "Internship, Remote",
     bulletPoints: [
-      "Integrated a web application for instructors that I had developed as part of my degree's capstone project into the company's existing codebase",
+      "Integrated a web application for instructors that I had developed as part of my degree's capstone project into the company's existing codebase.",
       "Implemented chat functionality in the app to support real-time  collaboration of multiple instructors working on a single course, and integrated a chatbot into the app powered by an NLP machine learning model.",
     ],
   },
@@ -30,9 +30,55 @@ const workExperienceItems = [
   },
 ];
 
+const extraExperienceItems = [
+  {
+    title: "Frontend Software Developer at UBC Launchpad / BC Cancer Agency",
+    companyUrl: "https://ubclaunchpad.com/",
+    timePeriod: "09 / 2022 - 04 / 2023",
+    jobLocation: "Vancouver, Canada",
+    jobType: null,
+    bulletPoints: [
+      "Contributed to the development of a lab management web application. ",
+      "Implemented a Kanban-style ticket management board with drag and drop capabilities, a PDF  invoice generation tool, form builder components among other features.",
+    ],
+  },
+  {
+    title: "Capstone Project (CPEN491) at UBC ECE / Immersio Inc",
+    companyUrl: "https://ece.ubc.ca/",
+    timePeriod: "09 / 2021 - 04 / 2022",
+    jobLocation: "Vancouver, Canada",
+    jobType: null,
+    bulletPoints: [
+      "Developed a full-stack React web application featuring intuitive course creation tools for language instructors, utilizing NextJS for the frontend, Express for the server-side logic and MongoDB for the database ",
+    ],
+  },
+  {
+    title: "Fullstack Software Developer at UBC Launchpad",
+    companyUrl: "https://ubclaunchpad.com/",
+    timePeriod: "09 / 2021 - 04 / 2022",
+    jobLocation: "Vancouver, Canada",
+    jobType: null,
+    bulletPoints: [
+      "Contributed to the development of a React Native app to help students manage their finances more effectively. ",
+      "Implemented a feature allowing users to automatically scan  receipts and add expenses using their phone's camera and machine learning/computer vision.",
+    ],
+  },
+  {
+    title: "Control Engineer at UBC Sailbot",
+    companyUrl: "https://www.ubcsailbot.org/",
+    timePeriod: "08 / 2018 - 12 / 2019",
+    jobLocation: "Vancouver, Canada",
+    jobType: null,
+    bulletPoints: [
+      "Contributed to the creation and testing of a robust control system to autonomously control a robotic sailboat. ",
+      "Presented research findings at the 2019  Multidisciplinary Undergraduate Research Conference through a poster presentation",
+    ],
+  },
+];
+
 export default function InfoPage() {
   return (
-    <div className="scrollbar-hide flex h-full flex-col items-end gap-1  overflow-y-auto pb-8 pr-3 pt-32 sm:gap-2 sm:pr-32 sm:pt-40">
+    <div className="scrollbar-hide flex h-full flex-col items-end gap-1  overflow-y-auto pb-8 pr-3 pt-32 sm:gap-2 sm:pr-40 sm:pt-40">
       {/* About  */}
       <Section>
         <SectionHeader>About</SectionHeader>
@@ -75,6 +121,72 @@ export default function InfoPage() {
         })}
       </Section>
 
+      {/* Skills  */}
+      <Section>
+        <SectionHeader>Skills</SectionHeader>
+        <SectionDesc className="mb-1  font-normal text-foreground">
+          <a
+            href={
+              "https://mathewb-github-stats.vercel.app/api/top-langs?username=mathewbushuru&langs_count=10"
+            }
+            target="_blank"
+            rel="noreferrer"
+            className="decoration-muted underline-offset-4 hover:underline"
+          >
+            <span>Most Used Languages :</span>
+            <ArrowUpRight className="inline-block h-3 w-3" />
+          </a>{" "}
+          <span className="text-muted">
+            JavaScript, Python, Java, TypeScript, C, CSS, HTML (in descending
+            order).
+          </span>
+        </SectionDesc>
+        <SectionDesc className="mb-1  font-normal text-foreground">
+          <span>Tools and Frameworks :</span>{" "}
+          <span className="text-muted">
+            ReactJS, NextJS, React Native, TailwindCSS, NodeJS / ExpressJS,
+            MongoDB, MySQL / PlanetScale, Git, AWS, Firebase.
+          </span>
+        </SectionDesc>
+      </Section>
+
+      {/* Education  */}
+      <Section>
+        <SectionHeader>Education</SectionHeader>
+        <SectionDesc className="mb-1  font-normal text-foreground">
+          University of British Columbia
+        </SectionDesc>
+        <SectionDesc className="mb-1  font-normal text-muted">
+          Bachelor of Applied Science (BASC), Electrical Engineering
+        </SectionDesc>
+        <SectionDesc className="mb-1  font-normal text-muted">
+          Vancouver, Canada
+        </SectionDesc>
+        <SectionDesc className="mb-1  font-normal text-muted">
+          May 2023
+        </SectionDesc>
+      </Section>
+
+      {/* Extracurricular  */}
+      <Section>
+        <SectionHeader>Extracurricular Experience</SectionHeader>
+        {extraExperienceItems.map((item, index) => {
+          return (
+            <ExperienceItem
+              key={item.title}
+              title={item.title}
+              companyUrl={item.companyUrl}
+              timePeriod={item.timePeriod}
+              jobLocation={item.jobLocation}
+              jobType={item.jobType}
+              bulletPoints={item.bulletPoints}
+            />
+          );
+        })}
+      </Section>
+
+      {/* Awards  */}
+
       {/* Contact  */}
       <Section>
         <SectionHeader>Contact</SectionHeader>
@@ -93,13 +205,18 @@ export default function InfoPage() {
           urlLink="https://github.com/mathewbushuru"
           shownLink="mathewbushuru"
         />
+        <ContactLink
+          linkDesc="LinkedIn"
+          urlLink="https://www.linkedin.com/in/mathewbushuru/"
+          shownLink="mathewbushuru"
+        />
       </Section>
     </div>
   );
 }
 
 function Section({ children }: { children: React.ReactNode }) {
-  return <h4 className="w-full md:w-[640px] mb-4">{children}</h4>;
+  return <h4 className="mb-4 w-full md:w-[640px]">{children}</h4>;
 }
 
 function SectionHeader({ children }: { children: React.ReactNode }) {
@@ -140,7 +257,7 @@ function ExperienceItem({
   title: string;
   companyUrl: string;
   timePeriod: string;
-  jobType: string;
+  jobType: string | null;
   jobLocation: string;
   bulletPoints: string[];
 }) {
@@ -151,14 +268,14 @@ function ExperienceItem({
           href={companyUrl}
           target="_blank"
           rel="noreferrer"
-          className="underline-offset-4 hover:underline"
+          className="decoration-muted underline-offset-4 hover:underline"
         >
           {title} <ArrowUpRight className="inline-block h-3 w-3" />
         </a>
       </SectionDesc>
       <SectionDesc className="sm:mb-1">{timePeriod}</SectionDesc>
       <SectionDesc className="mb-2 text-foreground sm:text-xs">
-        {jobType} | {jobLocation}
+        {jobType} {jobType && "|"} {jobLocation}
       </SectionDesc>
       {bulletPoints.map((item, index) => {
         return (
@@ -187,7 +304,7 @@ function ContactLink({
         href={urlLink}
         target="_blank"
         rel="noreferrer"
-        className="underline-offset-4 hover:underline"
+        className="decoration-muted underline-offset-4 hover:underline"
       >
         <span className="flex items-center gap-1">
           {shownLink}
