@@ -76,14 +76,50 @@ const extraExperienceItems = [
   },
 ];
 
+const awardItems = [
+  {
+    title: "Full MasterCard Foundation Scholarship ($250,000+)",
+    issuer: "University of British Columbia, MasterCard Foundation",
+    awardUrl: "https://mcfscholars.ubc.ca/",
+    desc: "For academic achievement, leadership skills, and involvement in  community service.",
+  },
+  {
+    title: "2021 International World's Challenge Challenge, Finalist",
+    issuer: "Western University",
+    awardUrl: "https://international.uwo.ca/challenge/global_final/",
+    desc: "This competition brings together students from a wide range of institutions, cultures and continents to form a strong international network and create even greater potential solutions to significant global issues.",
+  },
+  {
+    title:
+      "2021 Mastercard Foundation's  Social Entrepreneurship Fund (~$17000)",
+    issuer: "MasterCard Foundation",
+    awardUrl:
+      "https://mastercardfdn.org/mastercard-foundation-announces-new-fund-to-seed-young-african-leaders-social-ventures/",
+    desc: "This fund enables young changemakers to seed and kick-start promising social ventures and community projects, creating economic opportunities for themselves and others.",
+  },
+  {
+    title: "2020 UBC World's Challenge Challenge, 1st place ($6000)",
+    issuer: "University of British Columbia",
+    awardUrl:
+      "https://apsc.ubc.ca/news/2020/ubc-engineering-students-win-local-worlds-challenge-challenge-competition",
+    desc: "This competition seeks to engage UBC students on international issues and how they can play a part in sparking social change.",
+  },
+  {
+    title: "2019 Global Social Venture Challenge, Winner",
+    issuer: "The Resolution Fellowship",
+    awardUrl: "https://resolutionproject.org/fellows/mathew-bushuru/",
+    desc: "This multi-step competition held in Kigali inspired undergraduate students to propose impactful, socially-responsible projects addressing pressing social issues around the world.",
+  },
+];
+
 export default function InfoPage() {
   return (
-    <div className="scrollbar-hide flex h-full flex-col items-end gap-1  overflow-y-auto pb-8 pr-3 pt-32 sm:gap-2 sm:pr-40 sm:pt-40">
+    <div className="scrollbar-hide flex h-full flex-col items-end gap-1  overflow-y-auto pb-8 pr-3 pt-32 sm:gap-2 sm:pr-40 sm:pt-40 2xl:pr-60">
       {/* About  */}
       <Section>
         <SectionHeader>About</SectionHeader>
         <SectionDesc>
-          I'm Mathew and I enjoy building polished user experiences.
+          I'm Mathew and I enjoy building polished user interfaces.
         </SectionDesc>
       </Section>
 
@@ -136,14 +172,14 @@ export default function InfoPage() {
             <span>Most Used Languages :</span>
             <ArrowUpRight className="inline-block h-3 w-3" />
           </a>{" "}
-          <span className="text-muted">
+          <span className="font-light text-muted">
             JavaScript, Python, Java, TypeScript, C, CSS, HTML (in descending
             order).
           </span>
         </SectionDesc>
         <SectionDesc className="mb-1  font-normal text-foreground">
           <span>Tools and Frameworks :</span>{" "}
-          <span className="text-muted">
+          <span className="font-light text-muted">
             ReactJS, NextJS, React Native, TailwindCSS, NodeJS / ExpressJS,
             MongoDB, MySQL / PlanetScale, Git, AWS, Firebase.
           </span>
@@ -159,10 +195,10 @@ export default function InfoPage() {
         <SectionDesc className="mb-1  font-normal text-muted">
           Bachelor of Applied Science (BASC), Electrical Engineering
         </SectionDesc>
-        <SectionDesc className="mb-1  font-normal text-muted">
+        <SectionDesc className="mb-1  font-light text-muted">
           Vancouver, Canada
         </SectionDesc>
-        <SectionDesc className="mb-1  font-normal text-muted">
+        <SectionDesc className="mb-1  font-light text-muted">
           May 2023
         </SectionDesc>
       </Section>
@@ -186,6 +222,21 @@ export default function InfoPage() {
       </Section>
 
       {/* Awards  */}
+      <Section>
+        <SectionHeader>Awards</SectionHeader>
+
+        {awardItems.map((item, index) => {
+          return (
+            <AwardItem
+              key={item.title}
+              title={item.title}
+              issuer={item.issuer}
+              awardUrl={item.awardUrl}
+              desc={item.desc}
+            />
+          );
+        })}
+      </Section>
 
       {/* Contact  */}
       <Section>
@@ -216,7 +267,7 @@ export default function InfoPage() {
 }
 
 function Section({ children }: { children: React.ReactNode }) {
-  return <h4 className="mb-4 w-full md:w-[640px]">{children}</h4>;
+  return <h4 className="mb-4 w-full md:w-[640px] 2xl:w-[960px]">{children}</h4>;
 }
 
 function SectionHeader({ children }: { children: React.ReactNode }) {
@@ -279,11 +330,45 @@ function ExperienceItem({
       </SectionDesc>
       {bulletPoints.map((item, index) => {
         return (
-          <SectionDesc className="mb-2" key={index}>
+          <SectionDesc
+            className="mb-2 tracking-wider sm:tracking-wide"
+            key={index}
+          >
             {item}
           </SectionDesc>
         );
       })}
+    </div>
+  );
+}
+
+function AwardItem({
+  title,
+  awardUrl,
+  issuer,
+  desc,
+}: {
+  title: string;
+  awardUrl: string;
+  issuer: string;
+  desc: string;
+}) {
+  return (
+    <div className="mb-2">
+      <SectionDesc className="mb-1  font-normal text-foreground">
+        {title}
+      </SectionDesc>
+      <SectionDesc className="mb-1  font-normal text-muted">
+        <a
+          href={awardUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="decoration-muted underline-offset-4 hover:underline"
+        >
+          {issuer} <ArrowUpRight className="inline-block h-3 w-3" />
+        </a>
+      </SectionDesc>
+      <SectionDesc className="mb-2">{desc}</SectionDesc>
     </div>
   );
 }

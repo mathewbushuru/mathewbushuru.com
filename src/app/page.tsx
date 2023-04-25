@@ -47,7 +47,8 @@ export default function HomePage() {
               width={700}
               height={700 / 1.348}
               className="hidden sm:inline-block"
-              priority={index < 2}
+              // priority={index < 2}
+              priority
             />
             <Image
               key={item.srcUrlIphone}
@@ -56,7 +57,8 @@ export default function HomePage() {
               width={200}
               height={200 * 1.868}
               className="sm:mb-3"
-              priority={index < 1}
+              // priority={index < 1}
+              priority
             />
           </Fragment>
         );
