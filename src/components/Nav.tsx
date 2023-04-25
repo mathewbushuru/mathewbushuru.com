@@ -72,7 +72,7 @@ function NavItem({ item, isActive }: { item: string; isActive: boolean }) {
       <Button
         variant={"link"}
         size="sm"
-        className="h-auto px-0 capitalize tracking-wide sm:text-base"
+        className="h-auto px-0 capitalize font-normal tracking-wide sm:text-base"
       >
         {item}
       </Button>
