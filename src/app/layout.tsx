@@ -3,9 +3,10 @@ import { fontMono, fontSans } from "@/styles/fonts";
 
 import Header from "@/components/Header";
 import Nav from "@/components/Nav";
+import PageDesc from "@/components/PageDesc";
 
 export const metadata = {
-  title: "Mathew Bushuru",
+  title: "Mathew Bushuru | Home",
   description: "Mathew Bushuru's portfolio ",
 };
 
@@ -29,9 +30,7 @@ export default function RootLayout({
           </div>
           <div className="col-start-1 col-end-2 row-start-3 row-end-4 min-h-full ">
             {/* bottomLeft  */}
-            <div className="flex items-end pb-12 h-full ">
-              <p className="font-mono font-normal text-sm "> Featured Projects: </p>
-            </div>
+            <PageDesc/>
           </div>
           <div className="col-start-2  col-end-4 row-start-2 row-end-4 sm:col-end-3">
             {children}

@@ -29,22 +29,36 @@ const Nav: React.FC<NavProps> = ({ className, ...props }) => {
           />
         );
       })}
-      <Button
-        size="sm"
-        variant={"outline"}
-        className="mt-2 rounded-lg  px-2"
-        aria-label="LinkedIn Link"
+      <a
+        href="https://www.linkedin.com/in/mathewbushuru/"
+        target="_blank"
+        rel="noreferrer"
+        className="underline-offset-4 hover:underline"
       >
-        <LinkedinIcon className="h-5 w-5" />
-      </Button>
-      <Button
-        variant="outline"
-        size="sm"
-        className="rounded-lg px-2"
-        aria-label="Github Link"
+        <Button
+          size="sm"
+          variant={"outline"}
+          className="mt-2 rounded-lg  px-2"
+          aria-label="LinkedIn Link"
+        >
+          <LinkedinIcon className="h-5 w-5" />
+        </Button>
+      </a>
+      <a
+        href="https://github.com/mathewbushuru"
+        target="_blank"
+        rel="noreferrer"
+        className="underline-offset-4 hover:underline"
       >
-        <GithubIcon className="h-5 w-5" />
-      </Button>
+        <Button
+          variant="outline"
+          size="sm"
+          className="rounded-lg px-2"
+          aria-label="Github Link"
+        >
+          <GithubIcon className="h-5 w-5" />
+        </Button>
+      </a>
     </div>
   );
 };
