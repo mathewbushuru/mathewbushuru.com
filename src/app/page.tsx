@@ -2,13 +2,13 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="scrollbar-hide flex h-full items-end overflow-x-auto">
+    <div className="scrollbar-hide flex h-full flex-col items-end overflow-y-auto overflow-x-hidden sm:flex-row sm:overflow-x-auto sm:overflow-y-hidden pt-60">
       <Image
         src="/mockups/ipad/soma_org_ipad.png"
         alt="somaoffline.org"
         width={700}
         height={700 / 1.348}
-        className=""
+        className="hidden sm:inline-block"
         priority
       />
       <Image
@@ -24,7 +24,7 @@ export default function Home() {
         alt="somaoffline.org"
         width={700}
         height={700 / 1.348}
-        className=""
+        className="hidden sm:inline-block"
         priority
       />
       <Image
@@ -39,7 +39,7 @@ export default function Home() {
         alt="somaoffline.org"
         width={700}
         height={700 / 1.348}
-        className=""
+        className="hidden sm:inline-block"
       />
       <Image
         src="/mockups/iphone/google_iphone.png"
