@@ -20,10 +20,20 @@ const Nav: React.FC<NavProps> = ({ className, ...props }) => {
           </NavItem>
         );
       })}
-      <Button size="sm" variant={"outline"} className="mt-2 rounded-lg  px-2">
+      <Button
+        size="sm"
+        variant={"outline"}
+        className="mt-2 rounded-lg  px-2"
+        aria-label="LinkedIn Link"
+      >
         <LinkedinIcon className="h-5 w-5" />
       </Button>
-      <Button variant="outline" size="sm" className="rounded-lg px-2">
+      <Button
+        variant="outline"
+        size="sm"
+        className="rounded-lg px-2"
+        aria-label="Github Link"
+      >
         <GithubIcon className="h-5 w-5" />
       </Button>
     </div>
@@ -38,10 +48,16 @@ function NavItem({
   isActive: boolean;
 }) {
   if (isActive) {
-    return <div className="h-2 w-2 bg-foreground rounded-full my-1" />;
+    return <div className="my-1 h-2 w-2 rounded-full bg-foreground" />;
   }
   return (
-    <Button variant={"link"} size="sm" className="px-0 h-auto tracking-wide sm:text-base">{children}</Button>
+    <Button
+      variant={"link"}
+      size="sm"
+      className="h-auto px-0 tracking-wide sm:text-base"
+    >
+      {children}
+    </Button>
   );
 }
 
