@@ -167,8 +167,8 @@ export const projectsData = [
     dates: "03 / 2021 ",
     desc: "A metal detector using inductance changes in a magnetic coil to detect nearby metals.",
     techList: ["C", "32-bit Microcontrollers"],
-    demoUrl: "https://github.com/mathewbushuru/frequency-meter-metal-detector",
-    codeUrl: "https://youtu.be/pajMGd9RIf4",
+    demoUrl: "https://youtu.be/pajMGd9RIf4",
+    codeUrl: "https://github.com/mathewbushuru/frequency-meter-metal-detector",
   },
   {
     name: "Liquid-level Detector",
@@ -176,8 +176,8 @@ export const projectsData = [
     dates: "02 / 2021 ",
     desc: "A liquid/water level detector to aid visually impaired people to serve drinks.",
     techList: ["Assembly", "8-bit Microcontrollers"],
-    demoUrl: "https://github.com/mathewbushuru/capacitive-water-level-detector",
-    codeUrl: "https://www.youtube.com/watch?v=4QwDmZlB6OQ",
+    demoUrl: "https://www.youtube.com/watch?v=4QwDmZlB6OQ",
+    codeUrl: "https://github.com/mathewbushuru/capacitive-water-level-detector",
   },
   {
     name: "Soma",
