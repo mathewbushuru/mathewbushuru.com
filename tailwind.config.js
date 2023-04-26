@@ -8,9 +8,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "hsl(360,0%,98%)",
+        background: {
+          DEFAULT: "hsl(360,0%,97%)",
+          popover: "hsl(360,0%,100%)"
+        },
         foreground: "hsl(0,0%,7%)",
         muted: "hsl(0,0%,40%)",
+        accent: "hsl(0,0%,87%)",
       },
       fontFamily: {
         sans: ["var(--font-sans)"],
