@@ -11,8 +11,8 @@ export const metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div className="scrollbar-hide h-full overflow-y-auto pb-8 pr-3 pt-32 sm:gap-2 sm:pr-6 md:pr-6 sm:pt-40 2xl:pr-60">
-      <div className="grid gap-6 sm:gap-8 justify-items-end grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+    <div className="scrollbar-hide h-full overflow-y-auto pb-8 pr-3 pt-32 sm:gap-2 sm:pr-6 sm:pt-40 md:pr-6 2xl:pr-60">
+      <div className="grid grid-cols-1 justify-items-end gap-6 sm:gap-8 lg:grid-cols-2 xl:grid-cols-3">
         {projectsData.map((project) => {
           return (
             <ProjectCard
@@ -50,8 +50,14 @@ function ProjectCard({
   codeUrl: string | null;
 }) {
   return (
-    <div className="h-76 flex flex-col overflow-hidden rounded-md bg-background-popover shadow-md sm:w-72 md:w-80">
-      <Image src={imgSrc} width={320} height={150} alt={name} className="object-cover" />
+    <div className="h-76 pt-3 flex flex-col overflow-hidden rounded-md bg-background-popover shadow-md sm:w-72 md:w-80">
+      <Image
+        src={imgSrc}
+        width={320}
+        height={160}
+        alt={name}
+        className="max-h-40 object-contain"
+      />
       <ProjectName className="pl-2 pt-2">{name}</ProjectName>
       <ProjectDates>
         <CalendarIcon className="h-3 w-3" />
@@ -136,7 +142,7 @@ function ProjectDesc({
   return (
     <h4
       className={cn(
-        " text-xs font-light leading-5 tracking-wide text-foreground sm:text-sm ",
+        " text-xs font-light leading-5 tracking-wide text-foreground sm:text-sm lg:min-h-[68px]",
         className
       )}
     >

@@ -6,7 +6,7 @@ import { LinkedinIcon, GithubIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 
-const NavItems = ["home", "info", "projects", "writing"];
+const NavItems = ["home", "info", "projects"];
 
 interface NavProps extends React.HTMLAttributes<HTMLDivElement> {}
 
