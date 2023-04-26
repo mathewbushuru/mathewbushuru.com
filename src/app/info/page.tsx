@@ -22,19 +22,19 @@ export default function InfoPage() {
       </Section>
 
       {/* Currently */}
-      <Section>
-        <SectionHeader>Currently</SectionHeader>
-        <ExperienceItem
-          title="Software Developer / Maintainer at BC Cancer Agency"
-          companyUrl="http://www.bccancer.bc.ca/"
-          timePeriod="05 / 2023 - Present"
-          jobLocation="Vancouver, Canada"
-          jobType="Volunteer, Remote"
-          bulletPoints={[
-            "Maintaining and developing a lab management web application to streamline ticket submission, tracking and invoicing processes.",
-          ]}
-        />
-      </Section>
+      {false && (
+        <Section>
+          <SectionHeader>Currently</SectionHeader>
+          <ExperienceItem
+            title=""
+            companyUrl=""
+            timePeriod=""
+            jobLocation=""
+            jobType=""
+            bulletPoints={[""]}
+          />
+        </Section>
+      )}
 
       {/* Work Experience  */}
       <Section>
@@ -79,7 +79,7 @@ export default function InfoPage() {
           <span>Tools and Frameworks :</span>{" "}
           <span className="font-light text-muted">
             ReactJS, NextJS, React Native, TailwindCSS, NodeJS / ExpressJS,
-            MongoDB, MySQL / PlanetScale, Git, AWS, Firebase.
+            FastAPI, MongoDB, MySQL / PlanetScale, Git, AWS, Firebase.
           </span>
         </SectionDesc>
       </Section>
