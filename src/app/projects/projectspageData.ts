@@ -104,8 +104,8 @@ export const projectsData = [
     dates: "12 / 2022 ",
     desc: "Something between a sketchpad and an Etch-a-Sketch using Javascript to manipulate the DOM",
     techList: ["JavaScript", "CSS"],
-    demoUrl: "https://googly-lovat.vercel.app/",
-    codeUrl: "https://github.com/mathewbushuru/googly",
+    demoUrl: "https://mathewbushuru.github.io/etch-a-sketch/",
+    codeUrl: "https://github.com/mathewbushuru/etch-a-sketch",
   },
   {
     name: "Calculator",

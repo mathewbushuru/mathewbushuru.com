@@ -79,7 +79,7 @@ export default function InfoPage() {
           <span>Tools and Frameworks :</span>{" "}
           <span className="font-light text-muted">
             ReactJS, NextJS, React Native, TailwindCSS, NodeJS / ExpressJS,
-            FastAPI, MongoDB, MySQL / PlanetScale, Git, AWS, Firebase.
+            FastAPI, MongoDB, MySQL, Git, AWS, Firebase.
           </span>
         </SectionDesc>
       </Section>
