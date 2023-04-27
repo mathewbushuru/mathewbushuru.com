@@ -7,6 +7,11 @@ export const projectsData = [
     techList: ["TypeScript", "NextJS", "TailwindCSS"],
     demoUrl: "https://matt-components.vercel.app/",
     codeUrl: "https://github.com/mathewbushuru/component-library",
+    why:{
+      what:"A collection of React components and UI elements that I use often. Most of them are styled using Tailwind but a few use ChakraUI. They include navbars, footers, layouts, forms, hero pages, toggle buttons, cards, etc.",
+      why:"I started off this project as a way to practise styling using TailwindCSS and to improve my front-end skills. It has grown to be a collection of features that I bring to new projects so that I can get them done faster.",
+      lesson:"This project enabled me to learn the CSS-in-JS paradigm, mobile-first design, dark/light mode design and how to use TailwindCSS in different scenarios. "
+    }
   },
   {
     name: "Soma's vision ",
@@ -16,6 +21,7 @@ export const projectsData = [
     techList: ["JavaScript", "ReactJS", "CSS"],
     demoUrl: "https://www.somaoffline.org/",
     codeUrl: null,
+    why:null
   },
   {
     name: "React Starter Kit ",
@@ -25,6 +31,7 @@ export const projectsData = [
     techList: ["TypeScript", "ReactJS", "TailwindCSS", "Vite"],
     demoUrl: "https://react-starter-kit.onrender.com/",
     codeUrl: "https://github.com/mathewbushuru/react-starter-kit",
+    why:null
   },
   {
     name: "Chatnet ",
@@ -34,6 +41,7 @@ export const projectsData = [
     techList: ["TypeScript", "NextJS", "TailwindCSS", "Redis"],
     demoUrl: "https://chatnet.vercel.app/",
     codeUrl: "https://github.com/mathewbushuru/chatnet",
+    why:null
   },
   {
     name: "Portfolio ",
@@ -43,6 +51,7 @@ export const projectsData = [
     techList: ["TypeScript", "NextJS", "TailwindCSS"],
     demoUrl: "https://mathewbushuru.vercel.app/",
     codeUrl: "https://github.com/mathewbushuru/mathewbushuru.com",
+    why:null
   },
   {
     name: "Custom Webpack SPA ",
@@ -52,6 +61,7 @@ export const projectsData = [
     techList: ["JavaScript", "CSS", "Webpack"],
     demoUrl: "https://mathewbushuru.github.io/webpack-restaurant-SPA/",
     codeUrl: "https://github.com/mathewbushuru/webpack-restaurant-SPA",
+    why:null
   },
   {
     name: "ProSearchX",
@@ -61,6 +71,7 @@ export const projectsData = [
     techList: ["JavaScript", "ReactJS", "CSS"],
     demoUrl: "https://pro-search-x.vercel.app/",
     codeUrl: "https://github.com/mathewbushuru/ProSearchX",
+    why:null
   },
   {
     name: "Unbeatable TicTacToe",
@@ -70,6 +81,7 @@ export const projectsData = [
     techList: ["JavaScript", "CSS"],
     demoUrl: "https://mathewbushuru.github.io/unbeatable-tictactoe/",
     codeUrl: "https://github.com/mathewbushuru/unbeatable-tictactoe",
+    why:null
   },
   {
     name: "Simple Dashboard",
@@ -79,6 +91,7 @@ export const projectsData = [
     techList: ["CSS", "HTML"],
     demoUrl: "https://mathewbushuru.github.io/cssgrid-dashboard/",
     codeUrl: "https://github.com/mathewbushuru/cssgrid-dashboard",
+    why:null
   },
   {
     name: "Google Search Clone",
@@ -88,6 +101,7 @@ export const projectsData = [
     techList: ["JavaScript", "ReactJS", "CSS"],
     demoUrl: "https://googly-lovat.vercel.app/",
     codeUrl: "https://github.com/mathewbushuru/googly",
+    why:null
   },
   {
     name: "Simple Sign Up Form",
@@ -97,6 +111,7 @@ export const projectsData = [
     techList: ["JavaScript", "CSS", "HTML"],
     demoUrl: "https://mathewbushuru.github.io/sign-up-form/",
     codeUrl: "https://github.com/mathewbushuru/sign-up-form",
+    why:null
   },
   {
     name: "Etch a sketch",
@@ -106,6 +121,7 @@ export const projectsData = [
     techList: ["JavaScript", "CSS"],
     demoUrl: "https://mathewbushuru.github.io/etch-a-sketch/",
     codeUrl: "https://github.com/mathewbushuru/etch-a-sketch",
+    why:null
   },
   {
     name: "Calculator",
@@ -115,6 +131,7 @@ export const projectsData = [
     techList: ["JavaScript", "CSS"],
     demoUrl: "https://mathewbushuru.github.io/hp-prime-web/",
     codeUrl: null,
+    why:null
   },
   {
     name: "Regex Form Validator",
@@ -124,6 +141,7 @@ export const projectsData = [
     techList: ["JavaScript", "CSS"],
     demoUrl: "https://mathewbushuru.github.io/regex-form-validation/",
     codeUrl: null,
+    why:null
   },
   {
     name: "Kanban Task App",
@@ -133,6 +151,7 @@ export const projectsData = [
     techList: ["JavaScript", "ReactJS", "Styled components"],
     demoUrl: "https://drag-and-drop-app.mathewbushuru.vercel.app/",
     codeUrl: "https://github.com/mathewbushuru/drag-and-drop-task-app",
+    why:null
   },
   {
     name: "Rock Paper Scissors",
@@ -142,6 +161,7 @@ export const projectsData = [
     techList: ["JavaScript", "CSS"],
     demoUrl: "https://mathewbushuru.github.io/rock-paper-scissors/",
     codeUrl: null,
+    why:null
   },
   {
     name: "Snake Game",
@@ -151,6 +171,7 @@ export const projectsData = [
     techList: ["Python", "Tkinter"],
     demoUrl: null,
     codeUrl: "https://github.com/mathewbushuru/cpen333_mp",
+    why:null
   },
   {
     name: "Previous Portfolio",
@@ -160,6 +181,7 @@ export const projectsData = [
     techList: ["JavaScript", "HTML", "CSS", "Bootstrap"],
     demoUrl: "https://mathewbushuru.me/",
     codeUrl: null,
+    why:null
   },
   {
     name: "Metal Detector",
@@ -169,6 +191,7 @@ export const projectsData = [
     techList: ["C", "32-bit Microcontrollers"],
     demoUrl: "https://youtu.be/pajMGd9RIf4",
     codeUrl: "https://github.com/mathewbushuru/frequency-meter-metal-detector",
+    why:null
   },
   {
     name: "Liquid-level Detector",
@@ -178,6 +201,7 @@ export const projectsData = [
     techList: ["Assembly", "8-bit Microcontrollers"],
     demoUrl: "https://www.youtube.com/watch?v=4QwDmZlB6OQ",
     codeUrl: "https://github.com/mathewbushuru/capacitive-water-level-detector",
+    why:null
   },
   {
     name: "Soma",
@@ -187,5 +211,6 @@ export const projectsData = [
     techList: ["JavaScript", "HTML", "CSS", "Bootstrap"],
     demoUrl: "https://www.somaoffline.com/",
     codeUrl: null,
+    why:null
   },
 ];

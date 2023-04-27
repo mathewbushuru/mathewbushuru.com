@@ -1,4 +1,4 @@
-import { H1, Code, H2, H3 } from "@/components/ui/Typography";
+import { Code } from "@/components/ui/Typography";
 
 import { FC } from "react";
 

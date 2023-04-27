@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowUpRight, CalendarIcon, PlayIcon, GithubIcon } from "lucide-react";
+import { CalendarIcon, PlayIcon, GithubIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
@@ -24,6 +24,7 @@ export default function ProjectsPage() {
               techList={project.techList}
               demoUrl={project.demoUrl}
               codeUrl={project.codeUrl}
+              why={project.why}
             />
           );
         })}
@@ -40,6 +41,7 @@ function ProjectCard({
   techList,
   demoUrl,
   codeUrl,
+  why,
 }: {
   name: string;
   imgSrc: string;
@@ -48,9 +50,10 @@ function ProjectCard({
   techList: string[];
   demoUrl: string | null;
   codeUrl: string | null;
+  why: { what: string; why: String; lesson: string } | null;
 }) {
   return (
-    <div className="h-76 pt-3 flex flex-col overflow-hidden rounded-md bg-background-popover shadow-md sm:w-72 md:w-80">
+    <div className="h-76 flex flex-col overflow-hidden rounded-md bg-background-popover pt-3 shadow-md sm:w-72 md:w-80">
       <Image
         src={imgSrc}
         width={320}
@@ -95,6 +98,13 @@ function ProjectCard({
           </a>
         )}
       </div>
+      {why !== null && (
+        <div className="mb-3">
+          <ProjectDesc className="px-2 pt-2 text-muted underline decoration-muted underline-offset-4 sm:text-xs lg:min-h-fit  cursor-pointer w-fit">
+            Why I made it
+          </ProjectDesc>
+        </div>
+      )}
     </div>
   );
 }
