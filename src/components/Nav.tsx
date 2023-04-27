@@ -30,21 +30,6 @@ const Nav: React.FC<NavProps> = ({ className, ...props }) => {
         );
       })}
       <a
-        href="https://www.linkedin.com/in/mathewbushuru/"
-        target="_blank"
-        rel="noreferrer"
-        className="underline-offset-4 hover:underline"
-      >
-        <Button
-          size="sm"
-          variant={"outline"}
-          className="mt-2 rounded-lg  px-2"
-          aria-label="LinkedIn Link"
-        >
-          <LinkedinIcon className="h-5 w-5" />
-        </Button>
-      </a>
-      <a
         href="https://github.com/mathewbushuru"
         target="_blank"
         rel="noreferrer"
@@ -53,10 +38,25 @@ const Nav: React.FC<NavProps> = ({ className, ...props }) => {
         <Button
           variant="outline"
           size="sm"
-          className="rounded-lg px-2"
+          className="mt-2 rounded-lg px-2"
           aria-label="Github Link"
         >
-          <GithubIcon className="h-5 w-5" />
+          <GithubIcon className="h-4 w-4 sm:h-5 sm:w-5" />
+        </Button>
+      </a>
+      <a
+        href="https://www.linkedin.com/in/mathewbushuru/"
+        target="_blank"
+        rel="noreferrer"
+        className="underline-offset-4 hover:underline"
+      >
+        <Button
+          size="sm"
+          variant={"outline"}
+          className="rounded-lg  px-2"
+          aria-label="LinkedIn Link"
+        >
+          <LinkedinIcon className="h-4 w-4 sm:h-5 sm:w-5" />
         </Button>
       </a>
     </div>
@@ -72,7 +72,7 @@ function NavItem({ item, isActive }: { item: string; isActive: boolean }) {
       <Button
         variant={"link"}
         size="sm"
-        className="h-auto px-0 capitalize font-normal decoration-muted tracking-wide sm:text-base"
+        className="h-auto px-0 font-normal capitalize tracking-wide decoration-muted sm:text-base"
       >
         {item}
       </Button>
