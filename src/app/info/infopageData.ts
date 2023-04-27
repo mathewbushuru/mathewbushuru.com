@@ -64,7 +64,8 @@ export const extraExperienceItems = [
     jobType: null,
     bulletPoints: [
       "Contributed to the creation and testing of a robust control system to autonomously control a robotic sailboat. ",
-      "Presented research findings at the 2019  Multidisciplinary Undergraduate Research Conference through a poster presentation",
+      "Built an intuitive GUI to monitor and visualize the sailboat remotely, and simulated weather and boat dynamics using GazeboSim and ROS.",
+      "Presented research findings at the 2019  Multidisciplinary Undergraduate Research Conference through a poster presentation.",
     ],
   },
 ];
@@ -102,5 +103,28 @@ export const awardItems = [
     issuer: "The Resolution Fellowship",
     awardUrl: "https://resolutionproject.org/fellows/mathew-bushuru/",
     desc: "This multi-step competition held in Kigali inspired undergraduate students to propose impactful, socially-responsible projects addressing pressing social issues around the world.",
+  },
+];
+
+export const featureItems = [
+  {
+    title:
+      "UBC Engineering students win local World's Challenge Challenge competition",
+    link: "https://apsc.ubc.ca/news/2020/ubc-engineering-students-win-local-worlds-challenge-challenge-competition",
+  },
+  {
+    title:
+      "Next-Generation African Leaders Announced as Winners of the Resolution Social Venture Challenge",
+    link: "https://mastercardfdn.org/next-generation-african-leaders-announced-as-winners-of-the-resolution-social-venture-challenge-2/",
+  },
+  {
+    title:
+      "Multidisciplinary Undergraduate Research Conference - Model predictive control system for autonomous sailboat in varying weather conditions (Page 141)",
+    link: "https://students.ubc.ca/sites/students.ubc.ca/files/MURC%202019%20Program%20Guide%20Mar%2014_compressed%20%281%29.pdf#page=141",
+  },
+  {
+    title:
+      "Providing free offline educational tools to high school students in Kenya",
+    link: "https://bizwatchkenya.com/featured/providing-free-offline-educational-tools-to-high-school-students-in-kenya/",
   },
 ];

@@ -4,6 +4,7 @@ import {
   workExperienceItems,
   extraExperienceItems,
   awardItems,
+  featureItems,
 } from "./infopageData";
 
 export const metadata = {
@@ -79,7 +80,7 @@ export default function InfoPage() {
           <span>Tools and Frameworks :</span>{" "}
           <span className="font-light text-muted">
             ReactJS, NextJS, React Native, TailwindCSS, NodeJS / ExpressJS,
-            FastAPI, MongoDB, MySQL, Git, AWS, Firebase.
+            FastAPI, MongoDB, MySQL, Matlab / Simulink, Git, AWS, Firebase.
           </span>
         </SectionDesc>
       </Section>
@@ -132,6 +133,27 @@ export default function InfoPage() {
               awardUrl={item.awardUrl}
               desc={item.desc}
             />
+          );
+        })}
+      </Section>
+
+      {/* Features  */}
+      <Section>
+        <SectionHeader>Features</SectionHeader>
+        {featureItems.map((feature) => {
+          return (
+            <SectionDesc key={feature.link} className="mb-2  font-normal text-muted">
+              <a
+                href={
+                  feature.link
+                }
+                target="_blank"
+                rel="noreferrer"
+                className="decoration-muted underline-offset-4 hover:underline"
+              >
+                {feature.title} <ArrowUpRight className="inline-block h-3 w-3" />
+              </a>
+            </SectionDesc>
           );
         })}
       </Section>

@@ -182,7 +182,7 @@ export const projectsData = [
   {
     name: "Soma",
     imgSrc: "/mockups/ipad/somaoriginal_ipad.png",
-    dates: "07 / 2019 ",
+    dates: "03 / 2020 ",
     desc: "Soma's landing page.",
     techList: ["JavaScript", "HTML", "CSS", "Bootstrap"],
     demoUrl: "https://www.somaoffline.com/",
