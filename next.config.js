@@ -3,8 +3,7 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-  // TODO
-  images: { unoptimized: true, path: "/" },
+  images: { unoptimized: true },
   output: "export",
 };
 

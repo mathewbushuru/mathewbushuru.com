@@ -13,6 +13,6 @@ This is a redesign of my personal website to replace my old portfolio  (`mathewb
 
 I am using NextJS' Static Site Generation for this. At build time, Next takes all my React components and generates a HTML file per route which avoids loading unnecessary Javascript on the client side. As a result, the bundle size is  reduced significantly and the page loads faster.
 
-However, one disadvantage of using static site generation in NextJS is it does not support the built-in image  optimization that comes with `next/image`. To solve this I used the [`next-optimized-images`](https://github.com/cyrilwanner/next-optimized-images) NextJS plugin to do custom image optimization during build time. This is important because my new design uses a lot of images.
+One issue that comes up when using Static Site Generation with Next is `next/image` no longer optimizes images. This is because instead of optimizing images at build time, NextJS optimizes images on demand as users request them. The reasoning given for this is to prevent long build times if the project has many images. However this is important for this project because the design uses a lot of images. To solve this, I used a custom image optimization at build time.
 
 The reason I chose SSG for this project was due to the content of the site being static and to avoid vendor lock-in. I have tested that the site works on GitHub pages (the deploy script for this is at `./github/workflows/ghpages_deploy.yml`).
