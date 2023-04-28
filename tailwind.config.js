@@ -10,7 +10,8 @@ module.exports = {
       colors: {
         background: {
           DEFAULT: "hsl(360,0%,97%)",
-          popover: "hsl(360,0%,100%)"
+          popover: "hsl(360,0%,100%)",
+          blur: "hsl(360,0%,94%)",
         },
         foreground: "hsl(0,0%,7%)",
         muted: "hsl(0,0%,40%)",
@@ -28,5 +29,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };

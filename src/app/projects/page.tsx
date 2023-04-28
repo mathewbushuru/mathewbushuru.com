@@ -4,6 +4,7 @@ import { CalendarIcon, PlayIcon, GithubIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 import { projectsData } from "./projectspageData";
+import WhyModal from "./WhyModal";
 
 export const metadata = {
   title: "Mathew Bushuru | Projects",
@@ -98,11 +99,9 @@ function ProjectCard({
           </a>
         )}
       </div>
-      {why !== null && (
+      {demoUrl  && why !== null && (
         <div className="mb-3">
-          <ProjectDesc className="px-2 pt-2 text-muted underline decoration-muted underline-offset-4 sm:text-xs lg:min-h-fit  cursor-pointer w-fit">
-            Why I made it
-          </ProjectDesc>
+          <WhyModal data={why} title={name} demoUrl={demoUrl} />
         </div>
       )}
     </div>

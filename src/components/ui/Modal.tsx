@@ -15,7 +15,9 @@ const ModalPortal = ({
 }: ModalPrimitive.AlertDialogPortalProps) => {
   return (
     <ModalPrimitive.Portal className={cn(className)} {...props}>
-      <div className="">{children}</div>
+      <div className="fixed inset-0 z-50 flex items-end justify-center sm:items-center">
+        {children}
+      </div>
     </ModalPrimitive.Portal>
   );
 };
@@ -26,7 +28,10 @@ const ModalOverlay = React.forwardRef<
 >(({ className, children, ...props }, ref) => {
   return (
     <ModalPrimitive.Overlay
-      className={cn("", className)}
+      className={cn(
+        "fixed inset-0 backdrop-blur-sm transition-opacity animate-in fade-in sm:backdrop-blur-md",
+        className
+      )}
       ref={ref}
       {...props}
     />
@@ -42,7 +47,10 @@ export const ModalContent = React.forwardRef<
       <ModalOverlay />
       <ModalPrimitive.Content
         ref={ref}
-        className={cn("", className)}
+        className={cn(
+          "scrollbar-hide fixed z-50 grid max-h-full w-full max-w-lg scale-100 gap-4 overflow-y-auto border bg-background  p-6 font-sans text-foreground opacity-100 shadow-lg animate-in fade-in-90 slide-in-from-bottom-10 sm:rounded-lg sm:zoom-in-90 sm:slide-in-from-bottom-0 md:max-w-xl lg:max-w-2xl",
+          className
+        )}
         {...props}
       />
     </ModalPortal>
@@ -53,14 +61,30 @@ export const ModalHeader = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => {
-  return <div className={cn("", className)} {...props} />;
+  return (
+    <div
+      className={cn(
+        "flex flex-col space-y-2 text-center sm:text-left",
+        className
+      )}
+      {...props}
+    />
+  );
 };
 
 export const ModalFooter = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => {
-  return <div className={cn("", className)} {...props} />;
+  return (
+    <div
+      className={cn(
+        "flex flex-col-reverse gap-2 sm:flex-row sm:justify-end sm:space-y-0",
+        className
+      )}
+      {...props}
+    />
+  );
 };
 
 export const ModalTitle = React.forwardRef<
@@ -68,7 +92,11 @@ export const ModalTitle = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof ModalPrimitive.Title>
 >(({ className, ...props }, ref) => {
   return (
-    <ModalPrimitive.Title ref={ref} className={cn("", className)} {...props} />
+    <ModalPrimitive.Title
+      ref={ref}
+      className={cn("text-lg font-semibold", className)}
+      {...props}
+    />
   );
 });
 
@@ -79,7 +107,7 @@ export const ModalDescription = React.forwardRef<
   return (
     <ModalPrimitive.Description
       ref={ref}
-      className={cn("", className)}
+      className={cn("text-sm", className)}
       {...props}
     />
   );

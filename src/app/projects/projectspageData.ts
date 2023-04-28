@@ -10,7 +10,7 @@ export const projectsData = [
     why:{
       what:"A collection of React components and UI elements that I use often. Most of them are styled using Tailwind but a few use ChakraUI. They include navbars, footers, layouts, forms, hero pages, toggle buttons, cards, etc.",
       why:"I started off this project as a way to practise styling using TailwindCSS and to improve my front-end skills. It has grown to be a collection of features that I bring to new projects so that I can get them done faster.",
-      lesson:"This project enabled me to learn the CSS-in-JS paradigm, mobile-first design, dark/light mode design and how to use TailwindCSS in different scenarios. "
+      lesson:"This project enabled me to learn the CSS-in-JS paradigm, mobile-first design, designing for dark/light mode, and how to use TailwindCSS in different scenarios. "
     }
   },
   {
@@ -49,7 +49,7 @@ export const projectsData = [
     dates: "04 / 2023 ",
     desc: "A redesign of my portfolio using NextJS for Static Site Generation (SSG).",
     techList: ["TypeScript", "NextJS", "TailwindCSS"],
-    demoUrl: "https://mathewbushuru.vercel.app/",
+    demoUrl: "https://mathewbushuru.com/",
     codeUrl: "https://github.com/mathewbushuru/mathewbushuru.com",
     why:null
   },
