@@ -2,7 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* For Webkit-based browsers (Chrome, Safari and Opera) */
+ /* To fix viiewport height issues on mobile browsers */
+.h-screen-custom{
+    height: 100vh;
+    height: 100svh;
+    /* height: 100dvh; */
+}
+
+/* For Webkit-based browsers  */
 .scrollbar-hide::-webkit-scrollbar {
     display: none;
 }

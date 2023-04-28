@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${fontSans.variable} ${fontMono.variable}`}>
         <main
-          className="grid h-screen grid-cols-3 grid-rows-custom overflow-hidden bg-background p-0 pl-3 pr-1 pt-3 font-sans text-foreground sm:grid-cols-desktop
+          className="grid h-screen-custom grid-cols-3 grid-rows-custom overflow-hidden bg-background p-0 pl-3 pr-1 pt-3 font-sans text-foreground sm:grid-cols-desktop
          sm:p-0 sm:pl-6 sm:pt-6  "
         >
           <div className="col-start-1 col-end-3 row-start-1 row-end-2  sm:col-end-2">
