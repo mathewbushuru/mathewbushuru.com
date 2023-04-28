@@ -47,10 +47,14 @@ const WhyModal: FC<WhyModalProps> = ({ data, title, demoUrl }) => {
             Why I Made It
           </DescText>
           <DescText>{data.why}</DescText>
-          <DescText className="font-semibold tracking-wider text-foreground">
-            What I Learnt
-          </DescText>
-          <DescText>{data.lesson}</DescText>
+          {data.lesson && (
+            <>
+              <DescText className="font-semibold tracking-wider text-foreground">
+                What I Learnt
+              </DescText>
+              <DescText>{data.lesson}</DescText>
+            </>
+          )}
         </ModalDescription>
         <ModalFooter>
           <ModalCancel>Back</ModalCancel>

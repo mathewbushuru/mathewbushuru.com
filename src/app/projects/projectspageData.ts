@@ -7,11 +7,12 @@ export const projectsData = [
     techList: ["TypeScript", "NextJS", "TailwindCSS"],
     demoUrl: "https://matt-components.vercel.app/",
     codeUrl: "https://github.com/mathewbushuru/component-library",
-    why:{
-      what:"A collection of React components and UI elements that I use often. Most of them are styled using Tailwind but a few use ChakraUI. They include navbars, footers, layouts, forms, hero pages, toggle buttons, cards, etc.",
-      why:"I started off this project as a way to practise styling using TailwindCSS and to improve my front-end skills. It has grown to be a collection of features that I bring to new projects so that I can get them done faster.",
-      lesson:"This project enabled me to learn the CSS-in-JS paradigm, mobile-first design, designing for dark/light mode, and how to use TailwindCSS in different scenarios. "
-    }
+    why: {
+      what: "A collection of React components and UI elements that I use often. Most of them are styled using Tailwind but a few use ChakraUI. They include navbars, footers, layouts, forms, hero pages, toggle buttons, cards, etc.",
+      why: "I started off this project as a way to practise styling using TailwindCSS and to improve my front-end skills. It has grown to be a collection of features that I bring to new projects so that I can get them done faster.",
+      lesson:
+        "This project enabled me to learn the CSS-in-JS paradigm, mobile-first design, designing for dark/light mode, and how to use TailwindCSS in different scenarios. ",
+    },
   },
   {
     name: "Soma's vision ",
@@ -21,7 +22,12 @@ export const projectsData = [
     techList: ["JavaScript", "ReactJS", "CSS"],
     demoUrl: "https://www.somaoffline.org/",
     codeUrl: null,
-    why:null
+    why: {
+      what: "A replacement for Soma's old landing page (somaoffline.com) which was built using HTML/CSS/VanillaJS and styled with Bootstrap. This involved creating a new design in Figma and developing it as a React application. The styling is done using CSS Modules. ",
+      why: "It had been a while since we made any changes to the landing page so this was necessary to accurately showcase our path going forward.",
+      lesson:
+        "I learnt how to use the various services on Amazon Web Services, in particular AWS Amplify. I also learn how to design a website from scratch in Figma.",
+    },
   },
   {
     name: "React Starter Kit ",
@@ -31,7 +37,11 @@ export const projectsData = [
     techList: ["TypeScript", "ReactJS", "TailwindCSS", "Vite"],
     demoUrl: "https://react-starter-kit.onrender.com/",
     codeUrl: "https://github.com/mathewbushuru/react-starter-kit",
-    why:null
+    why: {
+      what: "This is a React app  template using Vite and TypeScript. It is a modified version of alan2207/bulletproof-react repo on GitHub that has been personalized for my specific needs. It uses TailwindCSS and unstyled headless component primitives from RadixUI. The included components in the repo are modified versions from the shadcn/ui repo on GitHub.",
+      why: "For almost all my React projects, I usually end up setting up the same libraries and tools e.g. React Router. This project attempts to wire up these different tools and to define the code structure that will enable the project to scale effectively. ",
+      lesson: "",
+    },
   },
   {
     name: "Chatnet ",
@@ -41,7 +51,12 @@ export const projectsData = [
     techList: ["TypeScript", "NextJS", "TailwindCSS", "Redis"],
     demoUrl: "https://chatnet.vercel.app/",
     codeUrl: "https://github.com/mathewbushuru/chatnet",
-    why:null
+    why: {
+      what: "This is an application to enable realtime chat among friends. It uses Redis so that  the sending and receiving messages is almost instant. It uses Firebase for authentication and is styled using Tailwind.",
+      why: "Although NextJS 13's AppDir is still in beta, I decided to learn how to use it since it will eventually replace the pages directory. Creating a complete project using it seemed like a good way to understand it.",
+      lesson:
+        "I learnt how to use React Server Components and how to structure an application that uses them. It was also my first time using Redis as a database and integrating it into a React/Next application was a good learning experience.",
+    },
   },
   {
     name: "Portfolio ",
@@ -51,7 +66,7 @@ export const projectsData = [
     techList: ["TypeScript", "NextJS", "TailwindCSS"],
     demoUrl: "https://mathewbushuru.com/",
     codeUrl: "https://github.com/mathewbushuru/mathewbushuru.com",
-    why:null
+    why: null,
   },
   {
     name: "Custom Webpack SPA ",
@@ -61,7 +76,12 @@ export const projectsData = [
     techList: ["JavaScript", "CSS", "Webpack"],
     demoUrl: "https://mathewbushuru.github.io/webpack-restaurant-SPA/",
     codeUrl: "https://github.com/mathewbushuru/webpack-restaurant-SPA",
-    why:null
+    why: {
+      what: "This is a Single Page Application (SPA) that uses vanilla JavaScript to dynamically render the HTML and manipulate the DOM. To achieve this, it uses a custom webpack configuration to bundle all the JS,CSS, and image source files and inject it into a div in the starting HTML. It also uses a basic custom router to enable  switching between different tabs/pages without a page reload. The site is not mobile responsive since styling was not in the scope of this project. However, I plan to implement that some time in the future.",
+      why: "I created this in order to learn how an SPA framework like React or Vue works under the hood.",
+      lesson:
+        "I learnt how to set up my own webpack project from scratch and to use the different loaders for different files types.I also got to learn how to create a parallax scrolling effect using images which looks really good.",
+    },
   },
   {
     name: "ProSearchX",
@@ -71,7 +91,11 @@ export const projectsData = [
     techList: ["JavaScript", "ReactJS", "CSS"],
     demoUrl: "https://pro-search-x.vercel.app/",
     codeUrl: "https://github.com/mathewbushuru/ProSearchX",
-    why:null
+    why: {
+      what: "This is an extension of my Google Search clone project but with additional features and enhancements to make Google Search more effective and powerful. It is for power users and professionals who require an easier and faster way to unlock Google Search capabilities.",
+      why: "I always end up modifying my  Google searches for a second search which I think after a while adds up to a lot of wasted time (although probably not as much as the time I spent on this project ). For example, adding stackoverflow to a programming question, or searching for an error in a version of a library released last month but getting results from years ago. This project attempts to solve this.",
+      lesson: "This project ended up replacing google.com as the homepage in my browser and it is the first time I created something that I use every single day. Despite not being as complex as some projects I have attempted, I really enjoyed working on it and learnt a lot from the many problems I had to solve that users would not notice when using the site, but would lead to an awful experience if missing. An example for this is selecting to search all websites should unselect the individual sites to search, ability to open results in new tab to enable a way to edit the search query, etc. I plan to come back to this project some time in the future when I have time.  ",
+    },
   },
   {
     name: "Unbeatable TicTacToe",
@@ -81,7 +105,7 @@ export const projectsData = [
     techList: ["JavaScript", "CSS"],
     demoUrl: "https://mathewbushuru.github.io/unbeatable-tictactoe/",
     codeUrl: "https://github.com/mathewbushuru/unbeatable-tictactoe",
-    why:null
+    why: null,
   },
   {
     name: "Simple Dashboard",
@@ -91,7 +115,7 @@ export const projectsData = [
     techList: ["CSS", "HTML"],
     demoUrl: "https://mathewbushuru.github.io/cssgrid-dashboard/",
     codeUrl: "https://github.com/mathewbushuru/cssgrid-dashboard",
-    why:null
+    why: null,
   },
   {
     name: "Google Search Clone",
@@ -101,7 +125,7 @@ export const projectsData = [
     techList: ["JavaScript", "ReactJS", "CSS"],
     demoUrl: "https://googly-lovat.vercel.app/",
     codeUrl: "https://github.com/mathewbushuru/googly",
-    why:null
+    why: null,
   },
   {
     name: "Simple Sign Up Form",
@@ -111,7 +135,7 @@ export const projectsData = [
     techList: ["JavaScript", "CSS", "HTML"],
     demoUrl: "https://mathewbushuru.github.io/sign-up-form/",
     codeUrl: "https://github.com/mathewbushuru/sign-up-form",
-    why:null
+    why: null,
   },
   {
     name: "Etch a sketch",
@@ -121,7 +145,7 @@ export const projectsData = [
     techList: ["JavaScript", "CSS"],
     demoUrl: "https://mathewbushuru.github.io/etch-a-sketch/",
     codeUrl: "https://github.com/mathewbushuru/etch-a-sketch",
-    why:null
+    why: null,
   },
   {
     name: "Calculator",
@@ -131,7 +155,7 @@ export const projectsData = [
     techList: ["JavaScript", "CSS"],
     demoUrl: "https://mathewbushuru.github.io/hp-prime-web/",
     codeUrl: null,
-    why:null
+    why: null,
   },
   {
     name: "Regex Form Validator",
@@ -141,7 +165,7 @@ export const projectsData = [
     techList: ["JavaScript", "CSS"],
     demoUrl: "https://mathewbushuru.github.io/regex-form-validation/",
     codeUrl: null,
-    why:null
+    why: null,
   },
   {
     name: "Kanban Task App",
@@ -151,7 +175,7 @@ export const projectsData = [
     techList: ["JavaScript", "ReactJS", "Styled components"],
     demoUrl: "https://drag-and-drop-app.mathewbushuru.vercel.app/",
     codeUrl: "https://github.com/mathewbushuru/drag-and-drop-task-app",
-    why:null
+    why: null,
   },
   {
     name: "Rock Paper Scissors",
@@ -161,7 +185,7 @@ export const projectsData = [
     techList: ["JavaScript", "CSS"],
     demoUrl: "https://mathewbushuru.github.io/rock-paper-scissors/",
     codeUrl: null,
-    why:null
+    why: null,
   },
   {
     name: "Snake Game",
@@ -171,7 +195,7 @@ export const projectsData = [
     techList: ["Python", "Tkinter"],
     demoUrl: null,
     codeUrl: "https://github.com/mathewbushuru/cpen333_mp",
-    why:null
+    why: null,
   },
   {
     name: "Previous Portfolio",
@@ -181,7 +205,7 @@ export const projectsData = [
     techList: ["JavaScript", "HTML", "CSS", "Bootstrap"],
     demoUrl: "https://mathewbushuru.me/",
     codeUrl: null,
-    why:null
+    why: null,
   },
   {
     name: "Metal Detector",
@@ -191,7 +215,7 @@ export const projectsData = [
     techList: ["C", "32-bit Microcontrollers"],
     demoUrl: "https://youtu.be/pajMGd9RIf4",
     codeUrl: "https://github.com/mathewbushuru/frequency-meter-metal-detector",
-    why:null
+    why: null,
   },
   {
     name: "Liquid-level Detector",
@@ -201,7 +225,7 @@ export const projectsData = [
     techList: ["Assembly", "8-bit Microcontrollers"],
     demoUrl: "https://www.youtube.com/watch?v=4QwDmZlB6OQ",
     codeUrl: "https://github.com/mathewbushuru/capacitive-water-level-detector",
-    why:null
+    why: null,
   },
   {
     name: "Soma",
@@ -211,6 +235,6 @@ export const projectsData = [
     techList: ["JavaScript", "HTML", "CSS", "Bootstrap"],
     demoUrl: "https://www.somaoffline.com/",
     codeUrl: null,
-    why:null
+    why: null,
   },
 ];
