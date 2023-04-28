@@ -26,7 +26,7 @@ export const projectsData = [
       what: "A replacement for Soma's old landing page (somaoffline.com) which was built using HTML/CSS/VanillaJS and styled with Bootstrap. This involved creating a new design in Figma and developing it as a React application. The styling is done using CSS Modules. ",
       why: "It had been a while since we made any changes to the landing page so this was necessary to accurately showcase our path going forward.",
       lesson:
-        "I learnt how to use the various services on Amazon Web Services, in particular AWS Amplify. I also learn how to design a website from scratch in Figma.",
+        "I learnt how to use the various services on Amazon Web Services, in particular AWS Amplify. I also learnt how to design a website from scratch in Figma.",
     },
   },
   {
@@ -94,7 +94,7 @@ export const projectsData = [
     why: {
       what: "This is an extension of my Google Search clone project but with additional features and enhancements to make Google Search more effective and powerful. It is for power users and professionals who require an easier and faster way to unlock Google Search capabilities.",
       why: "I always end up modifying my  Google searches for a second search which I think after a while adds up to a lot of wasted time (although probably not as much as the time I spent on this project ). For example, adding stackoverflow to a programming question, or searching for an error in a version of a library released last month but getting results from years ago. This project attempts to solve this.",
-      lesson: "This project ended up replacing google.com as the homepage in my browser and it is the first time I created something that I use every single day. Despite not being as complex as some projects I have attempted, I really enjoyed working on it and learnt a lot from the many problems I had to solve that users would not notice when using the site, but would lead to an awful experience if missing. An example for this is selecting to search all websites should unselect the individual sites to search, ability to open results in new tab to enable a way to edit the search query, etc. I plan to come back to this project some time in the future when I have time.  ",
+      lesson: "This project ended up replacing google.com as the homepage in my browser and it is the first time I created something that I use every single day. Despite not being as complex as some projects I have attempted, I really enjoyed working on it and learnt a lot from the many problems I had to solve that users would not notice when using the site, but would lead to an awful experience if missing. An example for this is selecting to search all websites should the user unselect each individual site to search, ability to open results in new tab to enable a way to edit the search query, etc. I plan to come back to this project some time in the future when I have time.  ",
     },
   },
   {
