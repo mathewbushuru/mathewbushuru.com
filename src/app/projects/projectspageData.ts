@@ -61,7 +61,7 @@ export const projectsData = [
   {
     name: "Portfolio ",
     imgSrc: "/mockups/ipad/resume_ipad.png",
-    dates: "04 / 2023 ",
+    dates: "04 / 2023 - Present ",
     desc: "A redesign of my portfolio using NextJS for Static Site Generation (SSG).",
     techList: ["TypeScript", "NextJS", "TailwindCSS"],
     demoUrl: "https://mathewbushuru.com/",

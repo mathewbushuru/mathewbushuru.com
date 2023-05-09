@@ -14,7 +14,7 @@ export default function ProjectsPage() {
   return (
     <div className="scrollbar-hide h-full overflow-y-auto pb-8 pr-3 pt-32 sm:gap-2 sm:pr-6 sm:pt-40 md:pr-6 2xl:pr-60">
       <div className="grid grid-cols-1 justify-items-end gap-6 sm:gap-8 lg:grid-cols-2 xl:grid-cols-3">
-        {projectsData.map((project) => {
+        {projectsData.map((project, index) => {
           return (
             <ProjectCard
               key={project.name}
@@ -26,6 +26,7 @@ export default function ProjectsPage() {
               demoUrl={project.demoUrl}
               codeUrl={project.codeUrl}
               why={project.why}
+              priorityImg={index < 6}
             />
           );
         })}
@@ -43,6 +44,7 @@ function ProjectCard({
   demoUrl,
   codeUrl,
   why,
+  priorityImg,
 }: {
   name: string;
   imgSrc: string;
@@ -52,6 +54,7 @@ function ProjectCard({
   demoUrl: string | null;
   codeUrl: string | null;
   why: { what: string; why: String; lesson: string } | null;
+  priorityImg: boolean;
 }) {
   return (
     <div className="h-76 flex flex-col overflow-hidden rounded-md bg-background-popover pt-3 shadow-md sm:w-72 md:w-80">
@@ -61,6 +64,7 @@ function ProjectCard({
         height={160}
         alt={name}
         className="max-h-40 object-contain"
+        priority={priorityImg}
       />
       <ProjectName className="pl-2 pt-2">{name}</ProjectName>
       <ProjectDates>
@@ -99,7 +103,7 @@ function ProjectCard({
           </a>
         )}
       </div>
-      {demoUrl  && why !== null && (
+      {demoUrl && why !== null && (
         <div className="mb-3">
           <WhyModal data={why} title={name} demoUrl={demoUrl} />
         </div>
