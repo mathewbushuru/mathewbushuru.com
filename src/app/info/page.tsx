@@ -89,7 +89,15 @@ export default function InfoPage() {
       <Section>
         <SectionHeader>Education</SectionHeader>
         <SectionDesc className="mb-1  font-normal text-foreground">
-          University of British Columbia
+          <a
+            href={" https://www.ubc.ca/"}
+            target="_blank"
+            rel="noreferrer"
+            className="decoration-muted underline-offset-4 hover:underline"
+          >
+            University of British Columbia
+            <ArrowUpRight className="inline-block h-3 w-3" />
+          </a>{" "}
         </SectionDesc>
         <SectionDesc className="mb-1  font-normal text-muted">
           Bachelor of Applied Science (BASC), Electrical Engineering
@@ -142,16 +150,18 @@ export default function InfoPage() {
         <SectionHeader>Features</SectionHeader>
         {featureItems.map((feature) => {
           return (
-            <SectionDesc key={feature.link} className="mb-2  font-normal text-muted">
+            <SectionDesc
+              key={feature.link}
+              className="mb-2  font-normal text-muted"
+            >
               <a
-                href={
-                  feature.link
-                }
+                href={feature.link}
                 target="_blank"
                 rel="noreferrer"
                 className="decoration-muted underline-offset-4 hover:underline"
               >
-                {feature.title} <ArrowUpRight className="inline-block h-3 w-3" />
+                {feature.title}{" "}
+                <ArrowUpRight className="inline-block h-3 w-3" />
               </a>
             </SectionDesc>
           );
