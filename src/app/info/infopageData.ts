@@ -11,27 +11,27 @@ export const workExperienceItems = [
     ],
   },
   {
-    title: "Machine Learning Intern at Cellulant",
+    title: "Machine Learning Engineer Intern at Cellulant",
     companyUrl: "https://www.cellulant.io/",
     timePeriod: "07 / 2019 - 09 / 2019",
     jobLocation: "Nairobi, Kenya",
     jobType: "Internship, In person",
     bulletPoints: [
       "Built a recommender system using the Surprise Python Library to personalize the company's app for each user.",
-      "Utilized  predictive data models and machine learning techniques to increase the customer retention rate from 47% to 64%. Successfully deployed a machine learning model on AWS to 2 million customers, providing  targeted phone airtime bonuses to customers identified as being at risk of churning within the next 30 days.",
+      "Utilized  predictive data models and machine learning techniques to increase the customer retention rate. Successfully deployed a machine learning model on AWS to 2 million customers, providing  targeted phone airtime bonuses to customers identified as being at risk of churning within the next 30 days.",
     ],
   },
 ];
 
 export const extraExperienceItems = [
   {
-    title: "Frontend Software Developer at UBC Launchpad / BC Cancer Agency",
+    title: "Software Developer at UBC Launchpad / BC Cancer Agency",
     companyUrl: "https://ubclaunchpad.com/",
     timePeriod: "09 / 2022 - 04 / 2023",
     jobLocation: "Vancouver, Canada",
     jobType: null,
     bulletPoints: [
-      "Contributed to the development of a lab management web application. ",
+      "Developed a lab management web application to streamline ticket submission, tracking, and invoicing processes for BC Cancer Agency ",
       "Implemented a Kanban-style ticket management board with drag and drop capabilities, a PDF  invoice generation tool, form builder components among other features.",
     ],
   },
@@ -46,7 +46,7 @@ export const extraExperienceItems = [
     ],
   },
   {
-    title: "Fullstack Software Developer at UBC Launchpad",
+    title: "Software Developer at UBC Launchpad",
     companyUrl: "https://ubclaunchpad.com/",
     timePeriod: "09 / 2021 - 04 / 2022",
     jobLocation: "Vancouver, Canada",
@@ -72,7 +72,7 @@ export const extraExperienceItems = [
 
 export const awardItems = [
   {
-    title: "Full MasterCard Foundation Scholarship ($250,000+)",
+    title: "MasterCard Foundation Full Tuition Scholarship",
     issuer: "University of British Columbia, MasterCard Foundation",
     awardUrl: "https://mcfscholars.ubc.ca/",
     desc: "For academic achievement, leadership skills, and involvement in  community service.",
@@ -85,14 +85,14 @@ export const awardItems = [
   },
   {
     title:
-      "2021 Mastercard Foundation's  Social Entrepreneurship Fund (~$17000)",
+      "2021 Mastercard Foundation's  Social Entrepreneurship Fund ",
     issuer: "MasterCard Foundation",
     awardUrl:
       "https://mastercardfdn.org/mastercard-foundation-announces-new-fund-to-seed-young-african-leaders-social-ventures/",
     desc: "This fund enables young changemakers to seed and kick-start promising social ventures and community projects, creating economic opportunities for themselves and others.",
   },
   {
-    title: "2020 UBC World's Challenge Challenge, 1st place ($6000)",
+    title: "2020 UBC World's Challenge Challenge, 1st place ",
     issuer: "University of British Columbia",
     awardUrl:
       "https://apsc.ubc.ca/news/2020/ubc-engineering-students-win-local-worlds-challenge-challenge-competition",

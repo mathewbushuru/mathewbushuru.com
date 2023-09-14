@@ -17,22 +17,30 @@ export default function InfoPage() {
       {/* About  */}
       <Section>
         <SectionHeader>About</SectionHeader>
+        <SectionDesc className="mb-2">
+          Hi and welcome to my website! My interests span a broad spectrum of
+          subjects, encompassing algorithm design, electronics, education, web
+          and mobile development.
+        </SectionDesc>
         <SectionDesc>
-          I'm Mathew and I enjoy building polished user interfaces.
+          I am always open to working on new project ideas so please feel free
+          to connect with me through the options in the contact section below.
         </SectionDesc>
       </Section>
 
       {/* Currently */}
-      {false && (
+      {true && (
         <Section>
           <SectionHeader>Currently</SectionHeader>
           <ExperienceItem
-            title=""
-            companyUrl=""
-            timePeriod=""
-            jobLocation=""
-            jobType=""
-            bulletPoints={[""]}
+            title="Software Developer Engineer Intern at Amelia"
+            companyUrl={null}
+            timePeriod="06 / 2023 - Present"
+            jobLocation="Toronto, Canada"
+            jobType="Internship, Remote"
+            bulletPoints={[
+              "Develop and ship new product features across iOS and Android applications.",
+            ]}
           />
         </Section>
       )}
@@ -236,7 +244,7 @@ function ExperienceItem({
   bulletPoints,
 }: {
   title: string;
-  companyUrl: string;
+  companyUrl: string | null;
   timePeriod: string;
   jobType: string | null;
   jobLocation: string;
@@ -245,14 +253,18 @@ function ExperienceItem({
   return (
     <div className="mb-2">
       <SectionDesc className="mb-1  font-normal text-foreground">
-        <a
-          href={companyUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="decoration-muted underline-offset-4 hover:underline"
-        >
-          {title} <ArrowUpRight className="inline-block h-3 w-3" />
-        </a>
+        {companyUrl ? (
+          <a
+            href={companyUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="decoration-muted underline-offset-4 hover:underline"
+          >
+            {title} <ArrowUpRight className="inline-block h-3 w-3" />
+          </a>
+        ) : (
+          title
+        )}
       </SectionDesc>
       <SectionDesc className="sm:mb-1">{timePeriod}</SectionDesc>
       <SectionDesc className="mb-2 text-foreground sm:text-xs">
