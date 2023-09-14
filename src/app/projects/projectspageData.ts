@@ -1,8 +1,36 @@
 export const projectsData = [
   {
+    name: "Soma Rewrite V2 ",
+    imgSrc: "/mockups/ipad/somaoffline_org_ipad.png",
+    dates: "07 / 2023 - Present",
+    desc: "Redesigning Soma's website using TypeScript. It also includes a new server page for downloading our offline content.",
+    techList: ["TypeScript", "ReactJS", "TailwindCSS"],
+    demoUrl: "https://somaoffline.org/",
+    codeUrl: null,
+    why: {
+      what: "A replacement for Soma's old landing page which was built using HTML/CSS/VanillaJS and styled with Bootstrap. This involved creating a new design in Figma and developing it as a React application. The styling is done using Tailwind. ",
+      why: "It had been a while since we made any changes to the landing page so this was necessary to accurately showcase our path going forward.",
+      lesson: "",
+    },
+  },
+  {
+    name: "Todoist - React, Express, React Native ",
+    imgSrc: "/mockups/ipad/todoist_ipad.png",
+    dates: "06 / 2023 - Present",
+    desc: "A Todoist clone with code implementation for the backend server, frontend web app and iOS/Android mobile apps",
+    techList: ["ReactJS", "TailwindCSS", "Express", "React Native"],
+    demoUrl: "https://todoist.mathewbushuru.com",
+    codeUrl: "https://github.com/mathewbushuru/todoist-express-react",
+    why: {
+      what: "An end-to-end Todoist clone from the backend server using Express, the frontend web app using React/TypeScript and the iOS/Android mobile apps using react native. The mobile app code is in a different repo (todoist-react-native).",
+      why: "I wanted to create a complete working example of a production-ready full-stack application. To prioritize the functionality over design work, I replicated Todoist's UI instead of creating my own custom design.",
+      lesson: "",
+    },
+  },
+  {
     name: "UI / Component library ",
     imgSrc: "/mockups/ipad/component_library_ipad.png",
-    dates: "04 / 2023 - Present",
+    dates: "04 / 2023 - 05 / 2023",
     desc: "A collection of prebuilt UI elements that I usually need in new projects. For example navbars, footers, cards, etc.",
     techList: ["TypeScript", "NextJS", "TailwindCSS"],
     demoUrl: "https://matt-components.vercel.app/",
@@ -15,24 +43,9 @@ export const projectsData = [
     },
   },
   {
-    name: "Soma's vision ",
-    imgSrc: "/mockups/ipad/soma_org_ipad.png",
-    dates: "04 / 2023 - Present",
-    desc: "A complete redesign of Soma's landing page to represent my vision of Soma's future.",
-    techList: ["JavaScript", "ReactJS", "CSS"],
-    demoUrl: "https://www.somaoffline.org/",
-    codeUrl: null,
-    why: {
-      what: "A replacement for Soma's old landing page (somaoffline.com) which was built using HTML/CSS/VanillaJS and styled with Bootstrap. This involved creating a new design in Figma and developing it as a React application. The styling is done using CSS Modules. ",
-      why: "It had been a while since we made any changes to the landing page so this was necessary to accurately showcase our path going forward.",
-      lesson:
-        "I learnt how to use the various services on Amazon Web Services, in particular AWS Amplify. I also learnt how to design a website from scratch in Figma.",
-    },
-  },
-  {
     name: "React Starter Kit ",
     imgSrc: "/mockups/ipad/reactstarter_ipad.png",
-    dates: "04 / 2023 - Present",
+    dates: "04 / 2023 - 05 / 23",
     desc: "My starting point for building scalable react applications ",
     techList: ["TypeScript", "ReactJS", "TailwindCSS", "Vite"],
     demoUrl: "https://react-starter-kit.onrender.com/",
@@ -44,9 +57,34 @@ export const projectsData = [
     },
   },
   {
+    name: "Blue Horizon Weather App",
+    imgSrc: "/mockups/ipad/bluehorizon_ipad.png",
+    dates: "04 / 2023 - 05 / 23",
+    desc: "A weather forecast app that shows Vancouver's realtime weather forecast by default but also allows users to search the weather of specific cities.",
+    techList: ["JavaScript", "CSS", "HTML"],
+    demoUrl: "https://mathewbushuru.github.io/blue-horizon/",
+    codeUrl: "https://github.com/mathewbushuru/blue-horizon",
+    why: null
+  },
+  {
+    name: "Soma Rewrite V1 ",
+    imgSrc: "/mockups/ipad/soma_org_ipad.png",
+    dates: "04 / 2023",
+    desc: "A complete redesign of Soma's landing page.",
+    techList: ["JavaScript", "ReactJS", "CSS"],
+    demoUrl: "https://somav1.vercel.app/",
+    codeUrl: null,
+    why: {
+      what: "A replacement for Soma's old landing page (somaoffline.com) which was built using HTML/CSS/VanillaJS and styled with Bootstrap. This involved creating a new design in Figma and developing it as a React application. The styling is done using CSS Modules. ",
+      why: "It had been a while since we made any changes to the landing page so this was necessary to accurately showcase our path going forward.",
+      lesson:
+        "I learnt how to use the various services on Amazon Web Services, in particular AWS Amplify. I also learnt how to design a website from scratch in Figma.",
+    },
+  },
+  {
     name: "Chatnet ",
     imgSrc: "/mockups/ipad/chatnet_ipad.png",
-    dates: "04 / 2023 - Present",
+    dates: "04 / 2023 ",
     desc: "A real time chat application built with Next 13's app directory /react server components",
     techList: ["TypeScript", "NextJS", "TailwindCSS", "Redis"],
     demoUrl: "https://chatnet.vercel.app/",
@@ -61,7 +99,7 @@ export const projectsData = [
   {
     name: "Portfolio ",
     imgSrc: "/mockups/ipad/resume_ipad.png",
-    dates: "04 / 2023 - Present ",
+    dates: "04 / 2023 ",
     desc: "A redesign of my portfolio using NextJS for Static Site Generation (SSG).",
     techList: ["TypeScript", "NextJS", "TailwindCSS"],
     demoUrl: "https://mathewbushuru.com/",
@@ -84,6 +122,16 @@ export const projectsData = [
     },
   },
   {
+    name: "Constraint Validation API",
+    imgSrc: "/mockups/ipad/constraintapi_ipad.png",
+    dates: "04 / 2023",
+    desc: "A signup form that uses JavaScript's form constraint validation API to inform the user of the validation status that is more informative than default HTML 5 validation messages.",
+    techList: ["JavaScript", "CSS", "HTML"],
+    demoUrl: "https://mathewbushuru.github.io/form-constraint-validation-api/",
+    codeUrl: "https://github.com/mathewbushuru/form-constraint-validation-api",
+    why: null,
+  },
+  {
     name: "ProSearchX",
     imgSrc: "/mockups/ipad/prosearchx_ipad.png",
     dates: "03 / 2023 ",
@@ -94,7 +142,8 @@ export const projectsData = [
     why: {
       what: "This is an extension of my Google Search clone project but with additional features and enhancements to make Google Search more effective and powerful. It is for power users and professionals who require an easier and faster way to unlock Google Search capabilities.",
       why: "I always end up modifying my  Google searches for a second search which I think after a while adds up to a lot of wasted time (although probably not as much as the time I spent on this project ). For example, adding stackoverflow to a programming question, or searching for an error in a version of a library released last month but getting results from years ago. This project attempts to solve this.",
-      lesson: "This project ended up replacing google.com as the homepage in my browser and it is the first time I created something that I use every single day. Despite not being as complex as some projects I have attempted, I really enjoyed working on it and learnt a lot from the many problems I had to solve that users would not notice when using the site, but would lead to an awful experience if missing. An example for this is selecting to search all websites should the user unselect each individual site to search, ability to open results in new tab to enable a way to edit the search query, etc. I plan to come back to this project some time in the future when I have time.  ",
+      lesson:
+        "This project ended up replacing google.com as the homepage in my browser and it is the first time I created something that I use every single day. Despite not being as complex as some projects I have attempted, I really enjoyed working on it and learnt a lot from the many problems I had to solve that users would not notice when using the site, but would lead to an awful experience if missing. An example for this is selecting to search all websites should the user unselect each individual site to search, ability to open results in new tab to enable a way to edit the search query, etc. I plan to come back to this project some time in the future when I have time.  ",
     },
   },
   {
@@ -203,7 +252,7 @@ export const projectsData = [
     dates: "02 / 2022 ",
     desc: "My dark-themed portfolio with a feature to open live project demos from a lightbox / modal within the app.",
     techList: ["JavaScript", "HTML", "CSS", "Bootstrap"],
-    demoUrl: "https://mathewbushuru.me/",
+    demoUrl: "https://mathewbushuru.github.io/myresume/",
     codeUrl: null,
     why: null,
   },
