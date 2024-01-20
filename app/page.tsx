@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <main className="bg-emerald-50">
+    <main className="">
       <Button variant="ghost">Matt</Button>
     </main>
   );
