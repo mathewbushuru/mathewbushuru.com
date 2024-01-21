@@ -30,7 +30,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="flex h-screen overflow-hidden">
+          <main
+            vaul-drawer-wrapper=""
+            className="flex h-screen overflow-hidden bg-background text-foreground"
+          >
             {/* DesktopScreen Plus Sidebar  */}
             <div className="hidden shadow-lg dark:border-r lg:block">
               <NavMenuContent />

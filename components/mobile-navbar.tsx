@@ -26,7 +26,7 @@ export const MobileNavbar = () => {
           <CommandIcon className="h-5 w-5 cursor-pointer" />
         </DrawerTrigger>
         <DrawerContent>
-          <div className="max-h-[32rem] overflow-y-scroll">
+          <div className="max-h-[28rem] overflow-y-scroll">
             <div className="flex h-full flex-col justify-between">
               {/* Top  */}
               <div className=" flex min-w-60 flex-col gap-3 px-4 pt-6">
