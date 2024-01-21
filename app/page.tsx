@@ -6,7 +6,11 @@ import {
   Wand2Icon,
   HammerIcon,
   NewspaperIcon,
-  CameraIcon
+  CameraIcon,
+  ArrowUpRightIcon,
+  GithubIcon,
+  LinkedinIcon,
+  MailIcon,
 } from "lucide-react";
 
 import { ThemeToggleIcon } from "@/components/theme-toggle-icon";
@@ -88,6 +92,42 @@ export default function Home() {
 
         {/* Bottom sidebar  */}
         <div className="flex min-w-60 flex-col gap-3 px-4 pb-6 pt-8">
+          <a
+            href="https://github.com/mathewbushuru"
+            target="_blank"
+            rel="noopener noreferrer"
+            tabIndex={-1}
+          >
+            <Button variant="ghost" className="w-full justify-start" size="sm">
+              <GithubIcon className="mr-2 h-4 w-4" />
+              <span>GitHub</span>
+              <ArrowUpRightIcon className="ml-auto mr-1.5 h-4 w-4" />
+            </Button>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/mathewbushuru/"
+            target="_blank"
+            rel="noopener noreferrer"
+            tabIndex={-1}
+          >
+            <Button variant="ghost" className="w-full justify-start" size="sm">
+              <LinkedinIcon className="mr-2 h-4 w-4" />
+              <span>LinkedIn</span>
+              <ArrowUpRightIcon className="ml-auto mr-1.5 h-4 w-4" />
+            </Button>
+          </a>
+          <a
+            href="mailto:mathewbushuru@proton.me"
+            target="_blank"
+            rel="noopener noreferrer"
+            tabIndex={-1}
+          >
+            <Button variant="ghost" className="justify-start w-full" size="sm">
+              <MailIcon className="mr-2 h-4 w-4" />
+              <span>Email</span>
+              <ArrowUpRightIcon className="ml-auto mr-1.5 h-4 w-4" />
+            </Button>
+          </a>
           <hr className="-mx-4" />
           <ThemeToggleButton />
         </div>
@@ -96,7 +136,7 @@ export default function Home() {
       {/* Content  */}
       <div className="overflow-scroll lg:px-8">
         {/* mobile navbar  */}
-        <nav className="fixed left-0 right-0 top-0 z-50 h-14 flex items-center justify-between border-b bg-background px-4 py-4 lg:hidden">
+        <nav className="fixed left-0 right-0 top-0 z-50 flex h-14 items-center justify-between border-b bg-background px-4 py-4 lg:hidden">
           <CommandIcon className="h-5 w-5" />
           <ThemeToggleIcon />
         </nav>
@@ -134,8 +174,8 @@ export default function Home() {
             >
               Amelia
             </a>
-            , built a serverless web-based lab management system for the
-            Molecular and Advanced Pathology Core (MAPCore) lab at{" "}
+            , built a web-based lab management system for the Molecular and
+            Advanced Pathology Core (MAPCore) lab at{" "}
             <a
               href="https://www.bccrc.ca/"
               target="_blank"
