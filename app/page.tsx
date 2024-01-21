@@ -26,7 +26,7 @@ export default function HomePage() {
         </p>
 
         <p className="mb-4 leading-7 lg:mb-6">
-          I am currently working on Point of Sales systems at the head office of
+          I currently work on Point of Sales systems at the head office of
           Choices Markets which is a division of{" "}
           <a
             href="https://pattisonfoodgroup.com/"
