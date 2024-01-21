@@ -1,4 +1,6 @@
-import React from 'react'
+export const metadata = {
+  title: "Mathew Bushuru | Books",
+};
 
 export default function ReadingPage() {
   return (

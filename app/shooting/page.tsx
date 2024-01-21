@@ -1,4 +1,6 @@
-import React from 'react'
+export const metadata = {
+  title: "Mathew Bushuru | Photography",
+};
 
 export default function ShootingPage() {
   return (

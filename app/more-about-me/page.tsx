@@ -1,4 +1,6 @@
-import React from 'react'
+export const metadata = {
+  title: "Mathew Bushuru | Info",
+};
 
 export default function MoreAboutMePage() {
   return (

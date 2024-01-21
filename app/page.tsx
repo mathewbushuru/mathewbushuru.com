@@ -117,7 +117,7 @@ export default function HomePage() {
                       rel="noopener noreferrer"
                       className="text-link hover:underline hover:underline-offset-4"
                     >
-                      Github
+                      GitHub
                     </a>
                   )}
                 </TableCell>
@@ -133,7 +133,7 @@ export default function HomePage() {
 const favoriteProjects = [
   {
     name: "Design System",
-    description: "My Personal design system",
+    description: "My personal design system",
     websiteLink: "https://design.mathewbushuru.com/",
     githubLink: "https://github.com/mathewbushuru/design-system",
   },
