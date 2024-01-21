@@ -6,9 +6,11 @@ import {
   Wand2Icon,
   HammerIcon,
   NewspaperIcon,
-  CameraIcon,
+  CameraIcon
 } from "lucide-react";
 
+import { ThemeToggleIcon } from "@/components/theme-toggle-icon";
+import { ThemeToggleButton } from "@/components/theme-toggle-button";
 import { Button } from "@/components/ui/button";
 import {
   Table,
@@ -24,7 +26,7 @@ export default function Home() {
   return (
     <main className="flex h-screen overflow-hidden">
       {/* sidebar  */}
-      <div className="hidden flex-col justify-between shadow-lg lg:flex">
+      <div className="hidden flex-col justify-between shadow-lg dark:border-r lg:flex">
         {/* Top sidebar  */}
         <div className=" flex min-w-60 flex-col gap-3 px-4 pt-6">
           <div className="mb-2 flex cursor-pointer flex-col gap-1 rounded-md px-4 py-2 text-sm font-medium hover:bg-accent">
@@ -85,20 +87,22 @@ export default function Home() {
         </div>
 
         {/* Bottom sidebar  */}
-        <div className="flex min-w-60 flex-col gap-3 px-4 py-8">
-          Online links
+        <div className="flex min-w-60 flex-col gap-3 px-4 pb-6 pt-8">
+          <hr className="-mx-4" />
+          <ThemeToggleButton />
         </div>
       </div>
 
       {/* Content  */}
       <div className="overflow-scroll lg:px-8">
         {/* mobile navbar  */}
-        <nav className="fixed left-0 right-0 top-0 z-50 h-12 border-b bg-background px-4 py-4 lg:hidden">
+        <nav className="fixed left-0 right-0 top-0 z-50 h-14 flex items-center justify-between border-b bg-background px-4 py-4 lg:hidden">
           <CommandIcon className="h-5 w-5" />
+          <ThemeToggleIcon />
         </nav>
 
         {/* Intro  */}
-        <div className="px-5 pb-4 pt-14 lg:pt-28">
+        <div className="px-5 pb-4 pt-16 lg:pt-28">
           <h1 className="mb-6 mt-3 text-xl font-semibold sm:text-2xl lg:hidden">
             Home
           </h1>
