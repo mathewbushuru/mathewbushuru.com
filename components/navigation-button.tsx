@@ -64,6 +64,7 @@ export const NavigationButton = ({
       className="w-full justify-start"
       variant={isActive ? "default" : "ghost"}
       size="sm"
+      tabIndex={-1}
     >
       <Icon className="mr-2 h-4 w-4" />
       <span>{label}</span>
