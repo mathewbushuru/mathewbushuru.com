@@ -79,7 +79,7 @@ export default function HomePage() {
           Favourite Projects
         </h1>
         <Table>
-          <TableCaption>See more in the Journey page</TableCaption>
+          <TableCaption>See more in the All Projects page</TableCaption>
           <TableHeader>
             <TableRow className="hover:bg-background">
               <TableHead className="pl-2 text-left lg:min-w-32">Name</TableHead>
