@@ -45,4 +45,6 @@ export const keysUsedInNavigation = [
   "KeyG",
   "KeyE",
   "KeyL",
+  "KeyD",
+  "KeyT",
 ];

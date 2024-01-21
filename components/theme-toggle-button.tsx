@@ -21,8 +21,14 @@ export function ThemeToggleButton() {
         <Button size="sm" variant="outline" className="justify-start">
           <SunIcon className="mr-2 h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
           <span className="inline dark:hidden">Light mode</span>
-          <MoonIcon className="mr-2 absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+          <span className="ml-auto mr-1.5 inline rounded-sm border bg-secondary px-1.5 text-muted-foreground dark:hidden">
+            D
+          </span>
+          <MoonIcon className="absolute mr-2 h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
           <span className="hidden dark:inline">Dark mode</span>
+          <span className="ml-auto mr-1.5 hidden rounded-sm border bg-secondary px-1.5 text-muted-foreground dark:inline">
+            T
+          </span>
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>

@@ -1,10 +1,12 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { useTheme } from "next-themes";
 
 import { keysUsedInNavigation } from "@/lib/constants";
 
 export function useKeyPress() {
   const router = useRouter();
+  const { setTheme } = useTheme();
 
   useEffect(() => {
     const keypressHandler = (event: KeyboardEvent) => {
@@ -35,6 +37,10 @@ export function useKeyPress() {
         window.open("mailto:mathewbushuru@proton.me", "_blank");
       } else if (event.code === "KeyL") {
         window.open("https://www.linkedin.com/in/mathewbushuru/", "_blank");
+      } else if (event.code === "KeyD") {
+        setTheme("dark");
+      } else if (event.code === "KeyT") {
+        setTheme("light");
       }
     };
 
