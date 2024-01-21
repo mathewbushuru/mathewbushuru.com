@@ -91,7 +91,10 @@ export const MobileNavbar = () => {
                   >
                     <GithubIcon className="mr-2 h-4 w-4" />
                     <span>GitHub</span>
-                    <ArrowUpRightIcon className="ml-auto mr-1.5 h-4 w-4" />
+                    <ArrowUpRightIcon className="ml-1.5 h-4 w-4" />
+                    <span className="ml-auto mr-1.5 rounded-sm border bg-secondary px-1.5 text-muted-foreground">
+                      G
+                    </span>
                   </Button>
                 </a>
                 <a
@@ -107,7 +110,10 @@ export const MobileNavbar = () => {
                   >
                     <MailIcon className="mr-2 h-4 w-4" />
                     <span>Email</span>
-                    <ArrowUpRightIcon className="ml-auto mr-1.5 h-4 w-4" />
+                    <ArrowUpRightIcon className="ml-1.5 h-4 w-4" />
+                    <span className="ml-auto mr-1.5 rounded-sm border bg-secondary px-1.5 text-muted-foreground">
+                      E
+                    </span>
                   </Button>
                 </a>
                 <a
@@ -123,7 +129,10 @@ export const MobileNavbar = () => {
                   >
                     <LinkedinIcon className="mr-2 h-4 w-4" />
                     <span>LinkedIn</span>
-                    <ArrowUpRightIcon className="ml-auto mr-1.5 h-4 w-4" />
+                    <ArrowUpRightIcon className="ml-1.5 h-4 w-4" />
+                    <span className="ml-auto mr-1.5 rounded-sm border bg-secondary px-1.5 text-muted-foreground">
+                      L
+                    </span>
                   </Button>
                 </a>
                 <hr className="-mx-4" />

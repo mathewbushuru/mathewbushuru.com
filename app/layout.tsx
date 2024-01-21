@@ -6,6 +6,7 @@ import "@/app/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { NavMenuContent } from "@/components/nav-menu-content";
 import { MobileNavbar } from "@/components/mobile-navbar";
+import { KeyboardRouter } from "@/components/keyboard-router";
 
 export const metadata: Metadata = {
   title: "Mathew Bushuru | Home",
@@ -36,6 +37,7 @@ export default function RootLayout({
           >
             {/* DesktopScreen Plus Sidebar  */}
             <div className="hidden shadow-lg dark:border-r lg:block">
+              <KeyboardRouter />
               <NavMenuContent />
             </div>
             {/* Page content  */}
