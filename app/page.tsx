@@ -8,22 +8,24 @@ import {
   TableCaption,
 } from "@/components/ui/table";
 
+import { favoriteProjects } from "@/lib/constants";
+
 export default function HomePage() {
   return (
     <>
       {/* Intro  */}
-      <div className="pb-8">
-        <h1 className="mb-6 mt-3 text-xl font-semibold sm:text-2xl lg:hidden">
+      <div className="pb-6 lg:pb-8">
+        <h1 className="mb-4 mt-3 text-xl font-semibold sm:text-2xl lg:hidden">
           Home
         </h1>
 
-        <p className="mb-6 leading-7">
+        <p className="mb-4 leading-7 lg:mb-6">
           Hello 👋 I'm Mathew Bushuru, a software engineer based in Vancouver,
           Canada. My interests span a broad variety of subjects, encompassing
           algorithm design, electronics, education, web and mobile development.
         </p>
 
-        <p className="mb-6 leading-7">
+        <p className="mb-4 leading-7 lg:mb-6">
           I am currently working on Point of Sales systems at the head office of
           Choices Markets which is a division of{" "}
           <a
@@ -34,7 +36,7 @@ export default function HomePage() {
           >
             Pattison Food Group
           </a>
-          . Previously, I have worked on a React Native mobile app for{" "}
+          . Previously, I have worked on a React Native mobile app at{" "}
           <a
             href="https://www.linkedin.com/company/getamelia/"
             target="_blank"
@@ -73,7 +75,7 @@ export default function HomePage() {
 
       {/* Favorite projects  */}
       <div>
-        <h1 className="mb-6 text-xl font-semibold sm:text-2xl">
+        <h1 className="mb-4 text-xl font-semibold sm:text-2xl lg:mb-6">
           Favourite Projects
         </h1>
         <Table>
@@ -82,7 +84,7 @@ export default function HomePage() {
             <TableRow className="hover:bg-background">
               <TableHead className="pl-2 text-left lg:min-w-32">Name</TableHead>
               <TableHead className="pl-2 text-left">Description</TableHead>
-              <TableHead className="pl-2 text-left lg:min-w-36">
+              <TableHead className="pl-2 text-left sm:min-w-36">
                 Links
               </TableHead>
             </TableRow>
@@ -129,40 +131,3 @@ export default function HomePage() {
     </>
   );
 }
-
-const favoriteProjects = [
-  {
-    name: "Design System",
-    description: "My personal design system",
-    websiteLink: "https://design.mathewbushuru.com/",
-    githubLink: "https://github.com/mathewbushuru/design-system",
-  },
-  {
-    name: "Todoist Monorepo",
-    description:
-      "A production ready application template built with React, React Native, TypeScript, Express and MySQL in a monorepo powered by Turborepo (Todoist clone).",
-    websiteLink: "https://todoist.mathewbushuru.com/",
-    githubLink: "https://github.com/mathewbushuru/todoist-monorepo",
-  },
-  {
-    name: "Algorithms",
-    description:
-      "Repository of computer science algorithms and data structures implemented in JavaScript, Java, C++, Python, TypeScript and C.",
-    websiteLink: null,
-    githubLink: "https://github.com/mathewbushuru/algorithms",
-  },
-  {
-    name: "Soma Offline",
-    description:
-      "An EdTech company providing access to educational resources to communities with limited or no internet access",
-    websiteLink: "https://www.somaoffline.com/",
-    githubLink: "https://github.com/soma-offline",
-  },
-  {
-    name: "ProSearchX",
-    description:
-      "A wrapper around Google Search with additional features to make it more effective and powerful.",
-    websiteLink: "https://pro-search-x.vercel.app/",
-    githubLink: "https://github.com/mathewbushuru/ProSearchX",
-  },
-];

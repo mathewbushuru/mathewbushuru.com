@@ -82,10 +82,16 @@
   * {
     @apply border-border;
   }
+  html {
+    @apply scroll-smooth antialiased;
+  }
   body {
     @apply bg-background text-foreground;
   }
   a {
     @apply rounded-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+  }
+  ::selection {
+    @apply bg-primary text-primary-foreground;
   }
 }
