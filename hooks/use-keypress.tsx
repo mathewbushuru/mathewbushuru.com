@@ -21,15 +21,11 @@ export function useKeyPress() {
         router.push("/");
       } else if (event.code === "Digit2") {
         router.push("/reading");
-      } else if (event.code === "Digit3") {
-        router.push("/writing");
-      } else if (event.code === "Digit4") {
+      }  else if (event.code === "Digit3") {
         router.push("/shooting");
-      } else if (event.code === "Digit5") {
+      } else if (event.code === "Digit4") {
         router.push("/all-projects");
-      } else if (event.code === "Digit6") {
-        router.push("/more-about-me");
-      } else if (event.code === "Digit6") {
+      } else if (event.code === "Digit5") {
         router.push("/more-about-me");
       } else if (event.code === "KeyG") {
         window.open("https://github.com/mathewbushuru", "_blank");

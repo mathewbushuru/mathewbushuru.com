@@ -49,20 +49,15 @@ export const MobileNavbar = () => {
                   </Link>
                 </DrawerClose>
                 <DrawerClose asChild>
-                  <Link href="/writing">
-                    <NavigationButton label="Writing" keyboardShortcut={3} />
-                  </Link>
-                </DrawerClose>
-                <DrawerClose asChild>
                   <Link href="/shooting">
-                    <NavigationButton label="Shooting" keyboardShortcut={4} />
+                    <NavigationButton label="Shooting" keyboardShortcut={3} />
                   </Link>
                 </DrawerClose>
                 <DrawerClose asChild>
                   <Link href="/all-projects">
                     <NavigationButton
                       label="All projects"
-                      keyboardShortcut={5}
+                      keyboardShortcut={4}
                     />
                   </Link>
                 </DrawerClose>
@@ -70,7 +65,7 @@ export const MobileNavbar = () => {
                   <Link href="/more-about-me">
                     <NavigationButton
                       label="More about me"
-                      keyboardShortcut={6}
+                      keyboardShortcut={5}
                     />
                   </Link>
                 </DrawerClose>

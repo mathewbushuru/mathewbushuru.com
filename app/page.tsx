@@ -79,7 +79,12 @@ export default function HomePage() {
           Favourite Projects
         </h1>
         <Table>
-          <TableCaption>See more in the All Projects page</TableCaption>
+          <TableCaption>
+            See more in the All Projects page{" "}
+            <span className="hidden font-mono lg:inline">
+              [Quick Shortcut - Press 4]
+            </span>
+          </TableCaption>
           <TableHeader>
             <TableRow className="hover:bg-background">
               <TableHead className="pl-2 text-left lg:min-w-32">Name</TableHead>
