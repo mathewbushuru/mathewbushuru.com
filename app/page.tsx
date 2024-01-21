@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   CommandIcon,
   SparklesIcon,
@@ -26,7 +27,7 @@ import {
   TableCaption,
 } from "@/components/ui/table";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main className="flex h-screen overflow-hidden">
       {/* sidebar  */}
@@ -39,55 +40,69 @@ export default function Home() {
               Software Engineer
             </span>
           </div>
-          <Button className="justify-start" size="sm">
-            <SparklesIcon className="mr-2 h-4 w-4" />
-            <span>Home</span>
-            <span className="ml-auto rounded-sm border bg-secondary px-1.5 text-muted-foreground">
-              1
-            </span>
-          </Button>
-          <Button variant="ghost" className="justify-start" size="sm">
-            <NavigationIcon className="mr-2 h-4 w-4" />
-            <span>Journey</span>
-            <span className="ml-auto rounded-sm border bg-accent px-1.5 text-muted-foreground">
-              2
-            </span>
-          </Button>
-          <Button variant="ghost" className="justify-start" size="sm">
-            <NewspaperIcon className="mr-2 h-4 w-4" />
-            <span>Reading</span>
-            <span className="ml-auto rounded-sm border bg-accent px-1.5 text-muted-foreground">
-              3
-            </span>
-          </Button>
-          <Button variant="ghost" className="justify-start" size="sm">
-            <PencilLineIcon className="mr-2 h-4 w-4" />
-            <span>Writing</span>
-            <span className="ml-auto rounded-sm border bg-accent px-1.5 text-muted-foreground">
-              4
-            </span>
-          </Button>
-          <Button variant="ghost" className="justify-start" size="sm">
-            <CameraIcon className="mr-2 h-4 w-4" />
-            <span>Shooting</span>
-            <span className="ml-auto rounded-sm border bg-accent px-1.5 text-muted-foreground">
-              5
-            </span>
-          </Button>
-          <Button variant="ghost" className="justify-start" size="sm">
-            <HammerIcon className="mr-2 h-4 w-4" />
-            <span>All projects</span>
-            <span className="ml-auto rounded-sm border bg-accent px-1.5 text-muted-foreground">
-              6
-            </span>
-          </Button>
-          <Button variant="ghost" className="justify-start" size="sm">
-            <Wand2Icon className="mr-2 h-4 w-4" />
-            <span>More about me</span>
-            <span className="ml-auto rounded-sm border bg-accent px-1.5 text-muted-foreground">
-              7
-            </span>
-          </Button>
+          <Link href="/">
+            <Button className="w-full justify-start" size="sm">
+              <SparklesIcon className="mr-2 h-4 w-4" />
+              <span>Home</span>
+              <span className="ml-auto rounded-sm border bg-secondary px-1.5 text-muted-foreground">
+                1
+              </span>
+            </Button>
+          </Link>
+          <Link href="/journey">
+            <Button variant="ghost" className="w-full justify-start" size="sm">
+              <NavigationIcon className="mr-2 h-4 w-4" />
+              <span>Journey</span>
+              <span className="ml-auto rounded-sm border bg-accent px-1.5 text-muted-foreground">
+                2
+              </span>
+            </Button>
+          </Link>
+          <Link href="/reading">
+            <Button variant="ghost" className="w-full justify-start" size="sm">
+              <NewspaperIcon className="mr-2 h-4 w-4" />
+              <span>Reading</span>
+              <span className="ml-auto rounded-sm border bg-accent px-1.5 text-muted-foreground">
+                3
+              </span>
+            </Button>
+          </Link>
+          <Link href="/writing">
+            <Button variant="ghost" className="w-full justify-start" size="sm">
+              <PencilLineIcon className="mr-2 h-4 w-4" />
+              <span>Writing</span>
+              <span className="ml-auto rounded-sm border bg-accent px-1.5 text-muted-foreground">
+                4
+              </span>
+            </Button>
+          </Link>
+          <Link href="/shooting">
+            <Button variant="ghost" className="w-full justify-start" size="sm">
+              <CameraIcon className="mr-2 h-4 w-4" />
+              <span>Shooting</span>
+              <span className="ml-auto rounded-sm border bg-accent px-1.5 text-muted-foreground">
+                5
+              </span>
+            </Button>
+          </Link>
+          <Link href="/all-projects">
+            <Button variant="ghost" className="w-full justify-start" size="sm">
+              <HammerIcon className="mr-2 h-4 w-4" />
+              <span>All projects</span>
+              <span className="ml-auto rounded-sm border bg-accent px-1.5 text-muted-foreground">
+                6
+              </span>
+            </Button>
+          </Link>
+          <Link href="/more-about-me">
+            <Button variant="ghost" className="w-full justify-start" size="sm">
+              <Wand2Icon className="mr-2 h-4 w-4" />
+              <span>More about me</span>
+              <span className="ml-auto rounded-sm border bg-accent px-1.5 text-muted-foreground">
+                7
+              </span>
+            </Button>
+          </Link>
         </div>
 
         {/* Bottom sidebar  */}
@@ -122,7 +137,7 @@ export default function Home() {
             rel="noopener noreferrer"
             tabIndex={-1}
           >
-            <Button variant="ghost" className="justify-start w-full" size="sm">
+            <Button variant="ghost" className="w-full justify-start" size="sm">
               <MailIcon className="mr-2 h-4 w-4" />
               <span>Email</span>
               <ArrowUpRightIcon className="ml-auto mr-1.5 h-4 w-4" />
