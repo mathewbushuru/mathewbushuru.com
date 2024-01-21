@@ -28,7 +28,7 @@ export const MobileNavbar = () => {
         <DrawerContent>
           <div className="max-h-[32rem] overflow-y-scroll">
             <div className="flex h-full flex-col justify-between">
-              {/* Top sidebar  */}
+              {/* Top  */}
               <div className=" flex min-w-60 flex-col gap-3 px-4 pt-6">
                 <Link href="/">
                   <div className="mb-2 flex cursor-pointer flex-col gap-1 rounded-md px-4 py-2 text-sm font-medium hover:bg-accent">
@@ -44,30 +44,25 @@ export const MobileNavbar = () => {
                   </Link>
                 </DrawerClose>
                 <DrawerClose asChild>
-                  <Link href="/journey">
-                    <NavigationButton label="Journey" keyboardShortcut={2} />
-                  </Link>
-                </DrawerClose>
-                <DrawerClose asChild>
                   <Link href="/reading">
-                    <NavigationButton label="Reading" keyboardShortcut={3} />
+                    <NavigationButton label="Reading" keyboardShortcut={2} />
                   </Link>
                 </DrawerClose>
                 <DrawerClose asChild>
                   <Link href="/writing">
-                    <NavigationButton label="Writing" keyboardShortcut={4} />
+                    <NavigationButton label="Writing" keyboardShortcut={3} />
                   </Link>
                 </DrawerClose>
                 <DrawerClose asChild>
                   <Link href="/shooting">
-                    <NavigationButton label="Shooting" keyboardShortcut={5} />
+                    <NavigationButton label="Shooting" keyboardShortcut={4} />
                   </Link>
                 </DrawerClose>
                 <DrawerClose asChild>
                   <Link href="/all-projects">
                     <NavigationButton
                       label="All projects"
-                      keyboardShortcut={6}
+                      keyboardShortcut={5}
                     />
                   </Link>
                 </DrawerClose>
@@ -75,13 +70,13 @@ export const MobileNavbar = () => {
                   <Link href="/more-about-me">
                     <NavigationButton
                       label="More about me"
-                      keyboardShortcut={7}
+                      keyboardShortcut={6}
                     />
                   </Link>
                 </DrawerClose>
               </div>
 
-              {/* Bottom sidebar  */}
+              {/* Bottom  */}
               <div className="flex min-w-60 flex-col gap-3 px-4 pb-6 pt-8">
                 <a
                   href="https://github.com/mathewbushuru"

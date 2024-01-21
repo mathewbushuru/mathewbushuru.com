@@ -26,23 +26,20 @@ export const NavMenuContent = () => {
         <Link href="/">
           <NavigationButton label="Home" keyboardShortcut={1} />
         </Link>
-        <Link href="/journey">
-          <NavigationButton label="Journey" keyboardShortcut={2} />
-        </Link>
         <Link href="/reading">
-          <NavigationButton label="Reading" keyboardShortcut={3} />
+          <NavigationButton label="Reading" keyboardShortcut={2} />
         </Link>
         <Link href="/writing">
-          <NavigationButton label="Writing" keyboardShortcut={4} />
+          <NavigationButton label="Writing" keyboardShortcut={3} />
         </Link>
         <Link href="/shooting">
-          <NavigationButton label="Shooting" keyboardShortcut={5} />
+          <NavigationButton label="Shooting" keyboardShortcut={4} />
         </Link>
         <Link href="/all-projects">
-          <NavigationButton label="All projects" keyboardShortcut={6} />
+          <NavigationButton label="All projects" keyboardShortcut={5} />
         </Link>
         <Link href="/more-about-me">
-          <NavigationButton label="More about me" keyboardShortcut={7} />
+          <NavigationButton label="More about me" keyboardShortcut={6} />
         </Link>
       </div>
 

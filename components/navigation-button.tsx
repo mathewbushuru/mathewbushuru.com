@@ -4,7 +4,6 @@ import { usePathname } from "next/navigation";
 import {
   SparklesIcon,
   PencilLineIcon,
-  NavigationIcon,
   Wand2Icon,
   HammerIcon,
   NewspaperIcon,
@@ -30,10 +29,6 @@ export const NavigationButton = ({
     case "Home":
       Icon = SparklesIcon;
       isActive = pathname === "/";
-      break;
-    case "Journey":
-      Icon = NavigationIcon;
-      isActive = pathname === "/journey";
       break;
     case "Reading":
       Icon = NewspaperIcon;
