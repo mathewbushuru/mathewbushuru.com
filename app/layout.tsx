@@ -3,6 +3,7 @@ import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 
 import "@/app/globals.css";
+
 import { ThemeProvider } from "@/components/theme-provider";
 import { NavMenuContent } from "@/components/nav-menu-content";
 import { MobileNavbar } from "@/components/mobile-navbar";
@@ -35,7 +36,7 @@ export default function RootLayout({
             vaul-drawer-wrapper=""
             className="flex h-screen overflow-hidden bg-background text-foreground"
           >
-            {/* DesktopScreen Plus Sidebar  */}
+            {/* Desktop Screen Sidebar  */}
             <div className="hidden shadow-lg dark:border-r lg:block">
               <KeyboardRouter />
               <NavMenuContent />

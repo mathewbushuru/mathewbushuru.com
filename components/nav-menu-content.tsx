@@ -9,6 +9,7 @@ import {
 import { ThemeToggleButton } from "@/components/theme-toggle-button";
 import { NavigationButton } from "@/components/navigation-button";
 import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export const NavMenuContent = () => {
   return (
@@ -16,11 +17,17 @@ export const NavMenuContent = () => {
       {/* Top sidebar  */}
       <div className=" flex min-w-60 flex-col gap-3 px-4 pt-6">
         <Link href="/">
-          <div className="mb-2 flex cursor-pointer flex-col gap-1 rounded-md px-4 py-2 text-sm font-medium hover:bg-accent">
-            <span className="">Mathew Bushuru</span>
-            <span className="font-light text-muted-foreground">
-              Software Engineer
-            </span>
+          <div className="mb-2 flex cursor-pointer items-center gap-2  rounded-md py-2 pl-1.5 pr-4 text-sm font-medium hover:bg-accent">
+            <Avatar className="h-8 w-8">
+              <AvatarImage src="/android-chrome-512x512.png" />
+              <AvatarFallback>MB</AvatarFallback>
+            </Avatar>
+            <div className="flex flex-col gap-1">
+              <span className="">Mathew Bushuru</span>
+              <span className="font-light text-muted-foreground">
+                Software Engineer
+              </span>
+            </div>
           </div>
         </Link>
         <Link href="/">
