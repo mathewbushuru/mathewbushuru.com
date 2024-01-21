@@ -32,12 +32,12 @@ export default function RootLayout({
         >
           <main className="flex h-screen overflow-hidden">
             {/* DesktopScreen Plus Sidebar  */}
-            <div className="hidden shadow-lg dark:border-r sm:block">
+            <div className="hidden shadow-lg dark:border-r lg:block">
               <NavMenuContent />
             </div>
             {/* Page content  */}
             <div className="overflow-scroll lg:px-8">
-              <div className="fixed left-0 right-0 top-0 sm:hidden z-50">
+              <div className="fixed left-0 right-0 top-0 z-50 lg:hidden">
                 <MobileNavbar />
               </div>
               <div className="mb-4 px-5 pt-16 lg:pt-28">{children}</div>
