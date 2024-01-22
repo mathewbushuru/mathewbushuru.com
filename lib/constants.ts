@@ -1,3 +1,64 @@
+export const allProjectItems = [
+  {
+    title: "Design System",
+    ipadPhotoLink: "/mockups/ipad/component_library_ipad.png",
+    iphonePhotoLink: "/mockups/iphone/component_library_iphone.png",
+    descriptionSectionsArr: [
+      "This is my personal design system based on a book by Brad Frost called Atomic Design. This includes my theme and colour palette (used on this website), component primitives built on top of React Aria and RadixUI, and component composites which combine multiple primitives.",
+      "I then use these component primitives and composites to build websites for example companies. An example is LearnCo which is inspired by Coursera.",
+    ],
+    techStackArr: ["TypeScript", "ReactJS", "TailwindCSS", "Vite"],
+    githubLink: "https://github.com/mathewbushuru/design-system",
+    liveLinkArr: [
+      {
+        linkDesc: "current version",
+        link: "https://design.mathewbushuru.com/",
+      },
+      {
+        linkDesc: "initial version",
+        link: "https://matt-components.vercel.app/",
+      },
+    ],
+  },
+  {
+    title: "ProSearchX",
+    ipadPhotoLink: "/mockups/ipad/prosearchx_ipad.png",
+    iphonePhotoLink: "/mockups/iphone/prosearchx_iphone.png",
+    descriptionSectionsArr: [
+      "A wrapper around Google Search with additional features to make it more effective and powerful. It is for power users and professionals who require an easier and faster way to unlock Google Search capabilities.",
+      "My motivation for this project is I usually end up modifying my Google searches for a second search, for example, adding StackOverflow to a  programming question, or searching for an error in a version of a library from last month but getting results from years ago. This  project attempts to solve this.",
+    ],
+    techStackArr: ["JavaScript", "ReactJS", "Vanilla CSS"],
+    githubLink: "https://github.com/mathewbushuru/ProSearchX",
+    liveLinkArr: [{ linkDesc: null, link: "https://pro-search-x.vercel.app/" }],
+  },
+  {
+    title: "Soma Landing Page Redesign",
+    ipadPhotoLink: "/mockups/ipad/somaoffline_org_ipad.png",
+    iphonePhotoLink: "/mockups/iphone/soma_org_iphone.png",
+    descriptionSectionsArr: [
+      "A redesign for Soma's landing page was well overdue.",
+    ],
+    techStackArr: ["TypeScript", "ReactJS", "Vite", "TailwindCSS", "Vitest"],
+    githubLink: null,
+    liveLinkArr: [
+      { linkDesc: "new", link: "https://www.somaoffline.org/" },
+      {
+        linkDesc: "Launch version",
+        link: "https://main--determined-roentgen-1de5f2.netlify.app/",
+      },
+      {
+        linkDesc: "Entrepreneurship@UBC prototype",
+        link: "https://somaprototype3.netlify.app/",
+      },
+      {
+        linkDesc: "Hackathon prototype",
+        link: "https://somaprototype2.netlify.app/",
+      },
+    ],
+  },
+];
+
 export const favoriteProjects = [
   {
     name: "Design System",

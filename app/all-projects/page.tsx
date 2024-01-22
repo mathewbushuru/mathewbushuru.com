@@ -3,6 +3,8 @@ import { ArrowUpRightIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
+import { allProjectItems } from "@/lib/constants";
+
 export const metadata = {
   title: "Mathew Bushuru | Projects",
 };
@@ -38,25 +40,32 @@ export default function AllProjectsPage() {
           ))}
           <div className="mt-2 space-x-2">
             {project.techStackArr.map((tech, index) => (
-              <Badge variant="secondary" key={index}>
+              <Badge variant="secondary" key={index} className="mb-1">
                 {tech}
               </Badge>
             ))}
           </div>
           <div className="mt-3 space-x-2">
-            <a
-              href={project.githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button variant="outline" size="sm">
-                <span>GitHub</span>
-                <ArrowUpRightIcon className="ml-1 h-4 w-4" />
-              </Button>
-            </a>
+            {project.githubLink && (
+              <a
+                href={project.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="outline" size="sm" className="mb-2">
+                  <span>GitHub</span>
+                  <ArrowUpRightIcon className="ml-1 h-4 w-4" />
+                </Button>
+              </a>
+            )}
             {project.liveLinkArr.map((linkInfo, index) => (
-              <a href={linkInfo.link} target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" size="sm">
+              <a
+                key={index}
+                href={linkInfo.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="outline" size="sm" className="mb-2">
                   <span>
                     Live {linkInfo.linkDesc && `(${linkInfo.linkDesc})`}
                   </span>
@@ -67,42 +76,13 @@ export default function AllProjectsPage() {
           </div>
         </div>
       ))}
+      <hr className="-mx-14 -mt-6" />
+      <div className="py-6">
+        More projects coming soon.{" "}
+        <span className="font-mono font-semibold">Press G</span> to see all the
+        public projects on my GitHub
+      </div>
     </div>
   );
 }
 
-const allProjectItems = [
-  {
-    title: "Design System",
-    ipadPhotoLink: "/mockups/ipad/component_library_ipad.png",
-    iphonePhotoLink: "/mockups/iphone/component_library_iphone.png",
-    descriptionSectionsArr: [
-      "This is my personal design system based on a book by Brad Frost called Atomic Design. This includes my theme and colour palette (used on this website), component primitives built on top of React Aria and RadixUI, and component composites which combine multiple primitives.",
-      "I then use these component primitives and composites to build websites for example companies. An example is LearnCo which is inspired by Coursera.",
-    ],
-    techStackArr: ["TypeScript", "ReactJS", "TailwindCSS", "Vite"],
-    githubLink: "https://github.com/mathewbushuru/design-system",
-    liveLinkArr: [
-      {
-        linkDesc: "current version",
-        link: "https://design.mathewbushuru.com/",
-      },
-      {
-        linkDesc: "initial version",
-        link: "https://matt-components.vercel.app/",
-      },
-    ],
-  },
-  {
-    title: "ProSearchX",
-    ipadPhotoLink: "/mockups/ipad/prosearchx_ipad.png",
-    iphonePhotoLink: "/mockups/iphone/prosearchx_iphone.png",
-    descriptionSectionsArr: [
-      "A wrapper around Google Search with additional features to make it more effective and powerful. It is for power users and professionals who require an easier and faster way to unlock Google Search capabilities.",
-      "My motivation for this project is I usually end up modifying my Google searches for a second search, for example, adding StackOverflow to a  programming question, or searching for an error in a version of a library from last month but getting results from years ago. This  project attempts to solve this.",
-    ],
-    techStackArr: ["JavaScript", "ReactJS", "Vanilla CSS"],
-    githubLink: "https://github.com/mathewbushuru/ProSearchX",
-    liveLinkArr: [{ linkDesc: null, link: "https://pro-search-x.vercel.app/" }],
-  },
-];
