@@ -141,7 +141,7 @@ export const galleryPagePhotos = [
     size: 330,
   },
   {
-    imageName: "downtown-van.jpg",
+    imageName: "downtown-van.JPG",
     size: 346,
   },
   {
@@ -193,7 +193,7 @@ export const galleryPagePhotos = [
     size: 678,
   },
   {
-    imageName: "snow-trees.JPG",
+    imageName: "snowy-trees.JPG",
     size: 726,
   },
   {
@@ -209,7 +209,7 @@ export const galleryPagePhotos = [
     size: 831,
   },
   {
-    imageName: "bluey-ocean.jpg",
+    imageName: "bluey-ocean.JPG",
     size: 905,
   },
   {
@@ -217,11 +217,11 @@ export const galleryPagePhotos = [
     size: 942,
   },
   {
-    imageName: "mountains.jpg",
+    imageName: "mountains.JPG",
     size: 943,
   },
   {
-    imageName: "snowy-trees.jpg",
+    imageName: "snow-trees.jpg",
     size: 1100,
   },
 ];
