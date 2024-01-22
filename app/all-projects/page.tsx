@@ -78,7 +78,7 @@ export default function AllProjectsPage() {
           </div>
         </div>
       ))}
-      <hr className="-mx-14 -mt-6" />
+      <hr className="-mx-4 -mt-6" />
       <div className="py-6">
         More projects coming soon.{" "}
         <span className="font-mono font-semibold">Press G</span> to see all my

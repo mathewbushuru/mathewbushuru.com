@@ -4,8 +4,8 @@ export const allProjectItems = [
     ipadPhotoLink: "/mockups/ipad/component_library_ipad.png",
     iphonePhotoLink: "/mockups/iphone/component_library_iphone.png",
     descriptionSectionsArr: [
-      "This is my personal design system based on a book by Brad Frost called Atomic Design. This includes my theme and colour palette (used on this website), component primitives built on top of React Aria and RadixUI, and component composites which combine multiple primitives.",
-      "I then use these component primitives and composites to build websites for example companies. An example is LearnCo which is inspired by Coursera.",
+      "This is my personal design system based on Atomic Design by Brad Frost. This includes my theme and colour palette (used on this website), component primitives built on top of React Aria and RadixUI, and component composites which combine multiple primitives.",
+      "I then use these component primitives and composites to build websites for fictional companies. An example is LearnCo which is inspired by Coursera.",
     ],
     techStackArr: ["TypeScript", "ReactJS", "TailwindCSS", "Vite"],
     githubLink: "https://github.com/mathewbushuru/design-system",
