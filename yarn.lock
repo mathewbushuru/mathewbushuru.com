@@ -1107,6 +1107,11 @@ react-dom@^18:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
+react-plock@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/react-plock/-/react-plock-3.0.2.tgz#c0f1ba8728d79a651c869652b2756232e705b564"
+  integrity sha512-0QfiLna1KfzrB9zN/a5mEKHqSc6twhOndYp2D9tdYv5gpwLBwu563p47mUarBRJv4KVnzCdJz8mW2Lllma0qIA==
+
 react-remove-scroll-bar@^2.3.3:
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/react-remove-scroll-bar/-/react-remove-scroll-bar-2.3.4.tgz#53e272d7a5cb8242990c7f144c44d8bd8ab5afd9"

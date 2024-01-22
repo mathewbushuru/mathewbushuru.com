@@ -226,6 +226,10 @@ export const galleryPagePhotos = [
   },
 ];
 
+export const galleryPagePhotoUrls = galleryPagePhotos.map(
+  (photo) => `/shooting/${photo.imageName}`,
+);
+
 export const keysUsedInNavigation = [
   "Digit1",
   "Digit2",
