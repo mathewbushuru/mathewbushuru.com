@@ -18,6 +18,7 @@ export const MasonryPhotos = () => {
           <img
             key={idx}
             src={item}
+            loading="lazy"
             style={{ width: "100%", maxWidth: "400px", borderRadius: "6px", height: "auto" }}
           />
         )}
