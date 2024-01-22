@@ -24,18 +24,18 @@ export default function ShootingPage() {
         beauty in the ordinary, and freezing moments in time. I hope you enjoy
         browsing through these images as much as I enjoyed taking them.
       </p>
-
-      <div className="masonry pt-4">
-        {galleryPagePhotos.map((photo) => (
-          <div className="masonry-item" key={photo.imageName}>
-            <img
-              src={`/shooting/${photo.imageName}`}
-              alt={photo.imageName}
-              className="rounded-md"
-            />
-          </div>
-        ))}
-      </div>
+        <div className="masonry pt-4">
+          {galleryPagePhotos.map((photo) => (
+            <div className="masonry-item" key={photo.imageName}>
+              <img
+                src={`/shooting/${photo.imageName}`}
+                alt={photo.imageName}
+                loading="lazy"
+                className="rounded-md"
+              />
+            </div>
+          ))}
+        </div>
     </div>
   );
 }
