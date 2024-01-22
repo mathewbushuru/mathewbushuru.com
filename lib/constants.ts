@@ -101,6 +101,18 @@ export const allProjectItems = [
     liveLinkArr: [{ linkDesc: null, link: "https://googly-lovat.vercel.app/" }],
   },
   {
+    title: "Snake Xenzia Python game",
+    ipadPhotoLink: "/mockups/ipad/snake_ipad.png",
+    iphonePhotoLink: null,
+    descriptionSectionsArr: [
+      "This was the final project of my system software engineering course at UBC. The first part of the project implements a graphical Snake game that utilizes Python's multithreading module to improve performance, and queue module to ensure safe multithreading.",
+      "The second part of the project is a communication client and server that uses the User Datagram Protocol(UDP). The Pinger application simulates the variability of normal Round-Trip time by having the server randomly wait for some time between 5 to 50ms before responding. It also simulates packet loss by making the server randomly ignore a message or request with a probability of 10%.",
+    ],
+    techStackArr: ["Python", "Tkinter"],
+    githubLink: "https://github.com/mathewbushuru/cpen333_mp",
+    liveLinkArr: [],
+  },
+  {
     title: "Unbeatable TicTacToe",
     ipadPhotoLink: "/mockups/ipad/unbeatable_tictactoe_ipad.png",
     iphonePhotoLink: "/mockups/iphone/unbeatable_tictactoe_iphone.png",
@@ -114,6 +126,132 @@ export const allProjectItems = [
       {
         linkDesc: null,
         link: "https://mathewbushuru.github.io/unbeatable-tictactoe/",
+      },
+    ],
+  },
+  {
+    title: "Custom Webpack Single Page Application",
+    ipadPhotoLink: "/mockups/ipad/coruscant_ipad.png",
+    iphonePhotoLink: null,
+    descriptionSectionsArr: [
+      "This is a Single Page Application that uses vanilla JS to dynamically render the HTML and manipulate the DOM. It uses a custom webpack configuration to bundle all the JavaScript,CSS and image source files and inject it into a div in the starting HTML (The same way a framework like React works)",
+      "It is a website of a fictional cafe in the Star Wars universe called The Coruscant Cafe. The main motivation for this project was to practise DOM manipulation and get a deeper understanding of how SPA frameworks like Vue or React work under the hood.",
+    ],
+    techStackArr: ["Vanilla JavaScript", "Vanilla CSS", "Webpack", "HTML"],
+    githubLink: "https://github.com/mathewbushuru/webpack-restaurant-SPA",
+    liveLinkArr: [
+      {
+        linkDesc: null,
+        link: "https://mathewbushuru.github.io/webpack-restaurant-SPA/",
+      },
+    ],
+  },
+  {
+    title: "Metal Detector (PIC 32-bit MicroController)",
+    ipadPhotoLink: "/mockups/ipad/magneticcoil_ipad.png",
+    iphonePhotoLink: null,
+    descriptionSectionsArr: [
+      "A metal detector using inductance changes in a magnetic coil to detect nearby metals. The inductance changes are converted to frequency variations using a Colpitts oscillator implemented using NOT gates from discrete MOSFETs. The PIC32 MicroController board is programmed in C to give audible feedback on the kind of metal detected (video demo on GitHub).",
+    ],
+    techStackArr: ["C", "MicroControllers"],
+    githubLink:
+      "https://github.com/mathewbushuru/frequency-meter-metal-detector",
+    liveLinkArr: [],
+  },
+  {
+    title: "Drag and Drop Demo app",
+    ipadPhotoLink: "/mockups/ipad/drag_drop_ipad.png",
+    iphonePhotoLink: null,
+    descriptionSectionsArr: [
+      "A kanban-style drag and drop app built in preparation for implementating a similar feature in the Lab Management System (LMS) web app that I was working on at the time.",
+    ],
+    techStackArr: ["JavaScript", "ReactJS", "Styled Components"],
+    githubLink: "https://github.com/mathewbushuru/drag-and-drop-task-app",
+    liveLinkArr: [
+      {
+        linkDesc: null,
+        link: "https://drag-and-drop-app.mathewbushuru.vercel.app/",
+      },
+    ],
+  },
+  {
+    title: "Sketch Application",
+    ipadPhotoLink: "/mockups/ipad/etchsketch_ipad.png",
+    iphonePhotoLink: null,
+    descriptionSectionsArr: [
+      "An online sketchpad built to improve my understanding of JavaScript DOM manipulation methods. The app has 'change colour' and 'erase drawn sketches' functionality.",
+    ],
+    techStackArr: ["JavaScript", "Vanilla CSS", "HTML"],
+    githubLink: "https://github.com/mathewbushuru/etch-a-sketch",
+    liveLinkArr: [
+      {
+        linkDesc: null,
+        link: "https://mathewbushuru.github.io/etch-a-sketch/",
+      },
+    ],
+  },
+  {
+    title:
+      "Liquid Level Detector (EFM 8-bit  MicroController)",
+    ipadPhotoLink: "/mockups/ipad/waterlevel_ipad.png",
+    iphonePhotoLink: null,
+    descriptionSectionsArr: [
+      "A liquid/water level detector to aid visually impaired people to serve drinks. It provides audible output of how full the cup is in 10% increments and says 'cup is full' when it reaches 100%. The  liquid level is also displayed on a 72 MHz LCD display and the board is programmed in 8051 Assembly (see video demo and indepth explanation on GitHub).",
+    ],
+    techStackArr: ["Assembly", "MicroControllers"],
+    githubLink:
+      "https://github.com/mathewbushuru/capacitive-water-level-detector",
+    liveLinkArr: [],
+  },
+  {
+    title: "Blue Horizon Weather App",
+    ipadPhotoLink: "/mockups/ipad/bluehorizon_ipad.png",
+    iphonePhotoLink: null,
+    descriptionSectionsArr: [
+      "A weather forecast app that shows Vancouver's realtime weather forecast by default but also allows users to search the weather of specific cities. The main motivation for this project was to improve my understanding of asycnronous JavaScript and working with APIs.",
+    ],
+    techStackArr: ["Vanilla JavaScript", "Vanilla CSS", "HTML"],
+    githubLink: "https://github.com/mathewbushuru/blue-horizon",
+    liveLinkArr: [
+      {
+        linkDesc: null,
+        link: "https://mathewbushuru.github.io/blue-horizon/",
+      },
+    ],
+  },
+  {
+    title: "Admin Dashboard",
+    ipadPhotoLink: "/mockups/ipad/dashboardgrid_ipad.png",
+    iphonePhotoLink: null,
+    descriptionSectionsArr: [
+      "A simple admin dashboard built with CSS Grid for layout. My motivation for this project was to learn more about CSS Grid. ",
+    ],
+    techStackArr: ["Vanilla CSS", "HTML"],
+    githubLink: "https://github.com/mathewbushuru/cssgrid-dashboard",
+    liveLinkArr: [
+      {
+        linkDesc: null,
+        link: "https://mathewbushuru.github.io/etch-a-sketch/",
+      },
+    ],
+  },
+  {
+    title: "Signup Form",
+    ipadPhotoLink: "/mockups/ipad/seawall_ipad.png",
+    iphonePhotoLink: null,
+    descriptionSectionsArr: [
+      "A simple sign up form built in order to understand how HTML forms and validation.",
+    ],
+    techStackArr: ["Vanilla JavaScript", "CSS", "HTML"],
+    githubLink: "https://github.com/mathewbushuru/sign-up-form",
+    liveLinkArr: [
+      {
+        linkDesc: "advanced",
+        link: "https://mathewbushuru.github.io/form-constraint-validation-api/",
+      },
+      {
+        linkDesc: "simple",
+        link: "https://mathewbushuru.github.io/sign-up-form/",
       },
     ],
   },
