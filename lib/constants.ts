@@ -53,10 +53,6 @@ export const galleryPagePhotos = [
     size: 122,
   },
   {
-    imageName: "lion-gate.jpg",
-    size: 120,
-  },
-  {
     imageName: "ponderosa.JPG",
     size: 134,
   },
@@ -111,6 +107,10 @@ export const galleryPagePhotos = [
   {
     imageName: "ubc-beach.JPG",
     size: 263,
+  },
+  {
+    imageName: "lion-gate.jpg",
+    size: 120,
   },
   {
     imageName: "vpl.JPG",
