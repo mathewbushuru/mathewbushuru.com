@@ -6,7 +6,7 @@ import { galleryPagePhotoUrls } from "@/lib/constants";
 
 export const MasonryPhotos = () => {
   return (
-    <div className="pt-4 mx-auto  w-fit">
+    <div className="pt-4 mx-auto w-fit">
       <Masonry
         items={galleryPagePhotoUrls}
         config={{

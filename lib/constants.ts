@@ -224,6 +224,14 @@ export const galleryPagePhotos = [
     imageName: "snow-trees.jpg",
     size: 1100,
   },
+  {
+    imageName: "nairobi-national-park.JPG",
+    size: 110
+  },
+  {
+    imageName: "rehani.jpg",
+    size: 240
+  }
 ];
 
 export const galleryPagePhotoUrls = galleryPagePhotos.map(
