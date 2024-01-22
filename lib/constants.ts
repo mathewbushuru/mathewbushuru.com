@@ -4,8 +4,8 @@ export const allProjectItems = [
     ipadPhotoLink: "/mockups/ipad/component_library_ipad.png",
     iphonePhotoLink: "/mockups/iphone/component_library_iphone.png",
     descriptionSectionsArr: [
-      "This is my personal design system based on a book by Brad Frost called Atomic Design. This includes my theme and colour palette (used on this website), component primitives built on top of React Aria and RadixUI, and component composites which combine multiple primitives.",
-      "I then use these component primitives and composites to build websites for example companies. An example is LearnCo which is inspired by Coursera.",
+      "This is my personal design system based on Atomic Design by Brad Frost. This includes my theme and colour palette (used on this website), component primitives built on top of React Aria and RadixUI, and component composites which combine multiple primitives.",
+      "I then use these component primitives and composites to build websites for fictional companies. An example is LearnCo which is inspired by Coursera.",
     ],
     techStackArr: ["TypeScript", "ReactJS", "TailwindCSS", "Vite"],
     githubLink: "https://github.com/mathewbushuru/design-system",
@@ -254,6 +254,42 @@ export const allProjectItems = [
         link: "https://mathewbushuru.github.io/sign-up-form/",
       },
     ],
+  },
+];
+
+
+export const awardItems = [
+  {
+    title: "2021 International World's Challenge Challenge, Finalist",
+    issuer: "Western University",
+    awardUrl: "https://international.uwo.ca/challenge/global_final/",
+    desc: "This competition brings together students from a wide range of institutions, cultures and continents to form a strong international network and create even greater potential solutions to significant global issues.",
+  },
+  {
+    title: "2021 Mastercard Foundation's  Social Entrepreneurship Fund ",
+    issuer: "MasterCard Foundation",
+    awardUrl:
+      "https://mastercardfdn.org/mastercard-foundation-announces-new-fund-to-seed-young-african-leaders-social-ventures/",
+    desc: "This fund enables young changemakers to seed and kick-start promising social ventures and community projects, creating economic opportunities for themselves and others.",
+  },
+  {
+    title: "2020 UBC World's Challenge Challenge, 1st place ",
+    issuer: "University of British Columbia",
+    awardUrl:
+      "https://apsc.ubc.ca/news/2020/ubc-engineering-students-win-local-worlds-challenge-challenge-competition",
+    desc: "This competition seeks to engage UBC students on international issues and how they can play a part in sparking social change.",
+  },
+  {
+    title: "2019 Global Social Venture Challenge, Winner",
+    issuer: "The Resolution Fellowship",
+    awardUrl: "https://resolutionproject.org/fellows/mathew-bushuru/",
+    desc: "This multi-step competition held in Kigali inspired undergraduate students to propose impactful, socially-responsible projects addressing pressing social issues around the world.",
+  },
+  {
+    title: "MasterCard Foundation Full Tuition Scholarship",
+    issuer: "University of British Columbia, MasterCard Foundation",
+    awardUrl: "https://mcfscholars.ubc.ca/",
+    desc: "For academic achievement, leadership skills, and involvement in  community service.",
   },
 ];
 
