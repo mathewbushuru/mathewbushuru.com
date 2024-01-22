@@ -43,11 +43,13 @@ export default function RootLayout({
               <NavMenuContent />
             </div>
             {/* Page content  */}
-            <div className="overflow-scroll lg:px-8">
+            <div className="overflow-scroll scrollbar-hide w-full lg:px-8">
               <div className="fixed left-0 right-0 top-0 z-50 lg:hidden">
                 <MobileNavbar />
               </div>
-              <div className="mb-4 px-5 pt-16 lg:pt-28">{children}</div>
+              <div className="mb-4 px-5 pt-16 lg:pt-28">
+                {children}
+              </div>
             </div>
           </main>
         </ThemeProvider>
