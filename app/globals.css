@@ -95,3 +95,27 @@
     @apply bg-primary text-primary-foreground;
   }
 }
+
+/* Gallery page photos masonry layout  */
+.masonry {
+  column-count: 1;
+  column-gap: 1.1rem;
+}
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1.1rem;
+}
+.masonry-item img {
+  width: 100%;
+  height: auto;
+}
+@media (min-width: 400px) {
+  .masonry {
+    column-count: 2;
+  }
+}
+@media (min-width: 400px) {
+  .masonry {
+    column-count: 3;
+  }
+}
