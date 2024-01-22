@@ -1,12 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import { Masonry } from "react-plock";
 
 import { galleryPagePhotoUrls } from "@/lib/constants";
 
 export const MasonryPhotos = () => {
   return (
-    <div className="pt-4 mx-auto w-fit">
+    <div className="mx-auto w-fit pt-4">
       <Masonry
         items={galleryPagePhotoUrls}
         config={{
@@ -19,7 +20,13 @@ export const MasonryPhotos = () => {
             key={idx}
             src={item}
             loading="lazy"
-            style={{ width: "100%", maxWidth: "400px", borderRadius: "6px", height: "auto" }}
+            alt={item}
+            style={{
+              width: "100%",
+              maxWidth: "400px",
+              borderRadius: "6px",
+              height: "auto",
+            }}
           />
         )}
       />

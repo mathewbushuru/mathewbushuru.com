@@ -10,6 +10,7 @@ import { MobileNavbar } from "@/components/mobile-navbar";
 import { KeyboardRouter } from "@/components/keyboard-router";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mathewbushuru.com/"),
   title: "Mathew Bushuru | Home",
   description: "Mathew Bushuru's portfolio",
 };
