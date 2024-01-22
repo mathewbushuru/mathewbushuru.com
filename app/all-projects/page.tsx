@@ -20,12 +20,12 @@ export default function AllProjectsPage() {
             <img
               src={project.ipadPhotoLink}
               alt=""
-              className="mx-auto  w-80 sm:h-96 sm:w-[32rem] lg:mx-0"
+              className="mx-auto  w-80 sm:h-80 sm:w-[26rem] lg:mx-0"
             />
             <img
               src={project.iphonePhotoLink}
               alt=""
-              className="hidden h-[22rem] lg:inline "
+              className="hidden h-72 w-[10rem] lg:inline "
             />
           </div>
           <h3 className="mt-4  text-lg font-semibold sm:text-2xl ">
@@ -50,20 +50,20 @@ export default function AllProjectsPage() {
               rel="noopener noreferrer"
             >
               <Button variant="outline" size="sm">
-                <span className="">GitHub</span>
+                <span>GitHub</span>
                 <ArrowUpRightIcon className="ml-1 h-4 w-4" />
               </Button>
             </a>
-            <a
-              href={project.liveLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button variant="outline" size="sm">
-                <span className="">Live</span>
-                <ArrowUpRightIcon className="ml-1 h-4 w-4" />
-              </Button>
-            </a>
+            {project.liveLinkArr.map((linkInfo, index) => (
+              <a href={linkInfo.link} target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" size="sm">
+                  <span>
+                    Live {linkInfo.linkDesc && `(${linkInfo.linkDesc})`}
+                  </span>
+                  <ArrowUpRightIcon className="ml-1 h-4 w-4" />
+                </Button>
+              </a>
+            ))}
           </div>
         </div>
       ))}
@@ -72,6 +72,27 @@ export default function AllProjectsPage() {
 }
 
 const allProjectItems = [
+  {
+    title: "Design System",
+    ipadPhotoLink: "/mockups/ipad/component_library_ipad.png",
+    iphonePhotoLink: "/mockups/iphone/component_library_iphone.png",
+    descriptionSectionsArr: [
+      "This is my personal design system based on a book by Brad Frost called Atomic Design. This includes my theme and colour palette (used on this website), component primitives built on top of React Aria and RadixUI, and component composites which combine multiple primitives.",
+      "I then use these component primitives and composites to build websites for example companies. An example is LearnCo which is inspired by Coursera.",
+    ],
+    techStackArr: ["TypeScript", "ReactJS", "TailwindCSS", "Vite"],
+    githubLink: "https://github.com/mathewbushuru/design-system",
+    liveLinkArr: [
+      {
+        linkDesc: "current version",
+        link: "https://design.mathewbushuru.com/",
+      },
+      {
+        linkDesc: "initial version",
+        link: "https://matt-components.vercel.app/",
+      },
+    ],
+  },
   {
     title: "ProSearchX",
     ipadPhotoLink: "/mockups/ipad/prosearchx_ipad.png",
@@ -82,18 +103,6 @@ const allProjectItems = [
     ],
     techStackArr: ["JavaScript", "ReactJS", "Vanilla CSS"],
     githubLink: "https://github.com/mathewbushuru/ProSearchX",
-    liveLink: "https://pro-search-x.vercel.app/",
-  },
-  {
-    title: "ProSearchX 2",
-    ipadPhotoLink: "/mockups/ipad/prosearchx_ipad.png",
-    iphonePhotoLink: "/mockups/iphone/prosearchx_iphone.png",
-    descriptionSectionsArr: [
-      "A wrapper around Google Search with additional features to make it more effective and powerful. It is for power users and professionals who require an easier and faster way to unlock Google Search capabilities.",
-      "My motivation for this project is I usually end up modifying my Google searches for a second search, for example, adding StackOverflow to a  programming question, or searching for an error in a version of a library from last month but getting results from years ago. This  project attempts to solve this.",
-    ],
-    techStackArr: ["JavaScript", "ReactJS", "Vanilla CSS"],
-    githubLink: "https://github.com/mathewbushuru/ProSearchX",
-    liveLink: "https://pro-search-x.vercel.app/",
+    liveLinkArr: [{ linkDesc: null, link: "https://pro-search-x.vercel.app/" }],
   },
 ];
