@@ -57,6 +57,34 @@ export const allProjectItems = [
       },
     ],
   },
+  {
+    title: "Google Search Clone",
+    ipadPhotoLink: "/mockups/ipad/google_results_ipad.png",
+    iphonePhotoLink: "/mockups/iphone/google_iphone.png",
+    descriptionSectionsArr: [
+      "A clone of Google Search with real time search results using Custom Search Engine (CSE). My motivation for this project was to create a scalable architecture of a React project that utilizes Bulletproof React.",
+    ],
+    techStackArr: ["JavaScript", "ReactJS", "Vanilla CSS"],
+    githubLink: "https://github.com/mathewbushuru/googly",
+    liveLinkArr: [{ linkDesc: null, link: "https://googly-lovat.vercel.app/" }],
+  },
+  {
+    title: "Unbeatable TicTacToe",
+    ipadPhotoLink: "/mockups/ipad/unbeatable_tictactoe_ipad.png",
+    iphonePhotoLink: "/mockups/iphone/unbeatable_tictactoe_iphone.png",
+    descriptionSectionsArr: [
+      "A vanilla JavaScript project that allows a human to play against an unbeatable computer. The app is implemented to be a Single Page Application like a React/Vue app by dynamically manipulating the DOM using vanilla JavaScript methods. It uses the module pattern which allows us to use and create encapsulation in our code as if we were using a language like Java.",
+      "To implement the unbeatable computer player, we use the minmax algorithm that always selects the move with the greatest payoff - minimize user's payoff and maximize bot's payoff in the next move.",
+    ],
+    techStackArr: ["Vanilla JavaScript", "Vanilla CSS"],
+    githubLink: "https://github.com/mathewbushuru/unbeatable-tictactoe",
+    liveLinkArr: [
+      {
+        linkDesc: null,
+        link: "https://mathewbushuru.github.io/unbeatable-tictactoe/",
+      },
+    ],
+  },
 ];
 
 export const favoriteProjects = [
@@ -287,12 +315,12 @@ export const galleryPagePhotos = [
   },
   {
     imageName: "nairobi-national-park.JPG",
-    size: 110
+    size: 110,
   },
   {
     imageName: "rehani.jpg",
-    size: 240
-  }
+    size: 240,
+  },
 ];
 
 export const galleryPagePhotoUrls = galleryPagePhotos.map(

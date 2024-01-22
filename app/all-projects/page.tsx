@@ -79,8 +79,8 @@ export default function AllProjectsPage() {
       <hr className="-mx-14 -mt-6" />
       <div className="py-6">
         More projects coming soon.{" "}
-        <span className="font-mono font-semibold">Press G</span> to see all the
-        public projects on my GitHub
+        <span className="font-mono font-semibold">Press G</span> to see all my
+        public GitHub projects.
       </div>
     </div>
   );
