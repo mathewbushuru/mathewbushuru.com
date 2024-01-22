@@ -24,11 +24,13 @@ export default function AllProjectsPage() {
               alt=""
               className="mx-auto  w-80 sm:h-80 sm:w-[26rem] lg:mx-0"
             />
-            <img
-              src={project.iphonePhotoLink}
-              alt=""
-              className="hidden h-72 w-[10rem] lg:inline "
-            />
+            {project.iphonePhotoLink && (
+              <img
+                src={project.iphonePhotoLink}
+                alt=""
+                className="hidden h-72 w-[10rem] lg:inline "
+              />
+            )}
           </div>
           <h3 className="mt-4  text-lg font-semibold sm:text-2xl ">
             {project.title}
@@ -85,4 +87,3 @@ export default function AllProjectsPage() {
     </div>
   );
 }
-

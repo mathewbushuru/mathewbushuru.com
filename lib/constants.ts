@@ -21,6 +21,38 @@ export const allProjectItems = [
     ],
   },
   {
+    title: "Todoist Monorepo",
+    ipadPhotoLink: "/mockups/ipad/todoist_ipad.png",
+    iphonePhotoLink: null,
+    descriptionSectionsArr: [
+      "For this project, I aim to create a complete working template of a production-ready full-stack application. I chose a Todo app because it is easily modifiable to cover the majority of CRUD operations of other applications. To prioritize functionality of the app, I am replicating Todoist's user interface instead of creating my own custom design.",
+      "It is hosted in monorepo that contains a static landing page/marketing site, a web app with authentication implemented, an iOS and Android app, and an backend API that communicates to a relational database.",
+    ],
+    techStackArr: [
+      "TypeScript",
+      "ReactJS",
+      "NextJS",
+      "Vite",
+      "React Native",
+      "NodeJS",
+      "ExpressJS",
+      "MySQL",
+      "TailwindCSS",
+      "Redux",
+      "RTK Query",
+      "Vitest",
+      "Supertest",
+      "Turborepo",
+    ],
+    githubLink: "https://github.com/mathewbushuru/todoist-monorepo",
+    liveLinkArr: [
+      {
+        linkDesc: null,
+        link: "https://todoist.mathewbushuru.com/",
+      },
+    ],
+  },
+  {
     title: "ProSearchX",
     ipadPhotoLink: "/mockups/ipad/prosearchx_ipad.png",
     iphonePhotoLink: "/mockups/iphone/prosearchx_iphone.png",
