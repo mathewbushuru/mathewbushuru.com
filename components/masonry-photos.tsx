@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Masonry } from "react-plock";
 
 import { galleryPagePhotoUrls } from "@/lib/constants";
