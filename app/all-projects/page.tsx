@@ -40,21 +40,21 @@ export default function AllProjectsPage() {
               {section}
             </p>
           ))}
-          <div className="mt-2 space-x-2">
+          <div className="mt-2">
             {project.techStackArr.map((tech, index) => (
-              <Badge variant="secondary" key={index} className="mb-1">
+              <Badge variant="secondary" key={index} className="mb-1 mr-2">
                 {tech}
               </Badge>
             ))}
           </div>
-          <div className="mt-3 space-x-2">
+          <div className="mt-3">
             {project.githubLink && (
               <a
                 href={project.githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button variant="outline" size="sm" className="mb-2">
+                <Button variant="outline" size="sm" className="mb-2 mr-2">
                   <span>GitHub</span>
                   <ArrowUpRightIcon className="ml-1 h-4 w-4" />
                 </Button>
@@ -67,7 +67,7 @@ export default function AllProjectsPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button variant="outline" size="sm" className="mb-2">
+                <Button variant="outline" size="sm" className="mb-2 mr-2">
                   <span>
                     Live {linkInfo.linkDesc && `(${linkInfo.linkDesc})`}
                   </span>

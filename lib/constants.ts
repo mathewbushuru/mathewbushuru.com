@@ -26,7 +26,7 @@ export const allProjectItems = [
     iphonePhotoLink: null,
     descriptionSectionsArr: [
       "For this project, I aim to create a complete working template of a production-ready, full-stack application. I chose a Todo app because it is easily modifiable to cover the majority of CRUD operations in other applications. To prioritize functionality of the app, I am replicating Todoist's user interface instead of creating my own custom design.",
-      "It is hosted in a monorepo with several packages. It includes a static landing page or marketing site, serving as the initial point of contact for users. The web app features user authentication to enable personalization and ensure security. It also has a UI component library package that is shared by the different applications. In addition to the web, the project extends to mobile platforms with dedicated iOS and Android apps, and the backend of the application is structured around an API that communicated to a relational database in order to serve the mobile and web frontends.",
+      "It is hosted in a monorepo with several packages. It includes a static landing page or marketing site, serving as the initial point of contact for users. The web app features user authentication to enable personalization and ensure security. It also has a UI component library package that is shared by the different applications. In addition to the web, the project extends to mobile platforms with dedicated iOS and Android apps, and the backend of the application is structured around an API that communicates to a relational database in order to serve the mobile and web frontends.",
     ],
     techStackArr: [
       "TypeScript",
