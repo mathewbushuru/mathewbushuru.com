@@ -139,13 +139,16 @@ export const MobileNavbar = () => {
                     </span>
                   </Button>
                 </a>
+
                 <hr className="-mx-4" />
+
                 <ThemeToggleButton />
               </div>
             </div>
           </div>
         </DrawerContent>
       </Drawer>
+
       <ThemeToggleIcon />
     </nav>
   );

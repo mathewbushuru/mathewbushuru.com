@@ -14,7 +14,7 @@ export default function ShootingPage() {
       </h1>
 
       <p className="mb-4 leading-7 lg:mb-6">
-        Welcome to my personal gallery, a window to the world as I see it
+        This is my personal gallery, a window to the world as I see it
         through my lens. I currently shoot with a Canon EOS250D paired with a
         prime 50mm f1.8 lens. I also have an 18-55mm and 55-250mm lens but I
         find myself mostly using the 50mm for its versatility and consistent

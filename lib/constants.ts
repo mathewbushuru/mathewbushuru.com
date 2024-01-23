@@ -4,8 +4,8 @@ export const allProjectItems = [
     ipadPhotoLink: "/mockups/ipad/component_library_ipad.png",
     iphonePhotoLink: "/mockups/iphone/component_library_iphone.png",
     descriptionSectionsArr: [
-      "This is my personal design system based on Atomic Design by Brad Frost. This includes my theme and colour palette (used on this website), component primitives built on top of React Aria and RadixUI, and component composites which combine multiple primitives.",
-      "I then use these component primitives and composites to build websites for fictional companies. An example is LearnCo which is inspired by Coursera.",
+      "This is my personal design system based on Atomic Design by Brad Frost. This includes my theme and colour palette (used on this portfolio website), component primitives built on top of React Aria and RadixUI, and component composites constructed by integrating multiple primitives.",
+      "I have created a series of websites for hypothetical businesses to showcase the adaptability and versatility of this design system. An example is LearnCo, a conceptual project inspired by online learning platforms like Coursera.",
     ],
     techStackArr: ["TypeScript", "ReactJS", "TailwindCSS", "Vite"],
     githubLink: "https://github.com/mathewbushuru/design-system",
@@ -25,8 +25,8 @@ export const allProjectItems = [
     ipadPhotoLink: "/mockups/ipad/todoist_ipad.png",
     iphonePhotoLink: null,
     descriptionSectionsArr: [
-      "For this project, I aim to create a complete working template of a production-ready full-stack application. I chose a Todo app because it is easily modifiable to cover the majority of CRUD operations of other applications. To prioritize functionality of the app, I am replicating Todoist's user interface instead of creating my own custom design.",
-      "It is hosted in monorepo that contains a static landing page/marketing site, a web app with authentication implemented, an iOS and Android app, and an backend API that communicates to a relational database.",
+      "For this project, I aim to create a complete working template of a production-ready, full-stack application. I chose a Todo app because it is easily modifiable to cover the majority of CRUD operations in other applications. To prioritize functionality of the app, I am replicating Todoist's user interface instead of creating my own custom design.",
+      "It is hosted in a monorepo with several packages. It includes a static landing page or marketing site, serving as the initial point of contact for users. The web app features user authentication to enable personalization and ensure security. It also has a UI component library package that is shared by the different applications. In addition to the web, the project extends to mobile platforms with dedicated iOS and Android apps, and the backend of the application is structured around an API that communicated to a relational database in order to serve the mobile and web frontends.",
     ],
     techStackArr: [
       "TypeScript",
@@ -57,8 +57,8 @@ export const allProjectItems = [
     ipadPhotoLink: "/mockups/ipad/prosearchx_ipad.png",
     iphonePhotoLink: "/mockups/iphone/prosearchx_iphone.png",
     descriptionSectionsArr: [
-      "A wrapper around Google Search with additional features to make it more effective and powerful. It is for power users and professionals who require an easier and faster way to unlock Google Search capabilities.",
-      "My motivation for this project is I usually end up modifying my Google searches for a second search, for example, adding StackOverflow to a  programming question, or searching for an error in a version of a library from last month but getting results from years ago. This  project attempts to solve this.",
+      "A wrapper around Google Search, designed specifically for professionals and power users who seek a more efficient and effective way to unlock Google Search capabilities.",
+      "My inspiration for this project is I often find myself modifying initial search queries to obtain more relevant results. For instance, appending 'StackOverflow' to a programming question, or searching for an error in a recent version of a library but getting results from years ago. So if your work relies heavily on internet research, this might just be the tool for you.",
     ],
     techStackArr: ["JavaScript", "ReactJS", "Vanilla CSS"],
     githubLink: "https://github.com/mathewbushuru/ProSearchX",
@@ -69,7 +69,7 @@ export const allProjectItems = [
     ipadPhotoLink: "/mockups/ipad/somaoffline_org_ipad.png",
     iphonePhotoLink: "/mockups/iphone/soma_org_iphone.png",
     descriptionSectionsArr: [
-      "A redesign for Soma's landing page was well overdue.",
+      "A much needed overhaul of Soma's online presence.",
     ],
     techStackArr: ["TypeScript", "ReactJS", "Vite", "TailwindCSS", "Vitest"],
     githubLink: null,
@@ -94,48 +94,32 @@ export const allProjectItems = [
     ipadPhotoLink: "/mockups/ipad/google_results_ipad.png",
     iphonePhotoLink: "/mockups/iphone/google_iphone.png",
     descriptionSectionsArr: [
-      "A clone of Google Search with real time search results using Custom Search Engine (CSE). My motivation for this project was to create a scalable architecture of a React project that utilizes Bulletproof React.",
+      "A clone of Google Search with instant real-time search results using Custom Search Engine (CSE). My motivation for this project was to create a scalable architecture of a React project that employs the principles of Bulletproof React.",
     ],
     techStackArr: ["JavaScript", "ReactJS", "Vanilla CSS"],
     githubLink: "https://github.com/mathewbushuru/googly",
     liveLinkArr: [{ linkDesc: null, link: "https://googly-lovat.vercel.app/" }],
   },
   {
-    title: "Snake Xenzia Python game",
+    title: "Snake Xenzia Python Game / UDP Pinger",
     ipadPhotoLink: "/mockups/ipad/snake_ipad.png",
     iphonePhotoLink: null,
     descriptionSectionsArr: [
       "This was the final project of my system software engineering course at UBC. The first part of the project implements a graphical Snake game that utilizes Python's multithreading module to improve performance, and queue module to ensure safe multithreading.",
-      "The second part of the project is a communication client and server that uses the User Datagram Protocol(UDP). The Pinger application simulates the variability of normal Round-Trip time by having the server randomly wait for some time between 5 to 50ms before responding. It also simulates packet loss by making the server randomly ignore a message or request with a probability of 10%.",
+      "The second part of the project was focused on network communication, featuring a client-server architecture that operates using the User Datagram Protocol (UDP). It is a pinger application that simulates the variability of normal Round-Trip time by having the server randomly wait for some time between 5 to 50ms before responding. The application also imitates real-world packet loss scenarios ( the server has a 10% probability of randomly ignoring a message or request).",
+      ,
     ],
     techStackArr: ["Python", "Tkinter"],
     githubLink: "https://github.com/mathewbushuru/cpen333_mp",
     liveLinkArr: [],
   },
   {
-    title: "Unbeatable TicTacToe",
-    ipadPhotoLink: "/mockups/ipad/unbeatable_tictactoe_ipad.png",
-    iphonePhotoLink: "/mockups/iphone/unbeatable_tictactoe_iphone.png",
-    descriptionSectionsArr: [
-      "A vanilla JavaScript project that allows a human to play against an unbeatable computer. The app is implemented to be a Single Page Application like a React/Vue app by dynamically manipulating the DOM using vanilla JavaScript methods. It uses the module pattern which allows us to use and create encapsulation in our code as if we were using a language like Java.",
-      "To implement the unbeatable computer player, we use the minmax algorithm that always selects the move with the greatest payoff - minimize user's payoff and maximize bot's payoff in the next move.",
-    ],
-    techStackArr: ["Vanilla JavaScript", "Vanilla CSS"],
-    githubLink: "https://github.com/mathewbushuru/unbeatable-tictactoe",
-    liveLinkArr: [
-      {
-        linkDesc: null,
-        link: "https://mathewbushuru.github.io/unbeatable-tictactoe/",
-      },
-    ],
-  },
-  {
-    title: "Custom Webpack Single Page Application",
+    title: "Coruscant Cafe - Custom Webpack SPA",
     ipadPhotoLink: "/mockups/ipad/coruscant_ipad.png",
     iphonePhotoLink: null,
     descriptionSectionsArr: [
-      "This is a Single Page Application that uses vanilla JS to dynamically render the HTML and manipulate the DOM. It uses a custom webpack configuration to bundle all the JavaScript,CSS and image source files and inject it into a div in the starting HTML (The same way a framework like React works)",
-      "It is a website of a fictional cafe in the Star Wars universe called The Coruscant Cafe. The main motivation for this project was to practise DOM manipulation and get a deeper understanding of how SPA frameworks like Vue or React work under the hood.",
+      "This vanilla JavaScript application simulates the sophisticated operations of frontend Single Page Application frameworks, but it is uniquely built without relying on these frameworks. The key to this is a custom webpack configuration that is designed to bundle all the JavaScript, CSS and image source files into a bundle that is efficiently injected into a div in starting HTML file.",
+      "It is a website for a fictional cafe set in the Star Wars universe and is one of my favorite designs among the websites that I've built (I plan to make it mobile responsive later).",
     ],
     techStackArr: ["Vanilla JavaScript", "Vanilla CSS", "Webpack", "HTML"],
     githubLink: "https://github.com/mathewbushuru/webpack-restaurant-SPA",
@@ -143,6 +127,23 @@ export const allProjectItems = [
       {
         linkDesc: null,
         link: "https://mathewbushuru.github.io/webpack-restaurant-SPA/",
+      },
+    ],
+  },
+  {
+    title: "Unbeatable TicTacToe",
+    ipadPhotoLink: "/mockups/ipad/unbeatable_tictactoe_ipad.png",
+    iphonePhotoLink: "/mockups/iphone/unbeatable_tictactoe_iphone.png",
+    descriptionSectionsArr: [
+      "A vanilla JavaScript project that allows a human player to challenge an AI opponent that is programmed to be unbeatable. The app dynamically manipulates the DOM with JavaScript methods to offer a seamless and interactive user experience without page reloads, similar to those created by Single Page Application frameworks like Vue or React.",
+      "The project implements the module pattern which provides a level of encapsulation to JavaScript similar to OOP languages like Java. The algorithm used for the unbeatable player is the minmax algorithm that always selects the move with the greatest payoff - either minimizing user's payoff or maximizing bot's payoff in the next move or both.",
+    ],
+    techStackArr: ["Vanilla JavaScript", "Vanilla CSS"],
+    githubLink: "https://github.com/mathewbushuru/unbeatable-tictactoe",
+    liveLinkArr: [
+      {
+        linkDesc: null,
+        link: "https://mathewbushuru.github.io/unbeatable-tictactoe/",
       },
     ],
   },
@@ -191,12 +192,11 @@ export const allProjectItems = [
     ],
   },
   {
-    title:
-      "Liquid Level Detector (EFM 8-bit  MicroController)",
+    title: "Liquid Level Detector (EFM 8-bit  MicroController)",
     ipadPhotoLink: "/mockups/ipad/waterlevel_ipad.png",
     iphonePhotoLink: null,
     descriptionSectionsArr: [
-      "A liquid/water level detector to aid visually impaired people to serve drinks. It provides audible output of how full the cup is in 10% increments and says 'cup is full' when it reaches 100%. The  liquid level is also displayed on a 72 MHz LCD display and the board is programmed in 8051 Assembly (see video demo and indepth explanation on GitHub).",
+      "A liquid/water level detector to aid visually impaired people to serve drinks. It provides audible output of how full the cup is in 10% increments and says 'cup is full' when it reaches 100%. The  liquid level is also displayed on a 72 MHz LCD display and the  EFM8 board is programmed in 8051 Assembly (see video demo and in-depth explanation on GitHub).",
     ],
     techStackArr: ["Assembly", "MicroControllers"],
     githubLink:
@@ -256,7 +256,6 @@ export const allProjectItems = [
     ],
   },
 ];
-
 
 export const awardItems = [
   {
@@ -327,6 +326,25 @@ export const favoriteProjects = [
       "A wrapper around Google Search with additional features to make it more effective and powerful.",
     websiteLink: "https://pro-search-x.vercel.app/",
     githubLink: "https://github.com/mathewbushuru/ProSearchX",
+  },
+];
+
+export const featuredLinks = [
+  {
+    desc: "Next-Generation African Leaders Announced as Winners of the  Resolution Social Venture Challenge",
+    url: "https://mastercardfdn.org/next-generation-african-leaders-announced-as-winners-of-the-resolution-social-venture-challenge-2/",
+  },
+  {
+    desc: "UBC Engineering students win local World's Challenge Challenge competition",
+    url: "https://apsc.ubc.ca/news/2020/ubc-engineering-students-win-local-worlds-challenge-challenge-competition",
+  },
+  {
+    desc: " Multidisciplinary Undergraduate Research Conference - Model  predictive control system for autonomous sailboat in varying weather conditions (Page 141)",
+    url: "https://students.ubc.ca/sites/students.ubc.ca/files/MURC%202019%20Program%20Guide%20Mar%2014_compressed%20%281%29.pdf#page=141",
+  },
+  {
+    desc: "Providing free offline educational tools to high school students in Kenya",
+    url: "https://bizwatchkenya.com/featured/providing-free-offline-educational-tools-to-high-school-students-in-kenya/",
   },
 ];
 

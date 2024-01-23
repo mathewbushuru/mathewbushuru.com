@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function AllProjectsPage() {
   return (
-    <div>
+    <div className="">
       <h1 className="mb-6 mt-3 text-xl font-semibold sm:text-2xl lg:hidden">
         All Projects
       </h1>
@@ -22,7 +22,7 @@ export default function AllProjectsPage() {
             <img
               src={project.ipadPhotoLink}
               alt=""
-              className="mx-auto  w-80 sm:h-80 sm:w-[26rem] lg:mx-0"
+              className="mx-auto w-80 sm:h-80 sm:w-[26rem] lg:mx-0"
             />
             {project.iphonePhotoLink && (
               <img
@@ -32,7 +32,7 @@ export default function AllProjectsPage() {
               />
             )}
           </div>
-          <h3 className="mt-4  text-lg font-semibold sm:text-2xl ">
+          <h3 className="mt-4 text-lg font-semibold sm:text-2xl ">
             {project.title}
           </h3>
           {project.descriptionSectionsArr.map((section, index) => (
@@ -78,7 +78,9 @@ export default function AllProjectsPage() {
           </div>
         </div>
       ))}
+
       <hr className="-mx-4 -mt-6" />
+
       <div className="py-6">
         More projects coming soon.{" "}
         <span className="font-mono font-semibold">Press G</span> to see all my
