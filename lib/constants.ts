@@ -196,7 +196,7 @@ export const allProjectItems = [
     ipadPhotoLink: "/mockups/ipad/waterlevel_ipad.png",
     iphonePhotoLink: null,
     descriptionSectionsArr: [
-      "A liquid/water level detector to aid visually impaired people to serve drinks. It provides audible output of how full the cup is in 10% increments and says 'cup is full' when it reaches 100%. The  liquid level is also displayed on a 72 MHz LCD display and the board is programmed in 8051 Assembly (see video demo and indepth explanation on GitHub).",
+      "A liquid/water level detector to aid visually impaired people to serve drinks. It provides audible output of how full the cup is in 10% increments and says 'cup is full' when it reaches 100%. The  liquid level is also displayed on a 72 MHz LCD display and the  EFM8 board is programmed in 8051 Assembly (see video demo and in-depth explanation on GitHub).",
     ],
     techStackArr: ["Assembly", "MicroControllers"],
     githubLink:
@@ -327,6 +327,25 @@ export const favoriteProjects = [
       "A wrapper around Google Search with additional features to make it more effective and powerful.",
     websiteLink: "https://pro-search-x.vercel.app/",
     githubLink: "https://github.com/mathewbushuru/ProSearchX",
+  },
+];
+
+export const featuredLinks = [
+  {
+    desc: "Next-Generation African Leaders Announced as Winners of the  Resolution Social Venture Challenge",
+    url: "https://mastercardfdn.org/next-generation-african-leaders-announced-as-winners-of-the-resolution-social-venture-challenge-2/",
+  },
+  {
+    desc: "UBC Engineering students win local World's Challenge Challenge competition",
+    url: "https://apsc.ubc.ca/news/2020/ubc-engineering-students-win-local-worlds-challenge-challenge-competition",
+  },
+  {
+    desc: " Multidisciplinary Undergraduate Research Conference - Model  predictive control system for autonomous sailboat in varying weather conditions (Page 141)",
+    url: "https://students.ubc.ca/sites/students.ubc.ca/files/MURC%202019%20Program%20Guide%20Mar%2014_compressed%20%281%29.pdf#page=141",
+  },
+  {
+    desc: "Providing free offline educational tools to high school students in Kenya",
+    url: "https://bizwatchkenya.com/featured/providing-free-offline-educational-tools-to-high-school-students-in-kenya/",
   },
 ];
 
