@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 
@@ -7,6 +7,11 @@ import { keysUsedInNavigation } from "@/lib/constants";
 export function useKeyPress() {
   const router = useRouter();
   const { theme, setTheme } = useTheme();
+
+  const themeRef = useRef(theme);
+  useEffect(() => {
+    themeRef.current = theme;
+  }, [theme]);
 
   useEffect(() => {
     const keypressHandler = (event: KeyboardEvent) => {
@@ -34,11 +39,7 @@ export function useKeyPress() {
       } else if (event.code === "KeyL") {
         window.open("https://www.linkedin.com/in/mathewbushuru/", "_blank");
       } else if (event.code === "KeyT") {
-        if (theme === "dark") {
-          setTheme("light");
-        } else {
-          setTheme("dark");
-        }
+        setTheme(themeRef.current === "light" ? "dark" : "light");
       }
     };
 
@@ -47,5 +48,5 @@ export function useKeyPress() {
     return () => {
       window.removeEventListener("keydown", keypressHandler);
     };
-  }, [theme]);
+  }, []);
 }
