@@ -94,9 +94,12 @@ export default function HomePage() {
               </TableHead>
             </TableRow>
           </TableHeader>
-          <TableBody>
+          <TableBody className="group">
             {favoriteProjects.map((project, index) => (
-              <TableRow key={index} className="hover:bg-background">
+              <TableRow
+                key={index}
+                className="hover:bg-background group-hover:opacity-70 group-hover:hover:opacity-100"
+              >
                 <TableCell className="pl-2 text-left align-top">
                   {project.name}
                 </TableCell>
