@@ -20,6 +20,7 @@ export const MasonryPhotos = () => {
             src={item}
             loading="lazy"
             alt={item}
+            className="hover:brightness-110"
             style={{
               width: "100%",
               maxWidth: "400px",

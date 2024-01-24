@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 
@@ -6,7 +6,12 @@ import { keysUsedInNavigation } from "@/lib/constants";
 
 export function useKeyPress() {
   const router = useRouter();
-  const { setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
+
+  const themeRef = useRef(theme);
+  useEffect(() => {
+    themeRef.current = theme;
+  }, [theme]);
 
   useEffect(() => {
     const keypressHandler = (event: KeyboardEvent) => {
@@ -21,7 +26,7 @@ export function useKeyPress() {
         router.push("/");
       } else if (event.code === "Digit2") {
         router.push("/reading");
-      }  else if (event.code === "Digit3") {
+      } else if (event.code === "Digit3") {
         router.push("/shooting");
       } else if (event.code === "Digit4") {
         router.push("/all-projects");
@@ -33,10 +38,8 @@ export function useKeyPress() {
         window.open("mailto:mathewbushuru@proton.me", "_blank");
       } else if (event.code === "KeyL") {
         window.open("https://www.linkedin.com/in/mathewbushuru/", "_blank");
-      } else if (event.code === "KeyD") {
-        setTheme("dark");
       } else if (event.code === "KeyT") {
-        setTheme("light");
+        setTheme(themeRef.current === "light" ? "dark" : "light");
       }
     };
 

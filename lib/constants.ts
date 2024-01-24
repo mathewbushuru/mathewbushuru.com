@@ -370,8 +370,8 @@ export const galleryPagePhotos = [
     size: 134,
   },
   {
-    imageName: "east-van.jpg",
-    size: 135,
+    imageName: "radisson-kigali.jpg",
+    size: 188,
   },
   {
     imageName: "winter-lamp.jpg",
@@ -382,9 +382,13 @@ export const galleryPagePhotos = [
     size: 186,
   },
   {
-    imageName: "radisson-kigali.jpg",
-    size: 188,
+    imageName: "kits-beach.jpg",
+    size: 291,
   },
+  // {
+  //   imageName: "east-van.jpg",
+  //   size: 135,
+  // },
   {
     imageName: "lion-gate-flower.jpg",
     size: 199,
@@ -437,9 +441,13 @@ export const galleryPagePhotos = [
     imageName: "kigali.JPG",
     size: 293,
   },
+  // {
+  //   imageName: "kits-beach.jpg",
+  //   size: 291,
+  // },
   {
-    imageName: "kits-beach.jpg",
-    size: 291,
+    imageName: "east-van.jpg",
+    size: 135,
   },
   {
     imageName: "siwash-rock.JPG",
