@@ -309,7 +309,7 @@ export const favoriteProjects = [
   {
     name: "Algorithms",
     description:
-      "Repository of computer science algorithms and data structures implemented in JavaScript, Java, C++, Python, TypeScript and C.",
+      "Repository of computer science algorithms and data structures implemented in Java, C++, JavaScript, C, TypeScript and Python.",
     websiteLink: null,
     githubLink: "https://github.com/mathewbushuru/algorithms",
   },
