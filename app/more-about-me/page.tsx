@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 
-import { awardItems, featuredLinks } from "@/lib/constants";
+import { awardItems, featuredLinks, miscLinks } from "@/lib/constants";
 
 export const metadata = {
   title: "Mathew Bushuru | Info",
@@ -51,7 +51,7 @@ export default function MoreAboutMePage() {
       </div>
 
       {/* Featured  */}
-      <div className="mb-4 max-w-5xl pb-8 lg:mb-6">
+      <div className="mb-4 max-w-5xl pb-4 lg:mb-6">
         <h3 className="mb-2 text-lg font-semibold sm:text-2xl">Features</h3>
         <ul className="space-y-1.5">
           {featuredLinks.map((link, index) => (
@@ -67,6 +67,30 @@ export default function MoreAboutMePage() {
                 </a>
               </li>
               {index < featuredLinks.length - 1 && (
+                <hr className="-mx-2 sm:hidden" />
+              )}
+            </Fragment>
+          ))}
+        </ul>
+      </div>
+
+      {/* More Links  */}
+      <div className="mb-4 max-w-5xl pb-8 lg:mb-6">
+        <h3 className="mb-2 text-lg font-semibold sm:text-2xl">Miscellaneous Links</h3>
+        <ul className="space-y-1.5">
+          {miscLinks.map((link, index) => (
+            <Fragment key={index}>
+              <li>
+                <a
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-link hover:underline hover:underline-offset-4"
+                >
+                  {link.desc}
+                </a>
+              </li>
+              {index < miscLinks.length - 1 && (
                 <hr className="-mx-2 sm:hidden" />
               )}
             </Fragment>
