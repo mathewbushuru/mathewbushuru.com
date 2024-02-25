@@ -309,7 +309,7 @@ export const favoriteProjects = [
   {
     name: "Algorithms",
     description:
-      "Repository of computer science algorithms and data structures implemented in JavaScript, Java, C++, Python, TypeScript and C.",
+      "Repository of computer science algorithms and data structures implemented in Java, C++, JavaScript, C, TypeScript and Python.",
     websiteLink: null,
     githubLink: "https://github.com/mathewbushuru/algorithms",
   },
@@ -574,9 +574,15 @@ export const keysUsedInNavigation = [
 
 export const miscLinks = [
   {
-    desc: "Undergraduate thesis (mathewbushuru.com/undergrad-thesis)",
+    desc: "Undergraduate thesis",
+    descUrl: "(mathewbushuru.com/undergrad-thesis)",
     url: "https://mathewbushuru.com/undergrad-thesis",
-  }
+  },
+  {
+    desc: "Undergraduate thesis source code",
+    descUrl: "(mathewbushuru.com/undergrad-thesis-code)",
+    url: "https://mathewbushuru.com/undergrad-thesis-code",
+  },
 ];
 
 export const readBooks = [

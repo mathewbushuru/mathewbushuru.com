@@ -76,7 +76,9 @@ export default function MoreAboutMePage() {
 
       {/* More Links  */}
       <div className="mb-4 max-w-5xl pb-8 lg:mb-6">
-        <h3 className="mb-2 text-lg font-semibold sm:text-2xl">Miscellaneous Links</h3>
+        <h3 className="mb-2 text-lg font-semibold sm:text-2xl">
+          Miscellaneous Links
+        </h3>
         <ul className="space-y-1.5">
           {miscLinks.map((link, index) => (
             <Fragment key={index}>
@@ -87,7 +89,10 @@ export default function MoreAboutMePage() {
                   rel="noopener noreferrer"
                   className="text-link hover:underline hover:underline-offset-4"
                 >
-                  {link.desc}
+                  {link.desc}&nbsp;
+                  <span className="font-mono text-sm text-muted-foreground">
+                    {link.descUrl}
+                  </span>
                 </a>
               </li>
               {index < miscLinks.length - 1 && (
