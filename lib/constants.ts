@@ -572,6 +572,13 @@ export const keysUsedInNavigation = [
   "KeyT",
 ];
 
+export const miscLinks = [
+  {
+    desc: "Undergraduate thesis (mathewbushuru.com/undergrad-thesis)",
+    url: "https://mathewbushuru.com/undergrad-thesis",
+  }
+];
+
 export const readBooks = [
   {
     name: "C++20 For Programmers, An Objects Natural Approach",
