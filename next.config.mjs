@@ -18,6 +18,12 @@ const nextConfig = {
           "https://drive.google.com/file/d/1t95E0oJWrLI9KoxyiY9bYehc0wOcvo-3/view",
         permanent: true,
       },
+      {
+        source: "/undergrad-thesis-code",
+        destination:
+          "https://drive.google.com/file/d/1HfgV--iOkd3073NwQke1ETPY6omd0bmB/view",
+        permanent: true,
+      },
     ];
   },
 };
