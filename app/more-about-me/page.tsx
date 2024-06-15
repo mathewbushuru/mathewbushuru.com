@@ -52,7 +52,7 @@ export default function MoreAboutMePage() {
 
       {/* Featured  */}
       <div className="mb-4 max-w-5xl pb-4 lg:mb-6">
-        <h3 className="mb-2 text-lg font-semibold sm:text-2xl">Features</h3>
+        <h3 className="mb-2 text-lg font-semibold sm:text-2xl">Featured</h3>
         <ul className="space-y-1.5">
           {featuredLinks.map((link, index) => (
             <Fragment key={index}>

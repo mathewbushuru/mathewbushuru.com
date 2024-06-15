@@ -73,10 +73,10 @@ export default function HomePage() {
         </p>
       </div>
 
-      {/* Favorite projects  */}
+      {/* Featured projects  */}
       <div>
         <h1 className="mb-4 text-xl font-semibold sm:text-2xl lg:mb-6">
-          Favourite Projects
+          Featured Projects
         </h1>
         <Table>
           <TableCaption>
