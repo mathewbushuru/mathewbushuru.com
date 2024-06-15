@@ -4,7 +4,7 @@ export const allProjectItems = [
     ipadPhotoLink: "/mockups/ipad/component_library_ipad.png",
     iphonePhotoLink: "/mockups/iphone/component_library_iphone.png",
     descriptionSectionsArr: [
-      "This is my personal design system based on Atomic Design by Brad Frost. This includes my theme and colour palette (used on this portfolio website), component primitives built on top of React Aria and RadixUI, and component composites constructed by integrating multiple primitives.",
+      "This is my personal design system based on Atomic Design by Brad Frost. This includes my theme and colour palette (used on this website), component primitives built on top of RadixUI and React Aria, and component composites constructed by integrating multiple primitives.",
       "I have created a series of websites for hypothetical businesses to showcase the adaptability and versatility of this design system. An example is LearnCo, a conceptual project inspired by online learning platforms like Coursera.",
     ],
     techStackArr: ["TypeScript", "ReactJS", "TailwindCSS", "Vite"],
@@ -58,7 +58,7 @@ export const allProjectItems = [
     iphonePhotoLink: "/mockups/iphone/prosearchx_iphone.png",
     descriptionSectionsArr: [
       "A wrapper around Google Search, designed specifically for professionals and power users who seek a more efficient and effective way to unlock Google Search capabilities.",
-      "My inspiration for this project is I often find myself modifying initial search queries to obtain more relevant results. For instance, appending 'StackOverflow' to a programming question, or searching for an error in a recent version of a library but getting results from years ago. So if your work relies heavily on internet research, this might just be the tool for you.",
+      "My inspiration for this project is I often find myself modifying initial search queries to obtain more relevant results. For instance, appending 'StackOverflow' to a programming question, or searching for an error in a recent version of a library but getting results from years ago. This tool is designed for people whose work relies heavily on internet research.",
     ],
     techStackArr: ["JavaScript", "ReactJS", "Vanilla CSS"],
     githubLink: "https://github.com/mathewbushuru/ProSearchX",
@@ -68,13 +68,11 @@ export const allProjectItems = [
     title: "Soma Landing Page Redesign",
     ipadPhotoLink: "/mockups/ipad/somaoffline_org_ipad.png",
     iphonePhotoLink: "/mockups/iphone/soma_org_iphone.png",
-    descriptionSectionsArr: [
-      "A much needed overhaul of Soma's online presence.",
-    ],
+    descriptionSectionsArr: ["An overhaul of Soma's online presence."],
     techStackArr: ["TypeScript", "ReactJS", "Vite", "TailwindCSS", "Vitest"],
     githubLink: null,
     liveLinkArr: [
-      { linkDesc: "new", link: "https://www.somaoffline.org/" },
+      { linkDesc: "new", link: "https://www.somaoffline.com/" },
       {
         linkDesc: "Launch version",
         link: "https://main--determined-roentgen-1de5f2.netlify.app/",
@@ -118,8 +116,8 @@ export const allProjectItems = [
     ipadPhotoLink: "/mockups/ipad/coruscant_ipad.png",
     iphonePhotoLink: null,
     descriptionSectionsArr: [
-      "This vanilla JavaScript application simulates the sophisticated operations of frontend Single Page Application frameworks, but it is uniquely built without relying on these frameworks. The key to this is a custom webpack configuration that is designed to bundle all the JavaScript, CSS and image source files into a bundle that is efficiently injected into a div in starting HTML file.",
-      "It is a website for a fictional cafe set in the Star Wars universe and is one of my favorite designs among the websites that I've built (I plan to make it mobile responsive later).",
+      "This vanilla JavaScript application simulates the operations of frontend Single Page Application frameworks, but it is built without relying on these frameworks. The key to this is a custom webpack configuration that is designed to bundle all the JavaScript, CSS and image source files into a bundle that is efficiently injected into a div in the starting HTML file.",
+      "It is a website for a fictional cafe set in the Star Wars universe and is one of my favorite designs among the websites that I've built.",
     ],
     techStackArr: ["Vanilla JavaScript", "Vanilla CSS", "Webpack", "HTML"],
     githubLink: "https://github.com/mathewbushuru/webpack-restaurant-SPA",
@@ -208,7 +206,7 @@ export const allProjectItems = [
     ipadPhotoLink: "/mockups/ipad/bluehorizon_ipad.png",
     iphonePhotoLink: null,
     descriptionSectionsArr: [
-      "A weather forecast app that shows Vancouver's realtime weather forecast by default but also allows users to search the weather of specific cities. The main motivation for this project was to improve my understanding of asycnronous JavaScript and working with APIs.",
+      "A weather forecast app that shows Vancouver's realtime weather forecast by default but also allows users to search the weather of specific cities. The main motivation for this project was to improve my understanding of asyncronous JavaScript and working with APIs.",
     ],
     techStackArr: ["Vanilla JavaScript", "Vanilla CSS", "HTML"],
     githubLink: "https://github.com/mathewbushuru/blue-horizon",
@@ -231,7 +229,7 @@ export const allProjectItems = [
     liveLinkArr: [
       {
         linkDesc: null,
-        link: "https://mathewbushuru.github.io/etch-a-sketch/",
+        link: "https://mathewbushuru.github.io/cssgrid-dashboard/",
       },
     ],
   },
@@ -240,7 +238,7 @@ export const allProjectItems = [
     ipadPhotoLink: "/mockups/ipad/seawall_ipad.png",
     iphonePhotoLink: null,
     descriptionSectionsArr: [
-      "A simple sign up form built in order to understand how HTML forms and validation.",
+      "Two sign up forms that I built to understand more about HTML forms and the browser's form constraint validation API.",
     ],
     techStackArr: ["Vanilla JavaScript", "CSS", "HTML"],
     githubLink: "https://github.com/mathewbushuru/sign-up-form",
