@@ -17,7 +17,7 @@ export const NavMenuContent = () => {
       {/* Top sidebar  */}
       <div className=" flex min-w-60 flex-col gap-3 px-4 pt-6">
         <Link href="/">
-          <div className="mb-2 flex cursor-pointer items-center gap-2  rounded-md py-2 pl-1.5 pr-4 text-sm font-medium hover:bg-accent">
+          <div className="mb-2 flex cursor-pointer items-center gap-2 rounded-md py-2 pl-1.5 pr-4 text-sm font-medium hover:bg-accent">
             <Avatar className="h-8 w-8">
               <AvatarImage src="/android-chrome-512x512.png" />
               <AvatarFallback>MB</AvatarFallback>
@@ -33,17 +33,20 @@ export const NavMenuContent = () => {
         <Link href="/">
           <NavigationButton label="Home" keyboardShortcut={1} />
         </Link>
+        <Link href="/writing">
+          <NavigationButton label="Writing" keyboardShortcut={2} />
+        </Link>
         <Link href="/reading">
-          <NavigationButton label="Reading" keyboardShortcut={2} />
+          <NavigationButton label="Reading" keyboardShortcut={3} />
         </Link>
         <Link href="/shooting">
-          <NavigationButton label="Shooting" keyboardShortcut={3} />
+          <NavigationButton label="Shooting" keyboardShortcut={4} />
         </Link>
         <Link href="/all-projects">
-          <NavigationButton label="All projects" keyboardShortcut={4} />
+          <NavigationButton label="All projects" keyboardShortcut={5} />
         </Link>
         <Link href="/more-about-me">
-          <NavigationButton label="More about me" keyboardShortcut={5} />
+          <NavigationButton label="More about me" keyboardShortcut={6} />
         </Link>
       </div>
 

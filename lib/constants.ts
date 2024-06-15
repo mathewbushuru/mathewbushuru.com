@@ -563,6 +563,7 @@ export const keysUsedInNavigation = [
   "Digit3",
   "Digit4",
   "Digit5",
+  "Digit6",
   "KeyG",
   "KeyE",
   "KeyL",

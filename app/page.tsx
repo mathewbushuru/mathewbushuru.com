@@ -82,7 +82,7 @@ export default function HomePage() {
           <TableCaption>
             See more in the All Projects page{" "}
             <span className="hidden font-mono lg:inline">
-              [Quick Shortcut - Press 4]
+              [Quick Shortcut - Press 5]
             </span>
           </TableCaption>
           <TableHeader>
