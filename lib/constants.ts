@@ -4,7 +4,7 @@ export const allProjectItems = [
     ipadPhotoLink: "/mockups/ipad/component_library_ipad.png",
     iphonePhotoLink: "/mockups/iphone/component_library_iphone.png",
     descriptionSectionsArr: [
-      "This is my personal design system based on Atomic Design by Brad Frost. This includes my theme and colour palette (used on this portfolio website), component primitives built on top of React Aria and RadixUI, and component composites constructed by integrating multiple primitives.",
+      "This is my personal design system based on Atomic Design by Brad Frost. This includes my theme and colour palette (used on this website), component primitives built on top of RadixUI and React Aria, and component composites constructed by integrating multiple primitives.",
       "I have created a series of websites for hypothetical businesses to showcase the adaptability and versatility of this design system. An example is LearnCo, a conceptual project inspired by online learning platforms like Coursera.",
     ],
     techStackArr: ["TypeScript", "ReactJS", "TailwindCSS", "Vite"],
@@ -53,28 +53,14 @@ export const allProjectItems = [
     ],
   },
   {
-    title: "ProSearchX",
-    ipadPhotoLink: "/mockups/ipad/prosearchx_ipad.png",
-    iphonePhotoLink: "/mockups/iphone/prosearchx_iphone.png",
-    descriptionSectionsArr: [
-      "A wrapper around Google Search, designed specifically for professionals and power users who seek a more efficient and effective way to unlock Google Search capabilities.",
-      "My inspiration for this project is I often find myself modifying initial search queries to obtain more relevant results. For instance, appending 'StackOverflow' to a programming question, or searching for an error in a recent version of a library but getting results from years ago. So if your work relies heavily on internet research, this might just be the tool for you.",
-    ],
-    techStackArr: ["JavaScript", "ReactJS", "Vanilla CSS"],
-    githubLink: "https://github.com/mathewbushuru/ProSearchX",
-    liveLinkArr: [{ linkDesc: null, link: "https://pro-search-x.vercel.app/" }],
-  },
-  {
     title: "Soma Landing Page Redesign",
     ipadPhotoLink: "/mockups/ipad/somaoffline_org_ipad.png",
     iphonePhotoLink: "/mockups/iphone/soma_org_iphone.png",
-    descriptionSectionsArr: [
-      "A much needed overhaul of Soma's online presence.",
-    ],
+    descriptionSectionsArr: ["An overhaul of Soma's online presence."],
     techStackArr: ["TypeScript", "ReactJS", "Vite", "TailwindCSS", "Vitest"],
-    githubLink: null,
+    githubLink: "https://github.com/soma-offline",
     liveLinkArr: [
-      { linkDesc: "new", link: "https://www.somaoffline.org/" },
+      { linkDesc: "new", link: "https://www.somaoffline.com/" },
       {
         linkDesc: "Launch version",
         link: "https://main--determined-roentgen-1de5f2.netlify.app/",
@@ -88,6 +74,18 @@ export const allProjectItems = [
         link: "https://somaprototype2.netlify.app/",
       },
     ],
+  },
+  {
+    title: "ProSearchX",
+    ipadPhotoLink: "/mockups/ipad/prosearchx_ipad.png",
+    iphonePhotoLink: "/mockups/iphone/prosearchx_iphone.png",
+    descriptionSectionsArr: [
+      "A wrapper around Google Search, designed specifically for professionals and power users who seek a more efficient and effective way to unlock Google Search capabilities.",
+      "My inspiration for this project is I often find myself modifying initial search queries to obtain more relevant results. For instance, appending 'StackOverflow' to a programming question, or searching for an error in a recent version of a library but getting results from years ago. This tool is designed for people whose work relies heavily on internet research.",
+    ],
+    techStackArr: ["JavaScript", "ReactJS", "Vanilla CSS"],
+    githubLink: "https://github.com/mathewbushuru/ProSearchX",
+    liveLinkArr: [{ linkDesc: null, link: "https://pro-search-x.vercel.app/" }],
   },
   {
     title: "Google Search Clone",
@@ -118,8 +116,8 @@ export const allProjectItems = [
     ipadPhotoLink: "/mockups/ipad/coruscant_ipad.png",
     iphonePhotoLink: null,
     descriptionSectionsArr: [
-      "This vanilla JavaScript application simulates the sophisticated operations of frontend Single Page Application frameworks, but it is uniquely built without relying on these frameworks. The key to this is a custom webpack configuration that is designed to bundle all the JavaScript, CSS and image source files into a bundle that is efficiently injected into a div in starting HTML file.",
-      "It is a website for a fictional cafe set in the Star Wars universe and is one of my favorite designs among the websites that I've built (I plan to make it mobile responsive later).",
+      "This vanilla JavaScript application simulates the operations of frontend Single Page Application frameworks, but it is built without relying on these frameworks. The key to this is a custom webpack configuration that is designed to bundle all the JavaScript, CSS and image source files into a bundle that is efficiently injected into a div in the starting HTML file.",
+      "It is a website for a fictional cafe set in the Star Wars universe and is one of my favorite designs among the websites that I've built.",
     ],
     techStackArr: ["Vanilla JavaScript", "Vanilla CSS", "Webpack", "HTML"],
     githubLink: "https://github.com/mathewbushuru/webpack-restaurant-SPA",
@@ -208,7 +206,7 @@ export const allProjectItems = [
     ipadPhotoLink: "/mockups/ipad/bluehorizon_ipad.png",
     iphonePhotoLink: null,
     descriptionSectionsArr: [
-      "A weather forecast app that shows Vancouver's realtime weather forecast by default but also allows users to search the weather of specific cities. The main motivation for this project was to improve my understanding of asycnronous JavaScript and working with APIs.",
+      "A weather forecast app that shows Vancouver's realtime weather forecast by default but also allows users to search the weather of specific cities. The main motivation for this project was to improve my understanding of asyncronous JavaScript and working with APIs.",
     ],
     techStackArr: ["Vanilla JavaScript", "Vanilla CSS", "HTML"],
     githubLink: "https://github.com/mathewbushuru/blue-horizon",
@@ -231,7 +229,7 @@ export const allProjectItems = [
     liveLinkArr: [
       {
         linkDesc: null,
-        link: "https://mathewbushuru.github.io/etch-a-sketch/",
+        link: "https://mathewbushuru.github.io/cssgrid-dashboard/",
       },
     ],
   },
@@ -240,7 +238,7 @@ export const allProjectItems = [
     ipadPhotoLink: "/mockups/ipad/seawall_ipad.png",
     iphonePhotoLink: null,
     descriptionSectionsArr: [
-      "A simple sign up form built in order to understand how HTML forms and validation.",
+      "Two sign up forms that I built to understand more about HTML forms and the browser's form constraint validation API.",
     ],
     techStackArr: ["Vanilla JavaScript", "CSS", "HTML"],
     githubLink: "https://github.com/mathewbushuru/sign-up-form",
@@ -261,7 +259,7 @@ export const awardItems = [
   {
     title: "2021 International World's Challenge Challenge, Finalist",
     issuer: "Western University",
-    awardUrl: "https://international.uwo.ca/challenge/global_final/",
+    awardUrl: "https://apsc.ubc.ca/news/2020/ubc-engineering-students-win-local-worlds-challenge-challenge-competition",
     desc: "This competition brings together students from a wide range of institutions, cultures and continents to form a strong international network and create even greater potential solutions to significant global issues.",
   },
   {
@@ -292,7 +290,7 @@ export const awardItems = [
   },
 ];
 
-export const favoriteProjects = [
+export const featuredProjects = [
   {
     name: "Design System",
     description: "My personal design system",
@@ -565,6 +563,7 @@ export const keysUsedInNavigation = [
   "Digit3",
   "Digit4",
   "Digit5",
+  "Digit6",
   "KeyG",
   "KeyE",
   "KeyL",
@@ -587,105 +586,117 @@ export const miscLinks = [
 
 export const readBooks = [
   {
+    name: "Programming in C, 4th Edition",
+    authors: "Stephen G. Kochan",
+    finishDate: "05/24",
+    link: "https://www.oreilly.com/library/view/programming-in-c/9780132781206/",
+  },
+  {
+    name: "C# For Programmers",
+    authors: "Paul Deitel and Harvey Deitel",
+    finishDate: "04/24",
+    link: "https://deitel.com/c-sharp-6-for-programmers/",
+  },
+  {
     name: "C++20 For Programmers, An Objects Natural Approach",
     authors: "Paul Deitel and Harvey Deitel",
-    finishDate: "Jan 2024",
+    finishDate: "01/24",
     link: "https://deitel.com/c-plus-plus-20-for-programmers/",
   },
   {
     name: "Java Foundations: Introduction to Program Design and Data Structures, 5th Edition",
     authors: "John Lewis",
-    finishDate: "Dec 2023",
+    finishDate: "12/23",
     link: "https://www.pearson.com/en-us/subject-catalog/p/java-foundations-introduction-to-program-design-and-data-structures/P200000003413/9780137518401",
   },
   {
     name: "Java How To Program, Early Objects 11th edition",
     authors: "Paul Deitel and Harvey Deitel",
-    finishDate: "Oct 2023",
+    finishDate: "10/23",
     link: "https://deitel.com/java-how-to-program-11-e-early-objects-version/",
   },
   {
     name: "Python for Programmers with Introductory AI Case Studies",
     authors: "Paul Deitel and Harvey Deitel",
-    finishDate: "Sep 2023",
+    finishDate: "09/23",
     link: "https://deitel.com/python-for-programmers-book/",
   },
   {
     name: "Head First Java, 3rd Edition",
     authors: "Kathy Sierra, Bert Bates, and Trisha Gee",
-    finishDate: "Sep 2023",
+    finishDate: "09/23",
     link: "https://www.oreilly.com/library/view/head-first-java/9781492091646/",
   },
   {
     name: "How Not To Be Wrong - The Power Of Mathematical Thinking",
     authors: "Jordan Ellenberg",
-    finishDate: "Jul 2023",
+    finishDate: "07/23",
     link: "https://www.jordanellenberg.com/book/how-not-to-be-wrong/",
   },
   {
     name: "A Doll's House",
     authors: "Henrik Ibsen",
-    finishDate: "Jul 2023",
+    finishDate: "07/23",
     link: "https://en.wikipedia.org/wiki/A_Doll%27s_House",
   },
   {
     name: "The Pearl",
     authors: "John Steinbeck",
-    finishDate: "Jun 2023",
+    finishDate: "06/23",
     link: "https://en.wikipedia.org/wiki/The_Pearl_(novella)",
   },
   {
     name: "The Caucasian Chalk Circle",
     authors: " Bertolt Brecht",
-    finishDate: "Jun 2023",
+    finishDate: "06/23",
     link: "https://en.wikipedia.org/wiki/The_Caucasian_Chalk_Circle",
   },
   {
     name: "React Key Concepts",
     authors: "Maximilian Schwarzmüller",
-    finishDate: "Mar 2023",
+    finishDate: "03/23",
     link: "https://www.packtpub.com/en-gb/product/react-key-concepts-9781803234502?=type=ebook#toc",
   },
   {
     name: "Web Development with Node and Express, 2nd Edition",
     authors: "Ethan Brown",
-    finishDate: "Mar 2023",
+    finishDate: "03/23",
     link: "https://www.oreilly.com/library/view/web-development-with/9781492053507/",
   },
   {
     name: "Learning React, 2nd Edition",
     authors: "Alex Banks, and Eve Porcello",
-    finishDate: "Feb 2023",
+    finishDate: "02/23",
     link: "https://www.oreilly.com/library/view/learning-react-2nd/9781492051718/",
   },
   {
     name: "Frankenstein: The 1818 Text",
     authors: "Mary Shelley",
-    finishDate: "Aug 2022",
+    finishDate: "08/22",
     link: "https://www.penguinrandomhouse.com/books/557081/frankenstein-the-1818-text-by-mary-shelley-introduction-by-charlotte-gordon-editorial-apparatus-by-charles-e-robinson/",
   },
   {
     name: "Things Fall Apart",
     authors: "Chinua Achebe",
-    finishDate: "Jul 2022",
+    finishDate: "07/22",
     link: "https://www.penguinrandomhouse.ca/books/565351/things-fall-apart-by-chinua-achebe/9780385667838",
   },
   {
     name: "The Secret Agent",
     authors: "Joseph Conrad",
-    finishDate: "Jun 2022",
+    finishDate: "06/22",
     link: "https://en.wikipedia.org/wiki/The_Secret_Agent",
   },
   {
     name: "The Lean Startup",
     authors: "Eric Ries",
-    finishDate: "Apr 2022",
+    finishDate: "04/22",
     link: "https://theleanstartup.com/book",
   },
   {
     name: "A Fine Balance",
     authors: "Rohinton Mistry",
-    finishDate: "Jan 2022",
+    finishDate: "01/22",
     link: "https://www.penguinrandomhouse.ca/books/115368/a-fine-balance-by-rohinton-mistry/9780771060540",
   },
 ];

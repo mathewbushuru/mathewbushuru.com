@@ -15,7 +15,7 @@ export function useKeyPress() {
 
   useEffect(() => {
     const keypressHandler = (event: KeyboardEvent) => {
-      // e.g. I still want Tab + Enter keyboard navigation on the website
+      // e.g. I still want 'Tab + Enter' keyboard navigation on the website
       if (!keysUsedInNavigation.includes(event.code)) {
         return;
       }
@@ -25,12 +25,14 @@ export function useKeyPress() {
       if (event.code === "Digit1") {
         router.push("/");
       } else if (event.code === "Digit2") {
-        router.push("/reading");
+        router.push("/writing");
       } else if (event.code === "Digit3") {
-        router.push("/shooting");
+        router.push("/reading");
       } else if (event.code === "Digit4") {
-        router.push("/all-projects");
+        router.push("/shooting");
       } else if (event.code === "Digit5") {
+        router.push("/all-projects");
+      } else if (event.code === "Digit6") {
         router.push("/more-about-me");
       } else if (event.code === "KeyG") {
         window.open("https://github.com/mathewbushuru", "_blank");

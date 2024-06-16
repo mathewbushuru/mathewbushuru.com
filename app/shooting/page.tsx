@@ -1,6 +1,5 @@
-import { galleryPagePhotos } from "@/lib/constants";
-
 import { MasonryPhotos } from "@/components/masonry-photos";
+import { galleryPagePhotos } from "@/lib/constants";
 
 export const metadata = {
   title: "Mathew Bushuru | Gallery",
@@ -14,17 +13,10 @@ export default function ShootingPage() {
       </h1>
 
       <p className="mb-4 leading-7 lg:mb-6">
-        This is my personal gallery, a window to the world as I see it
-        through my lens. I currently shoot with a Canon EOS250D paired with a
-        prime 50mm f1.8 lens. I also have an 18-55mm and 55-250mm lens but I
-        find myself mostly using the 50mm for its versatility and consistent
-        performance.
-      </p>
-
-      <p className="mb-4 leading-7 lg:mb-6">
-        Photography to me is about telling stories without words, exploring
-        beauty in the ordinary, and freezing moments in time. I hope you enjoy
-        browsing through these images as much as I enjoyed taking them.
+        This is my personal gallery featuring my favourite photos that I have
+        taken. I currently shoot with a Canon EOS250D paired with a prime 50mm
+        f1.8 lens. I also have an 18-55mm and a 55-250mm zoom lens but most of
+        these photos were taken with my iPhone.
       </p>
 
       <MasonryPhotos />

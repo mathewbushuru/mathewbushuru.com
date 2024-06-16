@@ -7,6 +7,7 @@ import {
   HammerIcon,
   NewspaperIcon,
   CameraIcon,
+  PencilLineIcon,
   type LucideIcon,
 } from "lucide-react";
 
@@ -28,6 +29,10 @@ export const NavigationButton = ({
     case "Home":
       Icon = SparklesIcon;
       isActive = pathname === "/";
+      break;
+    case "Writing":
+      Icon = PencilLineIcon;
+      isActive = pathname.startsWith("/writing");
       break;
     case "Reading":
       Icon = NewspaperIcon;
