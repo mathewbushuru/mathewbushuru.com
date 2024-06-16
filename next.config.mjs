@@ -3,6 +3,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/projects",
+        destination: "/all-projects",
+        permanent: true,
+      },
+      {
         source: "/github",
         destination: "https://github.com/mathewbushuru",
         permanent: true,
