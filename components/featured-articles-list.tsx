@@ -1,17 +1,9 @@
 import Link from "next/link";
 import { CalendarDaysIcon } from "lucide-react";
 
-export const metadata = {
-  title: "Mathew Bushuru | Blog",
-};
-
-export default function WritingPage() {
+export const FeaturedArticlesList = () => {
   return (
-    <div>
-      <h1 className="mb-4 mt-3 text-xl font-semibold sm:text-2xl lg:hidden">
-        Writing
-      </h1>
-
+    <>
       <Link href="/writing/soma">
         <div className="group rounded-sm py-4 transition-all duration-300 hover:cursor-pointer hover:bg-popover hover:px-4 hover:shadow-md">
           <h3 className="mb-1 text-lg font-semibold sm:text-xl lg:mb-2">
@@ -28,6 +20,6 @@ export default function WritingPage() {
           </div>
         </div>
       </Link>
-    </div>
+    </>
   );
-}
+};

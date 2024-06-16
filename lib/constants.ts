@@ -53,24 +53,12 @@ export const allProjectItems = [
     ],
   },
   {
-    title: "ProSearchX",
-    ipadPhotoLink: "/mockups/ipad/prosearchx_ipad.png",
-    iphonePhotoLink: "/mockups/iphone/prosearchx_iphone.png",
-    descriptionSectionsArr: [
-      "A wrapper around Google Search, designed specifically for professionals and power users who seek a more efficient and effective way to unlock Google Search capabilities.",
-      "My inspiration for this project is I often find myself modifying initial search queries to obtain more relevant results. For instance, appending 'StackOverflow' to a programming question, or searching for an error in a recent version of a library but getting results from years ago. This tool is designed for people whose work relies heavily on internet research.",
-    ],
-    techStackArr: ["JavaScript", "ReactJS", "Vanilla CSS"],
-    githubLink: "https://github.com/mathewbushuru/ProSearchX",
-    liveLinkArr: [{ linkDesc: null, link: "https://pro-search-x.vercel.app/" }],
-  },
-  {
     title: "Soma Landing Page Redesign",
     ipadPhotoLink: "/mockups/ipad/somaoffline_org_ipad.png",
     iphonePhotoLink: "/mockups/iphone/soma_org_iphone.png",
     descriptionSectionsArr: ["An overhaul of Soma's online presence."],
     techStackArr: ["TypeScript", "ReactJS", "Vite", "TailwindCSS", "Vitest"],
-    githubLink: null,
+    githubLink: "https://github.com/soma-offline",
     liveLinkArr: [
       { linkDesc: "new", link: "https://www.somaoffline.com/" },
       {
@@ -86,6 +74,18 @@ export const allProjectItems = [
         link: "https://somaprototype2.netlify.app/",
       },
     ],
+  },
+  {
+    title: "ProSearchX",
+    ipadPhotoLink: "/mockups/ipad/prosearchx_ipad.png",
+    iphonePhotoLink: "/mockups/iphone/prosearchx_iphone.png",
+    descriptionSectionsArr: [
+      "A wrapper around Google Search, designed specifically for professionals and power users who seek a more efficient and effective way to unlock Google Search capabilities.",
+      "My inspiration for this project is I often find myself modifying initial search queries to obtain more relevant results. For instance, appending 'StackOverflow' to a programming question, or searching for an error in a recent version of a library but getting results from years ago. This tool is designed for people whose work relies heavily on internet research.",
+    ],
+    techStackArr: ["JavaScript", "ReactJS", "Vanilla CSS"],
+    githubLink: "https://github.com/mathewbushuru/ProSearchX",
+    liveLinkArr: [{ linkDesc: null, link: "https://pro-search-x.vercel.app/" }],
   },
   {
     title: "Google Search Clone",
@@ -290,7 +290,7 @@ export const awardItems = [
   },
 ];
 
-export const favoriteProjects = [
+export const featuredProjects = [
   {
     name: "Design System",
     description: "My personal design system",
