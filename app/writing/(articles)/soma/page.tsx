@@ -2,8 +2,8 @@ import Link from "next/link";
 import { CalendarDaysIcon } from "lucide-react";
 
 export const metadata = {
-    title: "Mathew Bushuru | Blog - Soma",
-  };
+  title: "Mathew Bushuru | Blog - Soma",
+};
 
 export default function ArticleContentPage() {
   return (
