@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CalendarDaysIcon } from "lucide-react";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -6,11 +7,11 @@ export const metadata = {
   title: "Mathew Bushuru | Blog - Drag and Drop",
 };
 
-const _blogMetadata = {
+const blogMetadata = {
   published: false,
-  publishDate: null,
+  publishDate: "June 20, 2024",
   startedWorkingOnDate: "06/17/2024",
-  lastModifiedDate: "06/19/2024",
+  lastModifiedDate: "06/20/2024",
 };
 
 export default function ArticleContentPage() {
@@ -22,13 +23,13 @@ export default function ArticleContentPage() {
         </h3>
         <div className="mb-1 flex items-center text-sm text-muted-foreground/75 lg:mb-2">
           <CalendarDaysIcon className="mr-2 h-4 w-4" />
-          June 17, 2024
+          {blogMetadata.publishDate}
         </div>
 
         <div className="flex flex-col gap-2 leading-7 lg:gap-4">
           <p>
             In a typical drag and drop application, each draggable item stores
-            information about its position in the list. When the item, is
+            information about its position in the list. When the item is
             dragged, this information changes. A challenge that arises when
             working with such systems is figuring out the best way to store this
             information in the database in an efficient way. In this article, we
@@ -48,7 +49,7 @@ export default function ArticleContentPage() {
             shown below:
           </p>
 
-          <Tabs defaultValue="App.tsx">
+          <Tabs defaultValue="App.tsx" key={1}>
             <TabsList>
               <TabsTrigger value="App.tsx">App.tsx</TabsTrigger>
               <TabsTrigger value="chessboard.tsx">
@@ -87,6 +88,90 @@ export default function ArticleContentPage() {
               </code>
             </TabsContent>
           </Tabs>
+
+          <p>
+            We will then create a helper function that renders all the 64
+            squares of the chessboard. This function is called by the Chessboard
+            component to create all the square components that are then rendered
+            on a 500px by 500px grid (320px by 320px on mobile). Another minor
+            styling improvement will be centering the Chessboard on the page in
+            the App component.
+          </p>
+
+          <Tabs defaultValue="chessboard.tsx" key={2}>
+            <TabsList>
+              <TabsTrigger value="App.tsx">App.tsx</TabsTrigger>
+              <TabsTrigger value="chessboard.tsx">
+                components/chessboard.tsx
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent
+              value="App.tsx"
+              className="rounded-md bg-muted p-3 text-sm overflow-x-auto"
+            >
+              <code>
+                <pre className="opacity-60">{`import Chessboard from "@/components/chessboard";`}</pre>
+                <pre className="opacity-60">&nbsp;</pre>
+                <pre className="opacity-60">{`export default function App() {`}</pre>
+                <pre className="opacity-60">&nbsp;&nbsp;{`return (`}</pre>
+                <pre>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  {`<div className="py-20 flex justify-center">`}
+                </pre>
+                <pre className="opacity-60">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{`<Chessboard />`}
+                </pre>
+                <pre className="opacity-60">
+                  &nbsp;&nbsp;&nbsp;&nbsp;{`</div>`}
+                </pre>
+                <pre className="opacity-60">&nbsp;&nbsp;{`);`}</pre>
+                <pre className="opacity-60">{`}`}</pre>
+              </code>
+            </TabsContent>
+            <TabsContent
+              value="chessboard.tsx"
+              className="rounded-md bg-muted p-3 text-sm overflow-x-auto"
+            >
+              <code>
+                <pre>{`function renderSquares() {`}</pre>
+                <pre>&nbsp;&nbsp;{`const squares = [];`}</pre>
+                <pre>&nbsp;</pre>
+                <pre>&nbsp;&nbsp;{`for (let row = 0; row < 8; row++) {`}</pre>
+                <pre>&nbsp;&nbsp;&nbsp;&nbsp;{`for (let col = 0; col < 8; col++) {`}</pre>
+                <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{`squares.push(`}</pre>
+                <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'<div className="text-xs" key={`${row}${col}`}>'}</pre>
+                <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'{row},{col}'}</pre>
+                <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'</div>'}</pre>
+                <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{');'}</pre>
+                <pre>&nbsp;&nbsp;&nbsp;&nbsp;{'}'}</pre>
+                <pre>&nbsp;&nbsp;{'}'}</pre>
+                <pre>&nbsp;</pre>
+                <pre>&nbsp;&nbsp;{'return squares;'}</pre>
+                <pre>{'}'}</pre>
+                <pre>&nbsp;</pre>
+                <pre className="opacity-60">{`export default function Chessboard() {`}</pre>
+                <pre>&nbsp;&nbsp;{`const boardSquares = renderSquares();`}</pre>
+                <pre>&nbsp;&nbsp;{`return (`}</pre>
+                <pre>&nbsp;&nbsp;&nbsp;&nbsp;{`<div className="grid h-80 w-80 grid-cols-8 grid-rows-8 sm:h-[500px] sm:w-[500px]">`}</pre>
+                <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{`{boardSquares}`}</pre>
+                <pre>&nbsp;&nbsp;&nbsp;&nbsp;{`</div>`}</pre>
+                <pre>&nbsp;&nbsp;{`);`}</pre>
+                <pre className="opacity-60">{`}`}</pre>
+              </code>
+            </TabsContent>
+          </Tabs>
+
+          <p>
+            After adding this, this is how the app looks like:
+          </p>
+
+          <Image  
+            src="/writing/drag-and-drop/progress-1.jpg"
+            alt="Chessboard  at start"
+            width={500}
+            height={500}
+            className="rounded-md shadow-md"
+          />
         </div>
       </div>
     </>
