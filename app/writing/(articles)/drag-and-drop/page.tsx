@@ -8,7 +8,7 @@ const _blogMetadata = {
   published: false,
   publishDate: null,
   startedWorkingOnDate: "06/17/2024",
-  lastModifiedDate: "06/18/2024",
+  lastModifiedDate: "06/19/2024",
 };
 
 export default function ArticleContentPage() {
@@ -16,7 +16,7 @@ export default function ArticleContentPage() {
     <>
       <div className="p-4 pb-8">
         <h3 className="mb-1 text-xl font-semibold sm:text-2xl lg:mb-2">
-          Drag and Drop Applications using Database as Source of Truth
+          Full-Stack Drag and Drop Applications, and Chess.
         </h3>
         <div className="mb-1 flex items-center text-sm text-muted-foreground/75 lg:mb-2">
           <CalendarDaysIcon className="mr-2 h-4 w-4" />
@@ -35,7 +35,7 @@ export default function ArticleContentPage() {
             database to persist the drag information.
           </p>
 
-          <h5 className="mb-1 text-lg font-semibold sm:text-xl lg:mb-2">
+          <h5 className="mb-0.5 text-lg font-semibold sm:text-xl lg:mb-1">
             Fully clientside approach
           </h5>
 
@@ -45,11 +45,11 @@ export default function ArticleContentPage() {
               href="https://github.com/atlassian/pragmatic-drag-and-drop"
               target="_blank"
               rel="noopener noreferrer"
+              className="text-link hover:underline hover:underline-offset-4"
             >
               Pragmatic Drag and Drop
             </a>{" "}
-            from Atlassian. This is the React library powering drag and drop in
-            Trello, Jira and Confluence today. The example we'll be creating
+            from Atlassian. The example we'll be creating
             here is a chess board with only a king and a pawn. The goal is to be
             able to drag the pieces across the cells in the board.
           </p>
