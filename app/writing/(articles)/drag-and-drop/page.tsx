@@ -1,5 +1,7 @@
 import { CalendarDaysIcon } from "lucide-react";
 
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
 export const metadata = {
   title: "Mathew Bushuru | Blog - Drag and Drop",
 };
@@ -29,7 +31,7 @@ export default function ArticleContentPage() {
             information about its position in the list. When the item, is
             dragged, this information changes. A challenge that arises when
             working with such systems is figuring out the best way to store this
-            information in a database in an efficient way. In this article, we
+            information in the database in an efficient way. In this article, we
             will explore the different ways to handle this starting from a
             completely clientside approach then introducing a server and
             database to persist the drag information.
@@ -40,20 +42,51 @@ export default function ArticleContentPage() {
           </h5>
 
           <p>
-            This is a React application using{" "}
-            <a
-              href="https://github.com/atlassian/pragmatic-drag-and-drop"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-link hover:underline hover:underline-offset-4"
-            >
-              Pragmatic Drag and Drop
-            </a>{" "}
-            from Atlassian. The example we'll be creating here is a chess board
-            with only a king and a pawn. The goal is to be able to drag the
-            pieces across the cells in the board. We will using TailwindCSS for
-            styling. The starting code is shown below:
+            To serve as an example, we will be building a Chess application
+            using React that will allow the player to drag pieces across the
+            board. We'll be using TailwindCSS for styling. The starting code is
+            shown below:
           </p>
+
+          <Tabs defaultValue="App.tsx">
+            <TabsList>
+              <TabsTrigger value="App.tsx">App.tsx</TabsTrigger>
+              <TabsTrigger value="chessboard.tsx">
+                components/chessboard.tsx
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent
+              value="App.tsx"
+              className="rounded-md bg-muted p-3 text-sm"
+            >
+              <code>
+                <pre>{`import Chessboard from "@/components/chessboard";`}</pre>
+                <pre>&nbsp;</pre>
+                <pre>{`export default function App() {`}</pre>
+                <pre>&nbsp;&nbsp;{`return (`}</pre>
+                <pre>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  {`<div>`}
+                </pre>
+                <pre>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{`<Chessboard />`}
+                </pre>
+                <pre>&nbsp;&nbsp;&nbsp;&nbsp;{`</div>`}</pre>
+                <pre>&nbsp;&nbsp;{`);`}</pre>
+                <pre>{`}`}</pre>
+              </code>
+            </TabsContent>
+            <TabsContent
+              value="chessboard.tsx"
+              className="rounded-md bg-muted p-3 text-sm"
+            >
+              <code>
+                <pre>{`export default function Chessboard() {`}</pre>
+                <pre>&nbsp;&nbsp;{`return <>Chessboard</>;`}</pre>
+                <pre>{`}`}</pre>
+              </code>
+            </TabsContent>
+          </Tabs>
         </div>
       </div>
     </>
