@@ -49,9 +49,10 @@ export default function ArticleContentPage() {
             >
               Pragmatic Drag and Drop
             </a>{" "}
-            from Atlassian. The example we'll be creating
-            here is a chess board with only a king and a pawn. The goal is to be
-            able to drag the pieces across the cells in the board.
+            from Atlassian. The example we'll be creating here is a chess board
+            with only a king and a pawn. The goal is to be able to drag the
+            pieces across the cells in the board. We will using TailwindCSS for
+            styling. The starting code is shown below:
           </p>
         </div>
       </div>
