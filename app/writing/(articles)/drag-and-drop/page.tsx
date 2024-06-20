@@ -2,6 +2,7 @@ import Image from "next/image";
 import { CalendarDaysIcon } from "lucide-react";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { cn } from "@/lib/utils";
 
 export const metadata = {
   title: "Mathew Bushuru | Blog - Drag and Drop",
@@ -58,7 +59,7 @@ export default function ArticleContentPage() {
             </TabsList>
             <TabsContent
               value="App.tsx"
-              className="rounded-md bg-muted p-3 text-sm"
+              className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
             >
               <code>
                 <pre>{`import Chessboard from "@/components/chessboard";`}</pre>
@@ -79,7 +80,7 @@ export default function ArticleContentPage() {
             </TabsContent>
             <TabsContent
               value="chessboard.tsx"
-              className="rounded-md bg-muted p-3 text-sm"
+              className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
             >
               <code>
                 <pre>{`export default function Chessboard() {`}</pre>
@@ -107,53 +108,66 @@ export default function ArticleContentPage() {
             </TabsList>
             <TabsContent
               value="App.tsx"
-              className="rounded-md bg-muted p-3 text-sm overflow-x-auto"
+              className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
             >
               <code>
-                <pre className="opacity-60">{`import Chessboard from "@/components/chessboard";`}</pre>
-                <pre className="opacity-60">&nbsp;</pre>
-                <pre className="opacity-60">{`export default function App() {`}</pre>
-                <pre className="opacity-60">&nbsp;&nbsp;{`return (`}</pre>
-                <pre>
-                  &nbsp;&nbsp;&nbsp;&nbsp;
-                  {`<div className="py-20 flex justify-center">`}
-                </pre>
-                <pre className="opacity-60">
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{`<Chessboard />`}
-                </pre>
-                <pre className="opacity-60">
-                  &nbsp;&nbsp;&nbsp;&nbsp;{`</div>`}
-                </pre>
-                <pre className="opacity-60">&nbsp;&nbsp;{`);`}</pre>
-                <pre className="opacity-60">{`}`}</pre>
+                <CodeLine notChanged>
+                  import Chessboard from "@/components/chessboard";
+                </CodeLine>
+                <CodeLine notChanged>&nbsp;</CodeLine>
+                <CodeLine
+                  notChanged
+                >{`export default function App() {`}</CodeLine>
+                <CodeLine notChanged inset={1}>{`return  (`}</CodeLine>
+                <CodeLine inset={2}>{`<div className="py-20 flex justify-center">`}</CodeLine>
+                <CodeLine notChanged inset={3}>{`<Chessboard />`}</CodeLine> 
+                <CodeLine notChanged inset={2}>{`</div>`}</CodeLine>  
+                <CodeLine notChanged inset={1}>{`);`}</CodeLine>  
+                <CodeLine>{`}`}</CodeLine>
               </code>
             </TabsContent>
             <TabsContent
               value="chessboard.tsx"
-              className="rounded-md bg-muted p-3 text-sm overflow-x-auto"
+              className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
             >
               <code>
                 <pre>{`function renderSquares() {`}</pre>
                 <pre>&nbsp;&nbsp;{`const squares = [];`}</pre>
                 <pre>&nbsp;</pre>
                 <pre>&nbsp;&nbsp;{`for (let row = 0; row < 8; row++) {`}</pre>
-                <pre>&nbsp;&nbsp;&nbsp;&nbsp;{`for (let col = 0; col < 8; col++) {`}</pre>
+                <pre>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  {`for (let col = 0; col < 8; col++) {`}
+                </pre>
                 <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{`squares.push(`}</pre>
-                <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'<div className="text-xs" key={`${row}${col}`}>'}</pre>
-                <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'{row},{col}'}</pre>
-                <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'</div>'}</pre>
-                <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{');'}</pre>
-                <pre>&nbsp;&nbsp;&nbsp;&nbsp;{'}'}</pre>
-                <pre>&nbsp;&nbsp;{'}'}</pre>
+                <pre>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  {'<div className="text-xs" key={`${row}${col}`}>'}
+                </pre>
+                <pre>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  {"{row},{col}"}
+                </pre>
+                <pre>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{"</div>"}
+                </pre>
+                <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{");"}</pre>
+                <pre>&nbsp;&nbsp;&nbsp;&nbsp;{"}"}</pre>
+                <pre>&nbsp;&nbsp;{"}"}</pre>
                 <pre>&nbsp;</pre>
-                <pre>&nbsp;&nbsp;{'return squares;'}</pre>
-                <pre>{'}'}</pre>
+                <pre>&nbsp;&nbsp;{"return squares;"}</pre>
+                <pre>{"}"}</pre>
                 <pre>&nbsp;</pre>
                 <pre className="opacity-60">{`export default function Chessboard() {`}</pre>
                 <pre>&nbsp;&nbsp;{`const boardSquares = renderSquares();`}</pre>
                 <pre>&nbsp;&nbsp;{`return (`}</pre>
-                <pre>&nbsp;&nbsp;&nbsp;&nbsp;{`<div className="grid h-80 w-80 grid-cols-8 grid-rows-8 sm:h-[500px] sm:w-[500px]">`}</pre>
-                <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{`{boardSquares}`}</pre>
+                <pre>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  {`<div className="grid h-80 w-80 grid-cols-8 grid-rows-8 sm:h-[500px] sm:w-[500px]">`}
+                </pre>
+                <pre>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{`{boardSquares}`}
+                </pre>
                 <pre>&nbsp;&nbsp;&nbsp;&nbsp;{`</div>`}</pre>
                 <pre>&nbsp;&nbsp;{`);`}</pre>
                 <pre className="opacity-60">{`}`}</pre>
@@ -161,11 +175,9 @@ export default function ArticleContentPage() {
             </TabsContent>
           </Tabs>
 
-          <p>
-            After adding this, this is how the app looks like:
-          </p>
+          <p>After adding this, this is how the app looks like:</p>
 
-          <Image  
+          <Image
             src="/writing/drag-and-drop/progress-1.jpg"
             alt="Chessboard  at start"
             width={500}
@@ -175,5 +187,28 @@ export default function ArticleContentPage() {
         </div>
       </div>
     </>
+  );
+}
+
+function CodeLine({
+  notChanged = false,
+  inset = 0,
+  children,
+}: {
+  inset?: number;
+  notChanged?: boolean;
+  children: React.ReactNode;
+}) {
+  const SPACES_IN_TAB = 2;
+
+  const insetSpaces = new Array(inset * SPACES_IN_TAB)
+    .fill(null)
+    .map((_, index) => <span key={index}>&nbsp;</span>);
+
+  return (
+    <pre className={cn("", notChanged && "opacity-60")}>
+      {...insetSpaces}
+      {children}
+    </pre>
   );
 }
