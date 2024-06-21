@@ -10,7 +10,7 @@ export const metadata = {
 
 const blogMetadata = {
   published: false,
-  publishDate: "June 20, 2024",
+  publishDate: "June 21, 2024",
   startedWorkingOnDate: "06/17/2024",
   lastModifiedDate: "06/20/2024",
 };
@@ -40,7 +40,7 @@ export default function ArticleContentPage() {
           </p>
 
           <h5 className="mb-0.5 text-lg font-semibold sm:text-xl lg:mb-1">
-            Fully clientside approach
+            Clientside Implementation
           </h5>
 
           <p>
@@ -62,20 +62,15 @@ export default function ArticleContentPage() {
               className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
             >
               <code>
-                <pre>{`import Chessboard from "@/components/chessboard";`}</pre>
-                <pre>&nbsp;</pre>
-                <pre>{`export default function App() {`}</pre>
-                <pre>&nbsp;&nbsp;{`return (`}</pre>
-                <pre>
-                  &nbsp;&nbsp;&nbsp;&nbsp;
-                  {`<div>`}
-                </pre>
-                <pre>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{`<Chessboard />`}
-                </pre>
-                <pre>&nbsp;&nbsp;&nbsp;&nbsp;{`</div>`}</pre>
-                <pre>&nbsp;&nbsp;{`);`}</pre>
-                <pre>{`}`}</pre>
+                <CodeLine>{`import Chessboard from "@/components/chessboard";`}</CodeLine>
+                <CodeLine />
+                <CodeLine>{`export default function App() {`}</CodeLine>
+                <CodeLine inset={1}>{`return (`}</CodeLine>
+                <CodeLine inset={2}>{`<div>`}</CodeLine>
+                <CodeLine inset={3}>{`<Chessboard />`}</CodeLine>
+                <CodeLine inset={2}>{`</div>`}</CodeLine>
+                <CodeLine inset={1}>{`);`}</CodeLine>
+                <CodeLine>{`}`}</CodeLine>
               </code>
             </TabsContent>
             <TabsContent
@@ -83,9 +78,9 @@ export default function ArticleContentPage() {
               className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
             >
               <code>
-                <pre>{`export default function Chessboard() {`}</pre>
-                <pre>&nbsp;&nbsp;{`return <>Chessboard</>;`}</pre>
-                <pre>{`}`}</pre>
+                <CodeLine>{`export default function Chessboard() {`}</CodeLine>
+                <CodeLine inset={1}>{`return <>Chessboard</>;`}</CodeLine>
+                <CodeLine>{`}`}</CodeLine>
               </code>
             </TabsContent>
           </Tabs>
@@ -114,15 +109,17 @@ export default function ArticleContentPage() {
                 <CodeLine notChanged>
                   import Chessboard from "@/components/chessboard";
                 </CodeLine>
-                <CodeLine notChanged>&nbsp;</CodeLine>
-                <CodeLine
-                  notChanged
-                >{`export default function App() {`}</CodeLine>
-                <CodeLine notChanged inset={1}>{`return  (`}</CodeLine>
-                <CodeLine inset={2}>{`<div className="py-20 flex justify-center">`}</CodeLine>
-                <CodeLine notChanged inset={3}>{`<Chessboard />`}</CodeLine> 
-                <CodeLine notChanged inset={2}>{`</div>`}</CodeLine>  
-                <CodeLine notChanged inset={1}>{`);`}</CodeLine>  
+                <CodeLine notChanged />
+                <CodeLine notChanged>
+                  {`export default function App() {`}
+                </CodeLine>
+                <CodeLine inset={1} notChanged>{`return  (`}</CodeLine>
+                <CodeLine inset={2}>
+                  {`<div className="py-20 flex justify-center">`}
+                </CodeLine>
+                <CodeLine inset={3} notChanged>{`<Chessboard />`}</CodeLine>
+                <CodeLine inset={2} notChanged>{`</div>`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`);`}</CodeLine>
                 <CodeLine>{`}`}</CodeLine>
               </code>
             </TabsContent>
@@ -131,46 +128,42 @@ export default function ArticleContentPage() {
               className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
             >
               <code>
-                <pre>{`function renderSquares() {`}</pre>
-                <pre>&nbsp;&nbsp;{`const squares = [];`}</pre>
-                <pre>&nbsp;</pre>
-                <pre>&nbsp;&nbsp;{`for (let row = 0; row < 8; row++) {`}</pre>
-                <pre>
-                  &nbsp;&nbsp;&nbsp;&nbsp;
+                <CodeLine>{`function renderSquares() {`}</CodeLine>
+                <CodeLine inset={1}>{`const squares = [];`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={1}>
+                  {`for (let row = 0; row < 8; row++) {`}
+                </CodeLine>
+                <CodeLine inset={2}>
                   {`for (let col = 0; col < 8; col++) {`}
-                </pre>
-                <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{`squares.push(`}</pre>
-                <pre>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </CodeLine>
+                <CodeLine inset={3}>{`squares.push(`}</CodeLine>
+                <CodeLine inset={4}>
                   {'<div className="text-xs" key={`${row}${col}`}>'}
-                </pre>
-                <pre>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  {"{row},{col}"}
-                </pre>
-                <pre>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{"</div>"}
-                </pre>
-                <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{");"}</pre>
-                <pre>&nbsp;&nbsp;&nbsp;&nbsp;{"}"}</pre>
-                <pre>&nbsp;&nbsp;{"}"}</pre>
-                <pre>&nbsp;</pre>
-                <pre>&nbsp;&nbsp;{"return squares;"}</pre>
-                <pre>{"}"}</pre>
-                <pre>&nbsp;</pre>
-                <pre className="opacity-60">{`export default function Chessboard() {`}</pre>
-                <pre>&nbsp;&nbsp;{`const boardSquares = renderSquares();`}</pre>
-                <pre>&nbsp;&nbsp;{`return (`}</pre>
-                <pre>
-                  &nbsp;&nbsp;&nbsp;&nbsp;
+                </CodeLine>
+                <CodeLine inset={5}>{"{row},{col}"}</CodeLine>
+                <CodeLine inset={4}>{"</div>"}</CodeLine>
+                <CodeLine inset={3}>{");"}</CodeLine>
+                <CodeLine inset={2}>{"}"}</CodeLine>
+                <CodeLine inset={1}>{"}"}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={1}>{"return squares;"}</CodeLine>
+                <CodeLine>{"}"}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  notChanged
+                >{`export default function Chessboard() {`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                >{`const boardSquares = renderSquares();`}</CodeLine>
+                <CodeLine inset={1}>{`return (`}</CodeLine>
+                <CodeLine inset={2}>
                   {`<div className="grid h-80 w-80 grid-cols-8 grid-rows-8 sm:h-[500px] sm:w-[500px]">`}
-                </pre>
-                <pre>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{`{boardSquares}`}
-                </pre>
-                <pre>&nbsp;&nbsp;&nbsp;&nbsp;{`</div>`}</pre>
-                <pre>&nbsp;&nbsp;{`);`}</pre>
-                <pre className="opacity-60">{`}`}</pre>
+                </CodeLine>
+                <CodeLine inset={3}>{`{boardSquares}`}</CodeLine>
+                <CodeLine inset={2}>{`</div>`}</CodeLine>
+                <CodeLine inset={1}>{`);`}</CodeLine>
+                <CodeLine notChanged>{`}`}</CodeLine>
               </code>
             </TabsContent>
           </Tabs>
@@ -197,7 +190,7 @@ function CodeLine({
 }: {
   inset?: number;
   notChanged?: boolean;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }) {
   const SPACES_IN_TAB = 2;
 
@@ -207,8 +200,14 @@ function CodeLine({
 
   return (
     <pre className={cn("", notChanged && "opacity-60")}>
-      {...insetSpaces}
-      {children}
+      {children ? (
+        <>
+          {...insetSpaces}
+          {children}
+        </>
+      ) : (
+        <>&nbsp;</>
+      )}
     </pre>
   );
 }
