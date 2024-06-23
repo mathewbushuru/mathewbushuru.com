@@ -178,9 +178,10 @@ export default function ArticleContentPage() {
 
           <p>
             Next we will add altenating dark and light squares to the
-            chessboard. We will be using a helper function called{" "}
-            <code>cn</code> that uses Tailwind-merge and Clsx to conditionally
-            apply tailwind classes when the square is dark.
+            chessboard. We will be using a helper function (
+            <code className="font-mono">cn</code>) that uses Tailwind-merge and
+            Clsx to conditionally apply tailwind classes when the square is
+            dark.
           </p>
 
           <Tabs defaultValue="chessboard.tsx" key={3}>
@@ -245,7 +246,9 @@ export default function ArticleContentPage() {
                 <CodeLine inset={1}>{`return (`}</CodeLine>
                 <CodeLine inset={2}>{`<div`}</CodeLine>
                 <CodeLine inset={3}>{`className={cn(`}</CodeLine>
-                <CodeLine inset={4}>{`"flex items-center justify-center",`}</CodeLine>
+                <CodeLine
+                  inset={4}
+                >{`"flex items-center justify-center",`}</CodeLine>
                 <CodeLine inset={4}>{`isDark && "bg-gray-200",`}</CodeLine>
                 <CodeLine inset={3}>{` )}`}</CodeLine>
                 <CodeLine inset={2}>{`>`}</CodeLine>
@@ -268,14 +271,12 @@ export default function ArticleContentPage() {
                 </CodeLine>
                 <CodeLine inset={3} notChanged>{`squares.push(`}</CodeLine>
                 <CodeLine inset={4}>
-                  {'<Square isDark={(row + col) % 2 === 1}>'}
+                  {"<Square isDark={(row + col) % 2 === 1}>"}
                 </CodeLine>
                 <CodeLine inset={5} notChanged>
                   {"{row},{col}"}
                 </CodeLine>
-                <CodeLine inset={4}>
-                  {"</Square>"}
-                </CodeLine>
+                <CodeLine inset={4}>{"</Square>"}</CodeLine>
                 <CodeLine inset={3} notChanged>
                   {");"}
                 </CodeLine>
@@ -312,6 +313,214 @@ export default function ArticleContentPage() {
 
           <Image
             src="/writing/drag-and-drop/progress-2.jpg"
+            alt="Chessboard  at start"
+            width={500}
+            height={500}
+            className="rounded-md shadow-md"
+          />
+
+          <p>
+            We will be maintaining the positional data of the chess pieces in
+            the <code className="font-mono">Chessboard</code> component. We pass
+            down this data to the{" "}
+            <code className="font-mono">renderSquares</code> function which uses
+            it to add chess piece icons to the relevant squares. To simplify
+            this, we create a lookup table that returns a{" "}
+            <code className="font-mono">Piece</code> component that has the
+            relevant icon image.
+          </p>
+
+          <Tabs defaultValue="chessboard.tsx" key={4}>
+            <TabsList>
+              <TabsTrigger value="App.tsx">App.tsx</TabsTrigger>
+              <TabsTrigger value="utils.tsx">lib/utils.tsx</TabsTrigger>
+              <TabsTrigger value="chessboard.tsx">
+                components/chessboard.tsx
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent
+              value="App.tsx"
+              className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
+            >
+              <code>
+                <CodeLine notChanged>
+                  import Chessboard from "@/components/chessboard";
+                </CodeLine>
+                <CodeLine notChanged />
+                <CodeLine notChanged>
+                  {`export default function App() {`}
+                </CodeLine>
+                <CodeLine inset={1} notChanged>{`return  (`}</CodeLine>
+                <CodeLine inset={2} notChanged>
+                  {`<div className="py-20 flex justify-center">`}
+                </CodeLine>
+                <CodeLine inset={3} notChanged>{`<Chessboard />`}</CodeLine>
+                <CodeLine inset={2} notChanged>{`</div>`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`);`}</CodeLine>
+                <CodeLine notChanged>{`}`}</CodeLine>
+              </code>
+            </TabsContent>
+            <TabsContent
+              value="utils.tsx"
+              className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
+            >
+              <code>
+                <CodeLine
+                  notChanged
+                >{`import { clsx, type ClassValue } from "clsx"`}</CodeLine>
+                <CodeLine
+                  notChanged
+                >{`import { twMerge } from "tailwind-merge"`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  notChanged
+                >{`export function cn(...inputs: ClassValue[]) {`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                  notChanged
+                >{`return twMerge(clsx(inputs))`}</CodeLine>
+                <CodeLine notChanged>{`}`}</CodeLine>
+              </code>
+            </TabsContent>
+            <TabsContent
+              value="chessboard.tsx"
+              className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
+            >
+              <code>
+                <CodeLine>
+                  {`import { type ReactElement, type ReactNode } from "react";`}
+                </CodeLine>
+                <CodeLine />
+                <CodeLine
+                  notChanged
+                >{`import { cn } from "@/lib/utils";`}</CodeLine>
+                <CodeLine />
+                <CodeLine>{`function Piece({ imageSrc, alt }: { imageSrc: string; alt: string }) {`}</CodeLine>
+                <CodeLine inset={1}>{`return <img src={imageSrc} alt={alt} className="h-11 w-11" />;`}</CodeLine>
+                <CodeLine>{`}`}</CodeLine>
+                <CodeLine />
+                <CodeLine>{`type TPieceName = "king" | "pawn";`}</CodeLine>
+                <CodeLine />
+                <CodeLine>{`const pieceComponentLookup: {`}</CodeLine>
+                <CodeLine inset={1}>{`[Key in TPieceName]: () => ReactElement;`}</CodeLine>
+                <CodeLine>{`} = {`}</CodeLine>
+                <CodeLine inset={1}>{`king: () => <Piece imageSrc="/icons/king.png" alt="King" />,`}</CodeLine>
+                <CodeLine inset={1}>{`pawn: () => <Piece imageSrc="/icons/pawn.png" alt="Pawn" />,`}</CodeLine>
+                <CodeLine>{`};`}</CodeLine>
+                <CodeLine />
+                <CodeLine>{`type TCoordsArr = [number, number];`}</CodeLine>
+                <CodeLine />
+                <CodeLine>{`type TPieceData = {`}</CodeLine>
+                <CodeLine inset={1}>{`name: TPieceName;`}</CodeLine>
+                <CodeLine inset={1}>{`coords: TCoordsArr;`}</CodeLine>
+                <CodeLine>{`};`}</CodeLine>
+                <CodeLine />
+                <CodeLine>{`function areCoordsEqual(c1: TCoordsArr, c2: TCoordsArr) {`}</CodeLine>
+                <CodeLine inset={1}>{`return c1[0] === c2[0] && c1[1] === c2[1];`}</CodeLine>
+                <CodeLine>{`}`}</CodeLine>
+                <CodeLine />
+                <CodeLine notChanged>{`function Square({`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`isDark,`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`children,`}</CodeLine>
+                <CodeLine notChanged>{`}: {`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`isDark: boolean;`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                  notChanged
+                >{`children: ReactNode;`}</CodeLine>
+                <CodeLine notChanged>{`}) {`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`return (`}</CodeLine>
+                <CodeLine inset={2} notChanged>{`<div`}</CodeLine>
+                <CodeLine inset={3} notChanged>{`className={cn(`}</CodeLine>
+                <CodeLine
+                  inset={4}
+                  notChanged
+                >{`"flex items-center justify-center",`}</CodeLine>
+                <CodeLine
+                  inset={4}
+                  notChanged
+                >{`isDark && "bg-gray-200",`}</CodeLine>
+                <CodeLine inset={3} notChanged>{` )}`}</CodeLine>
+                <CodeLine inset={2} notChanged>{`>`}</CodeLine>
+                <CodeLine inset={3} notChanged>{`{children}`}</CodeLine>
+                <CodeLine inset={2} notChanged>{`</div>`}</CodeLine>
+                <CodeLine inset={2} notChanged>{`);`}</CodeLine>
+                <CodeLine notChanged> {`}`}</CodeLine>
+                <CodeLine />
+                <CodeLine>{`function renderSquares(allPiecesData: TPieceData[]) {`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                  notChanged
+                >{`const squares = [];`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={1} notChanged>
+                  {`for (let row = 0; row < 8; row++) {`}
+                </CodeLine>
+                <CodeLine inset={2} notChanged>
+                  {`for (let col = 0; col < 8; col++) {`}
+                </CodeLine>
+                <CodeLine inset={3}>{`const currCoordsArr: TCoordsArr = [row, col];`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={3}>{`const pieceInThisCoord = allPiecesData.find((pieceData) =>`}</CodeLine>
+                <CodeLine inset={4}>{`areCoordsEqual(currCoordsArr, pieceData.coords),`}</CodeLine>
+                <CodeLine inset={3}>{`);`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={3}>{`let ComponentToRender;`}</CodeLine>
+                <CodeLine inset={3}>{`if (pieceInThisCoord) {`}</CodeLine>
+                <CodeLine inset={4}>{`ComponentToRender = pieceComponentLookup[pieceInThisCoord.name];`}</CodeLine>
+                <CodeLine inset={4}>{`squares.push(`}</CodeLine>
+                <CodeLine inset={5}>{'<Square isDark={(row + col) % 2 === 1} key={`${row}${col}`}>'}</CodeLine>
+                <CodeLine inset={6}>{`<ComponentToRender />`}</CodeLine>
+                <CodeLine inset={5}>{`</Square>,`}</CodeLine>
+                <CodeLine inset={4}>{`);`}</CodeLine>
+                <CodeLine inset={3}>{`} else {`}</CodeLine>
+                <CodeLine inset={4}>{`ComponentToRender = () => <>&nbsp;</>;`}</CodeLine>
+                <CodeLine inset={4}>{`squares.push(`}</CodeLine>
+                <CodeLine inset={5}>{'<Square isDark={(row + col) % 2 === 1} key={`${row}${col}`}>'}</CodeLine>
+                <CodeLine inset={6}>{`<ComponentToRender />`}</CodeLine>
+                <CodeLine inset={5}>{`</Square>,`}</CodeLine>
+                <CodeLine inset={4}>{`);`}</CodeLine>
+                <CodeLine inset={3}>{`}`}</CodeLine>
+                <CodeLine inset={2} notChanged>
+                  {"}"}
+                </CodeLine>
+                <CodeLine inset={1} notChanged>
+                  {"}"}
+                </CodeLine>
+                <CodeLine />
+                <CodeLine inset={1} notChanged>
+                  {"return squares;"}
+                </CodeLine>
+                <CodeLine notChanged>{"}"}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  notChanged
+                >{`export default function Chessboard() {`}</CodeLine>
+                <CodeLine inset={1}>{`const allPiecesData: TPieceData[] = [`}</CodeLine>
+                <CodeLine inset={2}>{`{ name: "king", coords: [3, 2] },`}</CodeLine>
+                <CodeLine inset={2}>{`{ name: "pawn", coords: [1, 6] },`}</CodeLine>
+                <CodeLine inset={1}>{`];`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={1}>{``}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  inset={1}
+                >{`const boardSquares = renderSquares(allPiecesData);`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={1} notChanged>{`return (`}</CodeLine>
+                <CodeLine inset={2} notChanged>
+                  {`<div className="grid h-80 w-80 grid-cols-8 grid-rows-8 sm:h-[500px] sm:w-[500px]">`}
+                </CodeLine>
+                <CodeLine inset={3} notChanged>{`{boardSquares}`}</CodeLine>
+                <CodeLine inset={2} notChanged>{`</div>`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`);`}</CodeLine>
+                <CodeLine notChanged>{`}`}</CodeLine>
+              </code>
+            </TabsContent>
+          </Tabs>
+
+          <Image
+            src="/writing/drag-and-drop/progress-3.jpg"
             alt="Chessboard  at start"
             width={500}
             height={500}
