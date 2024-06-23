@@ -10,9 +10,9 @@ export const metadata = {
 
 const blogMetadata = {
   published: false,
-  publishDate: "June 21, 2024",
-  startedWorkingOnDate: "06/17/2024",
-  lastModifiedDate: "06/20/2024",
+  publishDate: "June 22, 2024",
+  startedWorkingOnDate: "June 17, 2024",
+  lastModifiedDate: "June 22, 2024",
 };
 
 export default function ArticleContentPage() {
@@ -89,9 +89,7 @@ export default function ArticleContentPage() {
             We will then create a helper function that renders all the 64
             squares of the chessboard. This function is called by the Chessboard
             component to create all the square components that are then rendered
-            on a 500px by 500px grid (320px by 320px on mobile). Another minor
-            styling improvement will be centering the Chessboard on the page in
-            the App component.
+            on a 500px by 500px grid (320px by 320px on mobile).
           </p>
 
           <Tabs defaultValue="chessboard.tsx" key={2}>
@@ -120,7 +118,7 @@ export default function ArticleContentPage() {
                 <CodeLine inset={3} notChanged>{`<Chessboard />`}</CodeLine>
                 <CodeLine inset={2} notChanged>{`</div>`}</CodeLine>
                 <CodeLine inset={1} notChanged>{`);`}</CodeLine>
-                <CodeLine>{`}`}</CodeLine>
+                <CodeLine notChanged>{`}`}</CodeLine>
               </code>
             </TabsContent>
             <TabsContent
@@ -172,6 +170,148 @@ export default function ArticleContentPage() {
 
           <Image
             src="/writing/drag-and-drop/progress-1.jpg"
+            alt="Chessboard  at start"
+            width={500}
+            height={500}
+            className="rounded-md shadow-md"
+          />
+
+          <p>
+            Next we will add altenating dark and light squares to the
+            chessboard. We will be using a helper function called{" "}
+            <code>cn</code> that uses Tailwind-merge and Clsx to conditionally
+            apply tailwind classes when the square is dark.
+          </p>
+
+          <Tabs defaultValue="chessboard.tsx" key={3}>
+            <TabsList>
+              <TabsTrigger value="App.tsx">App.tsx</TabsTrigger>
+              <TabsTrigger value="utils.tsx">lib/utils.tsx</TabsTrigger>
+              <TabsTrigger value="chessboard.tsx">
+                components/chessboard.tsx
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent
+              value="App.tsx"
+              className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
+            >
+              <code>
+                <CodeLine notChanged>
+                  import Chessboard from "@/components/chessboard";
+                </CodeLine>
+                <CodeLine notChanged />
+                <CodeLine notChanged>
+                  {`export default function App() {`}
+                </CodeLine>
+                <CodeLine inset={1} notChanged>{`return  (`}</CodeLine>
+                <CodeLine inset={2} notChanged>
+                  {`<div className="py-20 flex justify-center">`}
+                </CodeLine>
+                <CodeLine inset={3} notChanged>{`<Chessboard />`}</CodeLine>
+                <CodeLine inset={2} notChanged>{`</div>`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`);`}</CodeLine>
+                <CodeLine notChanged>{`}`}</CodeLine>
+              </code>
+            </TabsContent>
+            <TabsContent
+              value="utils.tsx"
+              className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
+            >
+              <code>
+                <CodeLine>{`import { clsx, type ClassValue } from "clsx"`}</CodeLine>
+                <CodeLine>{`import { twMerge } from "tailwind-merge"`}</CodeLine>
+                <CodeLine />
+                <CodeLine>{`export function cn(...inputs: ClassValue[]) {`}</CodeLine>
+                <CodeLine inset={1}>{`return twMerge(clsx(inputs))`}</CodeLine>
+                <CodeLine>{`}`}</CodeLine>
+              </code>
+            </TabsContent>
+            <TabsContent
+              value="chessboard.tsx"
+              className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
+            >
+              <code>
+                <CodeLine>{`import { type ReactNode } from "react";`}</CodeLine>
+                <CodeLine />
+                <CodeLine>{`import { cn } from "@/lib/utils";`}</CodeLine>
+                <CodeLine />
+                <CodeLine>{`function Square({`}</CodeLine>
+                <CodeLine inset={1}>{`isDark,`}</CodeLine>
+                <CodeLine inset={1}>{`children,`}</CodeLine>
+                <CodeLine>{`}: {`}</CodeLine>
+                <CodeLine inset={1}>{`isDark: boolean;`}</CodeLine>
+                <CodeLine inset={1}>{`children: ReactNode;`}</CodeLine>
+                <CodeLine>{`}) {`}</CodeLine>
+                <CodeLine inset={1}>{`return (`}</CodeLine>
+                <CodeLine inset={2}>{`<div`}</CodeLine>
+                <CodeLine inset={3}>{`className={cn(`}</CodeLine>
+                <CodeLine inset={4}>{`"flex items-center justify-center",`}</CodeLine>
+                <CodeLine inset={4}>{`isDark && "bg-gray-200",`}</CodeLine>
+                <CodeLine inset={3}>{` )}`}</CodeLine>
+                <CodeLine inset={2}>{`>`}</CodeLine>
+                <CodeLine inset={3}>{`{children}`}</CodeLine>
+                <CodeLine inset={2}>{`</div>`}</CodeLine>
+                <CodeLine inset={2}>{`);`}</CodeLine>
+                <CodeLine> {`}`}</CodeLine>
+                <CodeLine />
+                <CodeLine notChanged>{`function renderSquares() {`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                  notChanged
+                >{`const squares = [];`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={1} notChanged>
+                  {`for (let row = 0; row < 8; row++) {`}
+                </CodeLine>
+                <CodeLine inset={2} notChanged>
+                  {`for (let col = 0; col < 8; col++) {`}
+                </CodeLine>
+                <CodeLine inset={3} notChanged>{`squares.push(`}</CodeLine>
+                <CodeLine inset={4}>
+                  {'<Square isDark={(row + col) % 2 === 1}>'}
+                </CodeLine>
+                <CodeLine inset={5} notChanged>
+                  {"{row},{col}"}
+                </CodeLine>
+                <CodeLine inset={4}>
+                  {"</Square>"}
+                </CodeLine>
+                <CodeLine inset={3} notChanged>
+                  {");"}
+                </CodeLine>
+                <CodeLine inset={2} notChanged>
+                  {"}"}
+                </CodeLine>
+                <CodeLine inset={1} notChanged>
+                  {"}"}
+                </CodeLine>
+                <CodeLine />
+                <CodeLine inset={1} notChanged>
+                  {"return squares;"}
+                </CodeLine>
+                <CodeLine notChanged>{"}"}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  notChanged
+                >{`export default function Chessboard() {`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                  notChanged
+                >{`const boardSquares = renderSquares();`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`return (`}</CodeLine>
+                <CodeLine inset={2} notChanged>
+                  {`<div className="grid h-80 w-80 grid-cols-8 grid-rows-8 sm:h-[500px] sm:w-[500px]">`}
+                </CodeLine>
+                <CodeLine inset={3} notChanged>{`{boardSquares}`}</CodeLine>
+                <CodeLine inset={2} notChanged>{`</div>`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`);`}</CodeLine>
+                <CodeLine notChanged>{`}`}</CodeLine>
+              </code>
+            </TabsContent>
+          </Tabs>
+
+          <Image
+            src="/writing/drag-and-drop/progress-2.jpg"
             alt="Chessboard  at start"
             width={500}
             height={500}
