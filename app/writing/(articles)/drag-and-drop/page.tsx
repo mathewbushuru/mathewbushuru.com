@@ -2,7 +2,7 @@ import Image from "next/image";
 import { CalendarDaysIcon } from "lucide-react";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { cn } from "@/lib/utils";
+import { CodeLine } from "@/components/code-line";
 
 export const metadata = {
   title: "Mathew Bushuru | Blog - Drag and Drop",
@@ -187,9 +187,12 @@ export default function ArticleContentPage() {
           <Tabs defaultValue="chessboard.tsx" key={3}>
             <TabsList>
               <TabsTrigger value="App.tsx">App.tsx</TabsTrigger>
-              <TabsTrigger value="utils.tsx">lib/utils.tsx</TabsTrigger>
+              <TabsTrigger value="utils.tsx">
+                <span className="hidden sm:inline">lib/</span>utils.tsx
+              </TabsTrigger>
               <TabsTrigger value="chessboard.tsx">
-                components/chessboard.tsx
+                <span className="hidden sm:inline">components</span>
+                chessboard.tsx
               </TabsTrigger>
             </TabsList>
             <TabsContent
@@ -333,9 +336,12 @@ export default function ArticleContentPage() {
           <Tabs defaultValue="chessboard.tsx" key={4}>
             <TabsList>
               <TabsTrigger value="App.tsx">App.tsx</TabsTrigger>
-              <TabsTrigger value="utils.tsx">lib/utils.tsx</TabsTrigger>
+              <TabsTrigger value="utils.tsx">
+                <span className="hidden sm:inline">lib/</span>utils.tsx
+              </TabsTrigger>
               <TabsTrigger value="chessboard.tsx">
-                components/chessboard.tsx
+                <span className="hidden sm:inline">components</span>
+                chessboard.tsx
               </TabsTrigger>
             </TabsList>
             <TabsContent
@@ -396,16 +402,24 @@ export default function ArticleContentPage() {
                 >{`import { cn } from "@/lib/utils";`}</CodeLine>
                 <CodeLine />
                 <CodeLine>{`function Piece({ imageSrc, alt }: { imageSrc: string; alt: string }) {`}</CodeLine>
-                <CodeLine inset={1}>{`return <img src={imageSrc} alt={alt} className="h-11 w-11" />;`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                >{`return <img src={imageSrc} alt={alt} className="h-11 w-11" />;`}</CodeLine>
                 <CodeLine>{`}`}</CodeLine>
                 <CodeLine />
                 <CodeLine>{`type TPieceName = "king" | "pawn";`}</CodeLine>
                 <CodeLine />
                 <CodeLine>{`const pieceComponentLookup: {`}</CodeLine>
-                <CodeLine inset={1}>{`[Key in TPieceName]: () => ReactElement;`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                >{`[Key in TPieceName]: () => ReactElement;`}</CodeLine>
                 <CodeLine>{`} = {`}</CodeLine>
-                <CodeLine inset={1}>{`king: () => <Piece imageSrc="/icons/king.png" alt="King" />,`}</CodeLine>
-                <CodeLine inset={1}>{`pawn: () => <Piece imageSrc="/icons/pawn.png" alt="Pawn" />,`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                >{`king: () => <Piece imageSrc="/icons/king.png" alt="King" />,`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                >{`pawn: () => <Piece imageSrc="/icons/pawn.png" alt="Pawn" />,`}</CodeLine>
                 <CodeLine>{`};`}</CodeLine>
                 <CodeLine />
                 <CodeLine>{`type TCoordsArr = [number, number];`}</CodeLine>
@@ -416,7 +430,9 @@ export default function ArticleContentPage() {
                 <CodeLine>{`};`}</CodeLine>
                 <CodeLine />
                 <CodeLine>{`function areCoordsEqual(c1: TCoordsArr, c2: TCoordsArr) {`}</CodeLine>
-                <CodeLine inset={1}>{`return c1[0] === c2[0] && c1[1] === c2[1];`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                >{`return c1[0] === c2[0] && c1[1] === c2[1];`}</CodeLine>
                 <CodeLine>{`}`}</CodeLine>
                 <CodeLine />
                 <CodeLine notChanged>{`function Square({`}</CodeLine>
@@ -459,24 +475,42 @@ export default function ArticleContentPage() {
                 <CodeLine inset={2} notChanged>
                   {`for (let col = 0; col < 8; col++) {`}
                 </CodeLine>
-                <CodeLine inset={3}>{`const currCoordsArr: TCoordsArr = [row, col];`}</CodeLine>
+                <CodeLine
+                  inset={3}
+                >{`const currCoordsArr: TCoordsArr = [row, col];`}</CodeLine>
                 <CodeLine />
-                <CodeLine inset={3}>{`const pieceInThisCoord = allPiecesData.find((pieceData) =>`}</CodeLine>
-                <CodeLine inset={4}>{`areCoordsEqual(currCoordsArr, pieceData.coords),`}</CodeLine>
+                <CodeLine
+                  inset={3}
+                >{`const pieceInThisCoord = allPiecesData.find((pieceData) =>`}</CodeLine>
+                <CodeLine
+                  inset={4}
+                >{`areCoordsEqual(currCoordsArr, pieceData.coords),`}</CodeLine>
                 <CodeLine inset={3}>{`);`}</CodeLine>
                 <CodeLine />
                 <CodeLine inset={3}>{`let ComponentToRender;`}</CodeLine>
                 <CodeLine inset={3}>{`if (pieceInThisCoord) {`}</CodeLine>
-                <CodeLine inset={4}>{`ComponentToRender = pieceComponentLookup[pieceInThisCoord.name];`}</CodeLine>
+                <CodeLine
+                  inset={4}
+                >{`ComponentToRender = pieceComponentLookup[pieceInThisCoord.name];`}</CodeLine>
                 <CodeLine inset={4}>{`squares.push(`}</CodeLine>
-                <CodeLine inset={5}>{'<Square isDark={(row + col) % 2 === 1} key={`${row}${col}`}>'}</CodeLine>
+                <CodeLine inset={5}>
+                  {
+                    "<Square isDark={(row + col) % 2 === 1} key={`${row}${col}`}>"
+                  }
+                </CodeLine>
                 <CodeLine inset={6}>{`<ComponentToRender />`}</CodeLine>
                 <CodeLine inset={5}>{`</Square>,`}</CodeLine>
                 <CodeLine inset={4}>{`);`}</CodeLine>
                 <CodeLine inset={3}>{`} else {`}</CodeLine>
-                <CodeLine inset={4}>{`ComponentToRender = () => <>&nbsp;</>;`}</CodeLine>
+                <CodeLine
+                  inset={4}
+                >{`ComponentToRender = () => <>&nbsp;</>;`}</CodeLine>
                 <CodeLine inset={4}>{`squares.push(`}</CodeLine>
-                <CodeLine inset={5}>{'<Square isDark={(row + col) % 2 === 1} key={`${row}${col}`}>'}</CodeLine>
+                <CodeLine inset={5}>
+                  {
+                    "<Square isDark={(row + col) % 2 === 1} key={`${row}${col}`}>"
+                  }
+                </CodeLine>
                 <CodeLine inset={6}>{`<ComponentToRender />`}</CodeLine>
                 <CodeLine inset={5}>{`</Square>,`}</CodeLine>
                 <CodeLine inset={4}>{`);`}</CodeLine>
@@ -496,12 +530,16 @@ export default function ArticleContentPage() {
                 <CodeLine
                   notChanged
                 >{`export default function Chessboard() {`}</CodeLine>
-                <CodeLine inset={1}>{`const allPiecesData: TPieceData[] = [`}</CodeLine>
-                <CodeLine inset={2}>{`{ name: "king", coords: [3, 2] },`}</CodeLine>
-                <CodeLine inset={2}>{`{ name: "pawn", coords: [1, 6] },`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                >{`const allPiecesData: TPieceData[] = [`}</CodeLine>
+                <CodeLine
+                  inset={2}
+                >{`{ name: "king", coords: [3, 2] },`}</CodeLine>
+                <CodeLine
+                  inset={2}
+                >{`{ name: "pawn", coords: [1, 6] },`}</CodeLine>
                 <CodeLine inset={1}>{`];`}</CodeLine>
-                <CodeLine />
-                <CodeLine inset={1}>{``}</CodeLine>
                 <CodeLine />
                 <CodeLine
                   inset={1}
@@ -526,37 +564,10 @@ export default function ArticleContentPage() {
             height={500}
             className="rounded-md shadow-md"
           />
+
+          <p>[This article is still a work in progress]</p>
         </div>
       </div>
     </>
-  );
-}
-
-function CodeLine({
-  notChanged = false,
-  inset = 0,
-  children,
-}: {
-  inset?: number;
-  notChanged?: boolean;
-  children?: React.ReactNode;
-}) {
-  const SPACES_IN_TAB = 2;
-
-  const insetSpaces = new Array(inset * SPACES_IN_TAB)
-    .fill(null)
-    .map((_, index) => <span key={index}>&nbsp;</span>);
-
-  return (
-    <pre className={cn("", notChanged && "opacity-60")}>
-      {children ? (
-        <>
-          {...insetSpaces}
-          {children}
-        </>
-      ) : (
-        <>&nbsp;</>
-      )}
-    </pre>
   );
 }

@@ -11,11 +11,11 @@ export const FeaturedArticlesList = () => {
           </h3>
           <p className="mb-1 text-muted-foreground group-hover:text-foreground lg:mb-2">
             In a typical drag and drop application, each draggable item stores
-            information about its position...
+            information about its position in the list. When the item is dragged, this...
           </p>
           <div className="flex items-center text-sm text-muted-foreground/75">
             <CalendarDaysIcon className="mr-2 h-4 w-4" />
-            Jun 26, 2024
+            Jun 22, 2024
           </div>
         </div>
       </Link>
