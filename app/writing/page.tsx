@@ -12,7 +12,7 @@ export default function WritingPage() {
         Writing
       </h1>
 
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-1">
         <Link href="/writing/drag-and-drop">
           <div className="group rounded-sm py-4 transition-all duration-300 hover:cursor-pointer hover:bg-popover hover:px-4 hover:shadow-md">
             <h3 className="mb-1 text-lg font-semibold sm:text-xl lg:mb-2">
@@ -25,7 +25,7 @@ export default function WritingPage() {
             </p>
             <div className="flex items-center text-sm text-muted-foreground/75">
               <CalendarDaysIcon className="mr-2 h-4 w-4" />
-              Jun 26, 2024
+              Jun 24, 2024
             </div>
           </div>
         </Link>

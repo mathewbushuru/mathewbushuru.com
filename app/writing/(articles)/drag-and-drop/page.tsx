@@ -340,7 +340,7 @@ export default function ArticleContentPage() {
                 <span className="hidden sm:inline">lib/</span>utils.tsx
               </TabsTrigger>
               <TabsTrigger value="chessboard.tsx">
-                <span className="hidden sm:inline">components</span>
+                <span className="hidden sm:inline">components/</span>
                 chessboard.tsx
               </TabsTrigger>
             </TabsList>
@@ -559,6 +559,113 @@ export default function ArticleContentPage() {
 
           <Image
             src="/writing/drag-and-drop/progress-3.jpg"
+            alt="Chessboard  at start"
+            width={500}
+            height={500}
+            className="rounded-md shadow-md"
+          />
+
+          <p>
+            We will now make our chess board functional by allowing chess pieces
+            to be dragged around. We will be using{" "}
+            <a
+              href="https://github.com/atlassian/pragmatic-drag-and-drop"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-link hover:underline hover:underline-offset-4"
+            >
+              Pragmatic Drag and Drop
+            </a>{" "}
+            from Atlassian for our drag-and-drop functionality. This library
+            provides a <code className="font-mono">Draggable</code> function
+            that we can attach to any HTML element in the page that we want make
+            draggable (the chess icon images in our case). To make the chess
+            piece icon feel like it is being dragged, we will reduce the opacity
+            of the origin element to 40%. To get started run the command below
+            to install the package then add the following code to what we have
+            currently.
+          </p>
+
+          <CodeLine>yarn add @atlaskit/pragmatic-drag-and-drop</CodeLine>
+
+          <Tabs defaultValue="chessboard.tsx" key={5}>
+            <TabsList>
+              <TabsTrigger value="chessboard.tsx">
+                components/chessboard.tsx
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent
+              value="chessboard.tsx"
+              className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
+            >
+              <code>
+                <CodeLine>{`import {`}</CodeLine>
+                <CodeLine> useRef,</CodeLine>
+                <CodeLine> useEffect,</CodeLine>
+                <CodeLine> useState,</CodeLine>
+                <CodeLine> type ReactElement,</CodeLine>
+                <CodeLine> type ReactNode,</CodeLine>
+                <CodeLine>{`} from "react";`}</CodeLine>
+                <CodeLine>{`import { draggable } from "@atlaskit/pragmatic-drag-and-drop/element/adapter";`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  notChanged
+                >{`import { cn } from "@/lib/utils";`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  notChanged
+                >{`function Piece({ imageSrc, alt }: { imageSrc: string; alt: string }) {`}</CodeLine>
+                <CodeLine inset={1}>
+                  {`const pieceRef = useRef<HTMLImageElement | null>(null);`}
+                </CodeLine>
+                <CodeLine inset={1}>
+                  {`const [isDragging, setIsDragging] = useState<boolean>(false);`}
+                </CodeLine>
+                <CodeLine />
+                <CodeLine inset={1}>{`useEffect(() => {`}</CodeLine>
+                <CodeLine inset={2}>const el = pieceRef.current;</CodeLine>
+                <CodeLine />
+                <CodeLine inset={2}>if (el === null) return;</CodeLine>
+                <CodeLine />
+                <CodeLine inset={2}>{`return draggable({`}</CodeLine>
+                <CodeLine inset={3}>element: el,</CodeLine>
+                <CodeLine inset={3}>
+                  {`onDragStart: () => setIsDragging(true),`}
+                </CodeLine>
+                <CodeLine
+                  inset={3}
+                >{`onDrop: () => setIsDragging(false),`}</CodeLine>
+                <CodeLine inset={2}> {`});`}</CodeLine>
+                <CodeLine inset={1}>{`}, []);`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={1}>return (</CodeLine>
+                <CodeLine inset={2}>{`<img`}</CodeLine>
+                <CodeLine inset={3}>{`ref={pieceRef}`}</CodeLine>
+                <CodeLine inset={3}>{`src={imageSrc}`}</CodeLine>
+                <CodeLine inset={3}>{`alt={alt}`}</CodeLine>
+                <CodeLine inset={3}>
+                  {`className={cn("h-11 w-11", isDragging && "opacity-40")}`}
+                </CodeLine>
+                <CodeLine inset={2}>{`/>`}</CodeLine>
+                <CodeLine inset={1}>{`);`}</CodeLine>
+                <CodeLine>{`}`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  notChanged
+                >{`type TPieceName = "king" | "pawn";`}</CodeLine>
+                <CodeLine />
+                <CodeLine notChanged>{`// ...`}</CodeLine>
+              </code>
+            </TabsContent>
+          </Tabs>
+
+          <p>
+            As shown below, we can now drag the individual chess pieces and the
+            squares they were dragged from fades.
+          </p>
+
+          <Image
+            src="/writing/drag-and-drop/progress-4.jpg"
             alt="Chessboard  at start"
             width={500}
             height={500}
