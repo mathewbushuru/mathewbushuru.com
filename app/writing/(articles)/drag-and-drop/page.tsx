@@ -316,7 +316,7 @@ export default function ArticleContentPage() {
 
           <Image
             src="/writing/drag-and-drop/progress-2.jpg"
-            alt="Chessboard  at start"
+            alt="Chessboard"
             width={500}
             height={500}
             className="rounded-md shadow-md"
@@ -559,7 +559,7 @@ export default function ArticleContentPage() {
 
           <Image
             src="/writing/drag-and-drop/progress-3.jpg"
-            alt="Chessboard  at start"
+            alt="Chessboard"
             width={500}
             height={500}
             className="rounded-md shadow-md"
@@ -567,22 +567,14 @@ export default function ArticleContentPage() {
 
           <p>
             We will now make our chess board functional by allowing chess pieces
-            to be dragged around. We will be using{" "}
-            <a
-              href="https://github.com/atlassian/pragmatic-drag-and-drop"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-link hover:underline hover:underline-offset-4"
-            >
-              Pragmatic Drag and Drop
-            </a>{" "}
-            from Atlassian for our drag-and-drop functionality. This library
-            provides a <code className="font-mono">Draggable</code> function
-            that we can attach to any HTML element in the page that we want make
-            draggable (the chess icon images in our case). To make the chess
-            piece icon feel like it is being dragged, we will reduce the opacity
-            of the origin element to 40%. To get started run the command below
-            to install the package then add the following code to what we have
+            to be dragged around. We will be using Pragmatic Drag and Drop from
+            Atlassian for our drag-and-drop functionality. This library provides
+            a <code className="font-mono">Draggable</code> function that we can
+            attach to any HTML element in the page that we want make draggable
+            (the chess icon images in our case). To make the chess piece icon
+            feel like it is being dragged, we will reduce the opacity of the
+            origin element to 40%. To get started run the command below to
+            install the package then add the following code to what we have
             currently.
           </p>
 
@@ -666,7 +658,132 @@ export default function ArticleContentPage() {
 
           <Image
             src="/writing/drag-and-drop/progress-4.jpg"
-            alt="Chessboard  at start"
+            alt="Chessboard"
+            width={500}
+            height={500}
+            className="rounded-md shadow-md"
+          />
+
+          <p>
+            Now that the pieces can be dragged, we will make the squares of the
+            chess board act as areas that can be dropped into. We will also
+            highlight the squares in a different colour when dragged over to
+            provide visual feedback to the user.
+          </p>
+
+          <Tabs defaultValue="chessboard.tsx" key={6}>
+            <TabsList>
+              <TabsTrigger value="chessboard.tsx">
+                components/chessboard.tsx
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent
+              value="chessboard.tsx"
+              className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
+            >
+              <code>
+                <CodeLine notChanged>{`import {`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`useRef,`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`useEffect,`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`useState,`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`type ReactElement,`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`type ReactNode,`}</CodeLine>
+                <CodeLine notChanged>{`} from "react";`}</CodeLine>
+                <CodeLine>{`import {`}</CodeLine>
+                <CodeLine inset={1}>{`draggable,`}</CodeLine>
+                <CodeLine inset={1}>{`dropTargetForElements,`}</CodeLine>
+                <CodeLine>{`} from "@atlaskit/pragmatic-drag-and-drop/element/adapter";`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  notChanged
+                >{`import { cn } from "@/lib/utils";`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  notChanged
+                >{`function Piece({ imageSrc, alt }: { imageSrc: string; alt: string }) {`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`// ...`}</CodeLine>
+                <CodeLine notChanged>{`}`}</CodeLine>
+                <CodeLine />
+                <CodeLine notChanged>{`// ...`}</CodeLine>
+                <CodeLine />
+                <CodeLine notChanged>{`function Square({`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`isDark,`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`children,`}</CodeLine>
+                <CodeLine notChanged>{`}: {`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`isDark: boolean;`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                  notChanged
+                >{`children: ReactNode;`}</CodeLine>
+                <CodeLine notChanged>{`}) {`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                >{`const squareRef = useRef<HTMLDivElement | null>(null);`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                >{`const [isDraggedOver, setIsDraggedOver] = useState(false);`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={1}>{`useEffect(() => {`}</CodeLine>
+                <CodeLine inset={2}>{`const el = squareRef.current;`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={2}>{`if (el === null) return;`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  inset={2}
+                >{`return dropTargetForElements({`}</CodeLine>
+                <CodeLine inset={3}>{`element: el,`}</CodeLine>
+                <CodeLine inset={3}>
+                  {`{onDragEnter: () => setIsDraggedOver(true),`}
+                </CodeLine>
+                <CodeLine inset={3}>
+                  {`onDragLeave: () => setIsDraggedOver(false),}`}
+                </CodeLine>
+                <CodeLine
+                  inset={3}
+                >{`onDrop: () => setIsDraggedOver(false),`}</CodeLine>
+                <CodeLine inset={2}>{`});`}</CodeLine>
+                <CodeLine inset={1}>{`}, []);`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={1} notChanged>{`return (`}</CodeLine>
+                <CodeLine inset={2}>{`<div`}</CodeLine>
+                <CodeLine inset={3}>{`ref={squareRef}`}</CodeLine>
+                <CodeLine inset={3}>{`className={cn(`}</CodeLine>
+                <CodeLine
+                  inset={4}
+                >{`"flex items-center justify-center",`}</CodeLine>
+                <CodeLine inset={4}>
+                  {`isDraggedOver ? "bg-sky-200" : isDark ? "bg-gray-200" : "bg-popover",`}
+                </CodeLine>
+                <CodeLine inset={3}>{`)}`}</CodeLine>
+                <CodeLine inset={2}>{`>`}</CodeLine>
+                <CodeLine inset={3} notChanged>{`{children}`}</CodeLine>
+                <CodeLine inset={2}>{`</div>`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`);`}</CodeLine>
+                <CodeLine notChanged>{`}`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  notChanged
+                >{`function renderSquares(allPiecesData: TPieceData[]) {`}</CodeLine>
+                <CodeLine inset={1} notChanged>{` // ... `}</CodeLine>
+                <CodeLine notChanged>{`}`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  notChanged
+                >{`export default function Chessboard() {`}</CodeLine>
+                <CodeLine inset={1} notChanged>{` // ... `}</CodeLine>
+                <CodeLine notChanged>{`}`}</CodeLine>
+              </code>
+            </TabsContent>
+          </Tabs>
+
+          <p>
+            As you can see below, a square is highlighted in blue when a chess
+            piece is dragged over it.
+          </p>
+
+          <Image
+            src="/writing/drag-and-drop/progress-5.jpg"
+            alt="Chessboard"
             width={500}
             height={500}
             className="rounded-md shadow-md"
