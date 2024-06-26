@@ -733,10 +733,10 @@ export default function ArticleContentPage() {
                 >{`return dropTargetForElements({`}</CodeLine>
                 <CodeLine inset={3}>{`element: el,`}</CodeLine>
                 <CodeLine inset={3}>
-                  {`{onDragEnter: () => setIsDraggedOver(true),`}
+                  {`onDragEnter: () => setIsDraggedOver(true),`}
                 </CodeLine>
                 <CodeLine inset={3}>
-                  {`onDragLeave: () => setIsDraggedOver(false),}`}
+                  {`onDragLeave: () => setIsDraggedOver(false),`}
                 </CodeLine>
                 <CodeLine
                   inset={3}
@@ -788,6 +788,202 @@ export default function ArticleContentPage() {
             height={500}
             className="rounded-md shadow-md"
           />
+
+          <p>
+            We can go further and highlight a square green if it is eligible to
+            be dropped onto and red when its not. For this to work, each
+            draggable piece will have to carry its original coordinates with it
+            when it is being dragged. We modify the{" "}
+            <code className="font-mono">Piece</code> component to accept
+            coordinates and pass it on to the{" "}
+            <code className="font-mono">getInitialData</code> field of the
+            arguments object taken by{" "}
+            <code className="font-mono">draggable</code>.
+          </p>
+
+          <Tabs defaultValue="chessboard.tsx" key={7}>
+            <TabsList>
+              <TabsTrigger value="chessboard.tsx">
+                components/chessboard.tsx
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent
+              value="chessboard.tsx"
+              className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
+            >
+              <code>
+                <CodeLine notChanged>{`import {`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`useRef,`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`useEffect,`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`useState,`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`type ReactElement,`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`type ReactNode,`}</CodeLine>
+                <CodeLine notChanged>{`} from "react";`}</CodeLine>
+                <CodeLine notChanged>{`import {`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`draggable,`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                  notChanged
+                >{`dropTargetForElements,`}</CodeLine>
+                <CodeLine
+                  notChanged
+                >{`} from "@atlaskit/pragmatic-drag-and-drop/element/adapter";`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  notChanged
+                >{`import { cn } from "@/lib/utils";`}</CodeLine>
+                <CodeLine />
+                <CodeLine>{`type TPieceName = "king" | "pawn";`}</CodeLine>
+                <CodeLine>{`type TCoordsArr = [number, number];`}</CodeLine>
+                <CodeLine />
+                <CodeLine>{`function Piece({`}</CodeLine>
+                <CodeLine inset={1}>{`name,`}</CodeLine>
+                <CodeLine inset={1}>{`coords,`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`imageSrc,`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`alt,`}</CodeLine>
+                <CodeLine>{`}: {`}</CodeLine>
+                <CodeLine inset={1}>{`name: TPieceName;`}</CodeLine>
+                <CodeLine inset={1}>{`coords: TCoordsArr;`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`imageSrc: string;`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`alt: string;`}</CodeLine>
+                <CodeLine>{`}) {`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                  notChanged
+                >{`const pieceRef = useRef<HTMLImageElement | null>(null);`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                  notChanged
+                >{`const [isDragging, setIsDragging] = useState<boolean>(false);`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={1} notChanged>{`useEffect(() => {`}</CodeLine>
+                <CodeLine
+                  inset={2}
+                  notChanged
+                >{`const el = pieceRef.current;`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  inset={2}
+                  notChanged
+                >{`if (el === null) return;`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={2} notChanged>{`return draggable({`}</CodeLine>
+                <CodeLine inset={3} notChanged>{`element: el,`}</CodeLine>
+                <CodeLine
+                  inset={3}
+                >{`getInitialData: () => ({ name, coords }),`}</CodeLine>
+                <CodeLine
+                  inset={3}
+                  notChanged
+                >{`onDragStart: () => setIsDragging(true),`}</CodeLine>
+                <CodeLine
+                  inset={3}
+                  notChanged
+                >{`onDrop: () => setIsDragging(false),`}</CodeLine>
+                <CodeLine inset={2} notChanged>{`});`}</CodeLine>
+                <CodeLine inset={1}>{`}, [name, coords]);`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={1} notChanged>{`return (`}</CodeLine>
+                <CodeLine inset={2} notChanged>{`<img`}</CodeLine>
+                <CodeLine inset={3} notChanged>{`ref={pieceRef}`}</CodeLine>
+                <CodeLine inset={3} notChanged>{`src={imageSrc}`}</CodeLine>
+                <CodeLine inset={3} notChanged>{`alt={alt}`}</CodeLine>
+                <CodeLine
+                  inset={3}
+                  notChanged
+                >{`className={cn("h-11 w-11", isDragging && "opacity-40")}`}</CodeLine>
+                <CodeLine inset={2} notChanged>{`/>`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`);`}</CodeLine>
+                <CodeLine>{`}`}</CodeLine>
+                <CodeLine />
+                <CodeLine>{`const pieceComponentLookup: {`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                >{`[Key in TPieceName]: (coords: TCoordsArr) => ReactElement;`}</CodeLine>
+                <CodeLine>{`} = {`}</CodeLine>
+                <CodeLine inset={1}>{`king: (coords) => (`}</CodeLine>
+                <CodeLine
+                  inset={2}
+                >{`<Piece name="king" coords={coords} imageSrc="/icons/king.png" alt="King" />`}</CodeLine>
+                <CodeLine inset={1}>{`),`}</CodeLine>
+                <CodeLine inset={1}>{`pawn: (coords) => (`}</CodeLine>
+                <CodeLine
+                  inset={2}
+                >{`<Piece name="pawn" coords={coords} imageSrc="/icons/pawn.png" alt="Pawn" />`}</CodeLine>
+                <CodeLine inset={1}>{`),`}</CodeLine>
+                <CodeLine>{`};`}</CodeLine>
+                <CodeLine />
+                <CodeLine notChanged>{`type TPieceData = {`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`name: TPieceName;`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                  notChanged
+                >{`coords: TCoordsArr;`}</CodeLine>
+                <CodeLine notChanged>{`};`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  notChanged
+                >{`function areCoordsEqual(c1: TCoordsArr, c2: TCoordsArr) {`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`// ...`}</CodeLine>
+                <CodeLine notChanged>{`}`}</CodeLine>
+                <CodeLine />
+                <CodeLine notChanged>
+                  {`function Square({isDark, children}: {isDark: boolean; children: ReactNode;})`}
+                </CodeLine>
+                <CodeLine inset={1} notChanged>{`// ...`}</CodeLine>
+                <CodeLine notChanged>{`}`}</CodeLine>
+                <CodeLine />
+                <CodeLine>{`function renderSquares(allPiecesData: TPieceData[]) {`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                  notChanged
+                >{`const squares = [];`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  inset={1}
+                  notChanged
+                >{`for (let row = 0; row < 8; row++) {`}</CodeLine>
+                <CodeLine
+                  inset={2}
+                  notChanged
+                >{`for (let col = 0; col < 8; col++) {`}</CodeLine>
+                <CodeLine inset={3} notChanged>
+                  {`const currCoordsArr: TCoordsArr = [row, col];`}
+                </CodeLine>
+                <CodeLine />
+                <CodeLine inset={3} notChanged>
+                  {`const pieceInThisCoord = allPiecesData.find((pieceData) =>`}
+                </CodeLine>
+                <CodeLine inset={18} notChanged>
+                  {`areCoordsEqual(currCoordsArr, pieceData.coords),`}
+                </CodeLine>
+                <CodeLine inset={16} notChanged>
+                  {`);`}{" "}
+                </CodeLine>
+                <CodeLine />
+                <CodeLine inset={3}>{`squares.push(`}</CodeLine>
+                <CodeLine inset={4}>
+                  {
+                    "<Square isDark={(row + col) % 2 === 1} key={`${row}${col}`}>"
+                  }
+                </CodeLine>
+                <CodeLine inset={5}>{`{pieceInThisCoord ? (`}</CodeLine>
+                <CodeLine inset={6}>
+                  {`pieceComponentLookup[pieceInThisCoord.name](currCoordsArr)`}
+                </CodeLine>
+                <CodeLine inset={5}>{`) : (`}</CodeLine>
+                <CodeLine inset={6}>{`<>&nbsp;</>`}</CodeLine>
+                <CodeLine inset={5}>{`)}`}</CodeLine>
+                <CodeLine inset={4}>{`</Square>,`}</CodeLine>
+                <CodeLine inset={3}>{`);`}</CodeLine>
+                <CodeLine inset={2} notChanged>{`}`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`}`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={1} notChanged>{`return squares;`}</CodeLine>
+                <CodeLine>{`}`}</CodeLine>
+              </code>
+            </TabsContent>
+          </Tabs>
 
           <p>[This article is still a work in progress]</p>
         </div>
