@@ -15,7 +15,7 @@ export const FeaturedArticlesList = () => {
           </p>
           <div className="flex items-center text-sm text-muted-foreground/75">
             <CalendarDaysIcon className="mr-2 h-4 w-4" />
-            Jun 24, 2024
+            Jul 01, 2024
           </div>
         </div>
       </Link>

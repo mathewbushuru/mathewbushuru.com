@@ -82,7 +82,7 @@ export const NavMenuContent = () => {
             </span>
           </Button>
         </a>
-        <a
+        {/* <a
           href="https://www.linkedin.com/in/mathewbushuru/"
           target="_blank"
           rel="noopener noreferrer"
@@ -96,7 +96,7 @@ export const NavMenuContent = () => {
               L
             </span>
           </Button>
-        </a>
+        </a> */}
         <hr className="-mx-4" />
         <ThemeToggleButton />
       </div>

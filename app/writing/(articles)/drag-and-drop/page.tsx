@@ -10,9 +10,9 @@ export const metadata = {
 
 const blogMetadata = {
   published: false,
-  publishDate: "June 22, 2024",
+  publishDate: "July 02, 2024",
   startedWorkingOnDate: "June 17, 2024",
-  lastModifiedDate: "June 22, 2024",
+  lastModifiedDate: "July 02, 2024",
 };
 
 export default function ArticleContentPage() {
@@ -981,6 +981,190 @@ export default function ArticleContentPage() {
                 <CodeLine />
                 <CodeLine inset={1} notChanged>{`return squares;`}</CodeLine>
                 <CodeLine>{`}`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  notChanged
+                >{`export default function Chessboard() {`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`// ...`}</CodeLine>
+                <CodeLine notChanged>{`}`}</CodeLine>
+              </code>
+            </TabsContent>
+          </Tabs>
+
+          <p>
+            We can use this starting location and piece name at our drop targets
+            (<code className="font-mono">Square</code> components). We also
+            introduce an <code className="font-mono">isMoveValid</code> function
+            that checks if a chess piece can be dropped onto a particular square
+            based on its start and end location, and the piece type. We also
+            reset the coordinates of the king and pawn on the chessboard to
+            their starting position.
+          </p>
+
+          <p>
+            The TypeScript types for the chess piece's name and coordinates are
+            not carried over from the draggable (
+            <code className="font-mono">Piece</code> component) to the drop
+            target (<code className="font-mono">Square</code> component). To
+            make Typescript happy, we'll be using a temporary escape hatch (The
+            'as' type assertion to cast them to their expected types). Later on,
+            we'll implement a solution for this using type guards which are
+            functions or expressions that performs a runtime check to guarantee
+            the type in a certain scope.
+          </p>
+
+          <Tabs defaultValue="chessboard.tsx" key={8}>
+            <TabsList>
+              <TabsTrigger value="chessboard.tsx">
+                components/chessboard.tsx
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent
+              value="chessboard.tsx"
+              className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
+            >
+              <code>
+                <CodeLine notChanged>{`import {`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`useRef,`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`useEffect,`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`useState,`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`type ReactElement,`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`type ReactNode,`}</CodeLine>
+                <CodeLine notChanged>{`} from "react";`}</CodeLine>
+                <CodeLine notChanged>{`import {`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`draggable,`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                  notChanged
+                >{`dropTargetForElements,`}</CodeLine>
+                <CodeLine
+                  notChanged
+                >{`} from "@atlaskit/pragmatic-drag-and-drop/element/adapter";`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  notChanged
+                >{`import { cn } from "@/lib/utils";`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  notChanged
+                >{`type TPieceName = "king" | "pawn";`}</CodeLine>
+                <CodeLine
+                  notChanged
+                >{`type TCoordsArr = [number, number];`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  notChanged
+                >{`function Piece({ // ... } : { // ... }) {`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`// ...`}</CodeLine>
+                <CodeLine notChanged>{`}`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  notChanged
+                >{`const pieceComponentLookup: {`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                  notChanged
+                >{`[Key in TPieceName]: (coords: TCoordsArr) => ReactElement;`}</CodeLine>
+                <CodeLine notChanged>{`} = {`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`// ...`}</CodeLine>
+                <CodeLine notChanged>{`};`}</CodeLine>
+                <CodeLine />
+                <CodeLine notChanged>{`type TPieceData = {`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`name: TPieceName;`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                  notChanged
+                >{`coords: TCoordsArr;`}</CodeLine>
+                <CodeLine notChanged>{`};`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  notChanged
+                >{`function areCoordsEqual(c1: TCoordsArr, c2: TCoordsArr) {`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`// ...`}</CodeLine>
+                <CodeLine notChanged>{`}`}</CodeLine>
+                <CodeLine />
+                <CodeLine>{`function isMoveValid(`}</CodeLine>
+                <CodeLine inset={1}>{`startCoords: TCoordsArr,`}</CodeLine>
+                <CodeLine inset={1}>{`destCoords: TCoordsArr,`}</CodeLine>
+                <CodeLine inset={1}>{`pieceName: TPieceName,`}</CodeLine>
+                <CodeLine>{`) {`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                >{`const rowDist = Math.abs(startCoords[0] - destCoords[0]);`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                >{`const colDist = Math.abs(startCoords[1] - destCoords[1]);`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={1}>{`switch (pieceName) {`}</CodeLine>
+                <CodeLine inset={2}>{`case "king":`}</CodeLine>
+                <CodeLine inset={3}>{`return [0, 1].includes(rowDist) && [0, 1].includes(colDist);`}</CodeLine>
+                <CodeLine inset={2}>{`case "pawn":`}</CodeLine>
+                <CodeLine inset={3}>{`return colDist === 0 && startCoords[0] - destCoords[0] === 1;`}</CodeLine>
+                <CodeLine inset={2}>{`default:`}</CodeLine>
+                <CodeLine inset={3}>{`return false;`}</CodeLine>
+                <CodeLine inset={1}>{`}`}</CodeLine>
+                <CodeLine>{`}`}</CodeLine>
+                <CodeLine />
+                <CodeLine notChanged>
+                  {`function Square({isDark, children}: {isDark: boolean; children: ReactNode;})`}
+                </CodeLine>
+                <CodeLine inset={1} notChanged>{`// ...`}</CodeLine>
+                <CodeLine notChanged>{`}`}</CodeLine>
+                <CodeLine />
+                <CodeLine>{`function renderSquares(allPiecesData: TPieceData[]) {`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                  notChanged
+                >{`const squares = [];`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  inset={1}
+                  notChanged
+                >{`for (let row = 0; row < 8; row++) {`}</CodeLine>
+                <CodeLine
+                  inset={2}
+                  notChanged
+                >{`for (let col = 0; col < 8; col++) {`}</CodeLine>
+                <CodeLine inset={3} notChanged>
+                  {`const currCoordsArr: TCoordsArr = [row, col];`}
+                </CodeLine>
+                <CodeLine />
+                <CodeLine inset={3} notChanged>
+                  {`const pieceInThisCoord = allPiecesData.find((pieceData) =>`}
+                </CodeLine>
+                <CodeLine inset={18} notChanged>
+                  {`areCoordsEqual(currCoordsArr, pieceData.coords),`}
+                </CodeLine>
+                <CodeLine inset={16} notChanged>
+                  {`);`}{" "}
+                </CodeLine>
+                <CodeLine />
+                <CodeLine inset={3}>{`squares.push(`}</CodeLine>
+                <CodeLine inset={4}>
+                  {
+                    "<Square isDark={(row + col) % 2 === 1} key={`${row}${col}`}>"
+                  }
+                </CodeLine>
+                <CodeLine inset={5}>{`{pieceInThisCoord ? (`}</CodeLine>
+                <CodeLine inset={6}>
+                  {`pieceComponentLookup[pieceInThisCoord.name](currCoordsArr)`}
+                </CodeLine>
+                <CodeLine inset={5}>{`) : (`}</CodeLine>
+                <CodeLine inset={6}>{`<>&nbsp;</>`}</CodeLine>
+                <CodeLine inset={5}>{`)}`}</CodeLine>
+                <CodeLine inset={4}>{`</Square>,`}</CodeLine>
+                <CodeLine inset={3}>{`);`}</CodeLine>
+                <CodeLine inset={2} notChanged>{`}`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`}`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={1} notChanged>{`return squares;`}</CodeLine>
+                <CodeLine>{`}`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  notChanged
+                >{`export default function Chessboard() {`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`// ...`}</CodeLine>
+                <CodeLine notChanged>{`}`}</CodeLine>
               </code>
             </TabsContent>
           </Tabs>
