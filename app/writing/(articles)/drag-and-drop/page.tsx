@@ -996,9 +996,7 @@ export default function ArticleContentPage() {
             (<code className="font-mono">Square</code> components). We also
             introduce an <code className="font-mono">isMoveValid</code> function
             that checks if a chess piece can be dropped onto a particular square
-            based on its start and end location, and the piece type. We also
-            reset the coordinates of the king and pawn on the chessboard to
-            their starting position.
+            based on its start and end location, and the piece type.
           </p>
 
           <p>
@@ -1009,8 +1007,8 @@ export default function ArticleContentPage() {
             make Typescript happy, we'll be using a temporary escape hatch (The
             'as' type assertion to cast them to their expected types). Later on,
             we'll implement a solution for this using type guards which are
-            functions or expressions that performs a runtime check to guarantee
-            the type in a certain scope.
+            functions or expressions that perform a runtime check to guarantee
+            the types in a certain scope.
           </p>
 
           <Tabs defaultValue="chessboard.tsx" key={8}>
@@ -1097,21 +1095,106 @@ export default function ArticleContentPage() {
                 <CodeLine />
                 <CodeLine inset={1}>{`switch (pieceName) {`}</CodeLine>
                 <CodeLine inset={2}>{`case "king":`}</CodeLine>
-                <CodeLine inset={3}>{`return [0, 1].includes(rowDist) && [0, 1].includes(colDist);`}</CodeLine>
+                <CodeLine
+                  inset={3}
+                >{`return [0, 1].includes(rowDist) && [0, 1].includes(colDist);`}</CodeLine>
                 <CodeLine inset={2}>{`case "pawn":`}</CodeLine>
-                <CodeLine inset={3}>{`return colDist === 0 && startCoords[0] - destCoords[0] === 1;`}</CodeLine>
+                <CodeLine
+                  inset={3}
+                >{`return colDist === 0 && startCoords[0] - destCoords[0] === 1;`}</CodeLine>
                 <CodeLine inset={2}>{`default:`}</CodeLine>
                 <CodeLine inset={3}>{`return false;`}</CodeLine>
                 <CodeLine inset={1}>{`}`}</CodeLine>
                 <CodeLine>{`}`}</CodeLine>
                 <CodeLine />
-                <CodeLine notChanged>
-                  {`function Square({isDark, children}: {isDark: boolean; children: ReactNode;})`}
+                <CodeLine>
+                  {`function Square({coords, children}: {isDark: TCoordsArr; children: ReactNode;})`}
                 </CodeLine>
-                <CodeLine inset={1} notChanged>{`// ...`}</CodeLine>
-                <CodeLine notChanged>{`}`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                >{`type THoveredState = "idle" | "validMove" | "invalidMove";`}</CodeLine>
                 <CodeLine />
-                <CodeLine>{`function renderSquares(allPiecesData: TPieceData[]) {`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                >{`const squareRef = useRef<HTMLDivElement | null>(null);`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                >{`const [hoveredState, setHoveredState] = useState<THoveredState>("idle");`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  inset={1}
+                >{`const isDark = (coords[0] + coords[1]) % 2 === 1;`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={1} notChanged>{`useEffect(() => {`}</CodeLine>
+                <CodeLine
+                  inset={2}
+                  notChanged
+                >{`const el = squareRef.current;`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  inset={2}
+                  notChanged
+                >{`if (el === null) return;`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  inset={2}
+                >{`return dropTargetForElements({`}</CodeLine>
+                <CodeLine inset={3} notChanged>{`element: el,`}</CodeLine>
+                <CodeLine
+                  inset={3}
+                >{`onDragEnter: ({ source: draggedPiece }) => {`}</CodeLine>
+                <CodeLine
+                  inset={4}
+                >{`const startCoords = draggedPiece.data.coords as TCoordsArr;`}</CodeLine>
+                <CodeLine
+                  inset={4}
+                >{`const pieceName = draggedPiece.data.name as TPieceName;`}</CodeLine>
+                <CodeLine
+                  inset={4}
+                >{`if (isMoveValid(startCoords, coords, pieceName)) {`}</CodeLine>
+                <CodeLine inset={5}>{`setHoveredState("validMove");`}</CodeLine>
+                <CodeLine inset={4}>{`} else {`}</CodeLine>
+                <CodeLine
+                  inset={5}
+                >{`setHoveredState("invalidMove");`}</CodeLine>
+                <CodeLine inset={4}>{`}`}</CodeLine>
+                <CodeLine inset={3}>{`},`}</CodeLine>
+                <CodeLine
+                  inset={3}
+                >{`onDragLeave: () => setHoveredState("idle"),`}</CodeLine>
+                <CodeLine
+                  inset={3}
+                >{`onDrop: () => setHoveredState("idle"),`}</CodeLine>
+                <CodeLine inset={2}>{`});`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`}, []);`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={1}>{`return (`}</CodeLine>
+                <CodeLine inset={2}>{`<div`}</CodeLine>
+                <CodeLine inset={3} notChanged>{`ref={squareRef}`}</CodeLine>
+                <CodeLine inset={3}>{`className={cn(`}</CodeLine>
+                <CodeLine
+                  inset={4}
+                  notChanged
+                >{`"flex items-center justify-center",`}</CodeLine>
+                <CodeLine inset={4}>{`hoveredState === "validMove"`}</CodeLine>
+                <CodeLine inset={5}>{`? "bg-emerald-200"`}</CodeLine>
+                <CodeLine
+                  inset={6}
+                >{`: hoveredState === "invalidMove"`}</CodeLine>
+                <CodeLine inset={7}>{`? "bg-rose-200"`}</CodeLine>
+                <CodeLine inset={8}>{`: isDark`}</CodeLine>
+                <CodeLine inset={9}>{`? "bg-gray-200"`}</CodeLine>
+                <CodeLine inset={9}>{`: "bg-popover",`}</CodeLine>
+                <CodeLine inset={3}>{`)}`}</CodeLine>
+                <CodeLine inset={2}>{`>`}</CodeLine>
+                <CodeLine inset={3} notChanged>{`{children}`}</CodeLine>
+                <CodeLine inset={2}>{`</div>`}</CodeLine>
+                <CodeLine inset={1}>{`);`}</CodeLine>
+                <CodeLine>{`}`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  notChanged
+                >{`function renderSquares(allPiecesData: TPieceData[]) {`}</CodeLine>
                 <CodeLine
                   inset={1}
                   notChanged
@@ -1139,19 +1222,20 @@ export default function ArticleContentPage() {
                   {`);`}{" "}
                 </CodeLine>
                 <CodeLine />
-                <CodeLine inset={3}>{`squares.push(`}</CodeLine>
+                <CodeLine inset={3} notChanged>{`squares.push(`}</CodeLine>
                 <CodeLine inset={4}>
-                  {
-                    "<Square isDark={(row + col) % 2 === 1} key={`${row}${col}`}>"
-                  }
+                  {"<Square coords={currCoordsArr} key={`${row}${col}`}>"}
                 </CodeLine>
-                <CodeLine inset={5}>{`{pieceInThisCoord ? (`}</CodeLine>
-                <CodeLine inset={6}>
+                <CodeLine
+                  inset={5}
+                  notChanged
+                >{`{pieceInThisCoord ? (`}</CodeLine>
+                <CodeLine inset={6} notChanged>
                   {`pieceComponentLookup[pieceInThisCoord.name](currCoordsArr)`}
                 </CodeLine>
-                <CodeLine inset={5}>{`) : (`}</CodeLine>
-                <CodeLine inset={6}>{`<>&nbsp;</>`}</CodeLine>
-                <CodeLine inset={5}>{`)}`}</CodeLine>
+                <CodeLine inset={5} notChanged>{`) : (`}</CodeLine>
+                <CodeLine inset={6} notChanged>{`<>&nbsp;</>`}</CodeLine>
+                <CodeLine inset={5} notChanged>{`)}`}</CodeLine>
                 <CodeLine inset={4}>{`</Square>,`}</CodeLine>
                 <CodeLine inset={3}>{`);`}</CodeLine>
                 <CodeLine inset={2} notChanged>{`}`}</CodeLine>
