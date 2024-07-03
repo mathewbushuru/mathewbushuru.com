@@ -125,7 +125,7 @@ export const MobileNavbar = () => {
                     </span>
                   </Button>
                 </a>
-                <a
+                {/* <a
                   href="https://www.linkedin.com/in/mathewbushuru/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -143,7 +143,7 @@ export const MobileNavbar = () => {
                       L
                     </span>
                   </Button>
-                </a>
+                </a> */}
 
                 <hr className="-mx-4" />
 
