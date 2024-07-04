@@ -10,9 +10,9 @@ export const metadata = {
 
 const blogMetadata = {
   published: false,
-  publishDate: "July 02, 2024",
+  publishDate: "July 03, 2024",
   startedWorkingOnDate: "June 17, 2024",
-  lastModifiedDate: "July 02, 2024",
+  lastModifiedDate: "July 03, 2024",
 };
 
 export default function ArticleContentPage() {
