@@ -30,7 +30,7 @@ export const FeaturedProjectsTable = () => {
         {featuredProjects.map((project, index) => (
           <TableRow
             key={index}
-            className="transition-opacity duration-300 hover:bg-background group-hover:opacity-40 group-hover:hover:opacity-100"
+            className="transition-opacity duration-300 sm:hover:bg-background sm:group-hover:opacity-40 sm:group-hover:hover:opacity-100"
           >
             <TableCell className="pl-2 text-left align-top">
               {project.name}

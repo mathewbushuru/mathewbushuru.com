@@ -14,7 +14,7 @@ export default function WritingPage() {
 
       <div className="flex flex-col gap-1">
         <Link href="/writing/drag-and-drop">
-          <div className="group rounded-sm py-4 transition-all duration-300 hover:cursor-pointer hover:bg-popover hover:px-4 hover:shadow-md">
+          <div className="group rounded-sm py-4 transition-all duration-300 sm:hover:cursor-pointer sm:hover:bg-popover sm:hover:px-4 sm:hover:shadow-md">
             <h3 className="mb-1 text-lg font-semibold sm:text-xl lg:mb-2">
               Full-Stack Drag and Drop Applications, and Chess.
             </h3>
@@ -31,7 +31,7 @@ export default function WritingPage() {
         </Link>
 
         <Link href="/writing/soma">
-          <div className="group rounded-sm py-4 transition-all duration-300 hover:cursor-pointer hover:bg-popover hover:px-4 hover:shadow-md">
+          <div className="group rounded-sm py-4 transition-all duration-300 sm:hover:cursor-pointer sm:hover:bg-popover sm:hover:px-4 sm:hover:shadow-md">
             <h3 className="mb-1 text-lg font-semibold sm:text-xl lg:mb-2">
               Soma
             </h3>
