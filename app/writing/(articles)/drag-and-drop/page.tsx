@@ -578,7 +578,9 @@ export default function ArticleContentPage() {
             currently.
           </p>
 
-          <CodeLine>yarn add @atlaskit/pragmatic-drag-and-drop</CodeLine>
+          <div className="overflow-x-auto">
+            <CodeLine>yarn add @atlaskit/pragmatic-drag-and-drop</CodeLine>
+          </div>
 
           <Tabs defaultValue="chessboard.tsx" key={5}>
             <TabsList>
