@@ -36,7 +36,16 @@ export default function ArticleContentPage() {
             information in the database in an efficient way. In this article, we
             will explore the different ways to handle this starting from a
             completely clientside approach then introducing a server and
-            database to persist the drag information.
+            database to persist the drag information. To view what we will be
+            building by the end of this article, visit{" "}
+            <a
+              href="https://mathewbushuru.com/experiments/0001"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-link hover:underline hover:underline-offset-4"
+            >
+              mathewbushuru.com/experiments/0001
+            </a>.
           </p>
 
           <h5 className="mb-0.5 text-lg font-semibold sm:text-xl lg:mb-1">
