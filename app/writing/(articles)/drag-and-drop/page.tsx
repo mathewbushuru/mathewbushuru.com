@@ -10,9 +10,9 @@ export const metadata = {
 
 const blogMetadata = {
   published: false,
-  publishDate: "July 03, 2024",
+  publishDate: "July 04, 2024",
   startedWorkingOnDate: "June 17, 2024",
-  lastModifiedDate: "July 03, 2024",
+  lastModifiedDate: "July 04, 2024",
 };
 
 export default function ArticleContentPage() {
@@ -1439,7 +1439,39 @@ export default function ArticleContentPage() {
             </TabsContent>
           </Tabs>
 
+          <p>
+            We now have working Chessboard, albeit a pretty limited one as it only has two pieces.
+          </p>
+
+          <p className="">
+            Play with the app we built at {" "}
+            <a
+              href="https://mathewbushuru.com/experiments/0001"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-link hover:underline hover:underline-offset-4"
+            >
+              mathewbushuru.com/experiments/0001
+            </a>
+            .
+          </p>
+
           <p>[This article is still a work in progress]</p>
+
+          <p>[Upcoming  section  - Add Typescript type guards discussed above]</p>
+
+          <p>[Upcoming section - Extend app to have all chess piece types instead of only the king and one pawn, encode their valid and invalid moves too.]</p>
+
+          <p>[Upcoming section - Build a computer chess player that the user can play with]</p>
+
+          <p>[Upcoming section - Scaffold a Node backend and PostgreSQL database to persist the drag operation serverside.]</p>
+
+          <p>[Upcoming section - Naive database implementation, updating all affected rows in database on change]</p>
+
+          <p>[Upcoming section - More efficient ways to encode drag information in the database.]</p>
+
+          <p>[Upcoming section - Enable multiplayer between two users, using the serverside persisted data for gameplay.]</p>
+
         </div>
       </div>
     </>

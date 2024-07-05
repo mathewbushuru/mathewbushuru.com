@@ -29,6 +29,12 @@ const nextConfig = {
           "https://drive.google.com/file/d/1HfgV--iOkd3073NwQke1ETPY6omd0bmB/view",
         permanent: true,
       },
+      {
+        source: "/experiments/0001",
+        destination:
+          "https://mathew-bushuru-chess.vercel.app/",
+        permanent: true,
+      },
     ];
   },
 };
