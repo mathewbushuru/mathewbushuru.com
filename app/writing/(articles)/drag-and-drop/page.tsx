@@ -1255,6 +1255,190 @@ export default function ArticleContentPage() {
             </TabsContent>
           </Tabs>
 
+          <p>
+            We can now move the chess pieces and the square on the chessboard
+            will show green if it is a valid move and red when it is not.
+            However, one crucial piece is still missing. If you drop a piece, it
+            goes back to its original location. We will fix this using the{" "}
+            <code className="font-mono">monitorForElements</code> function from
+            Pragmatic drag and drop, which will enable us to update the
+            locations/coordinates states of all pieces after any drag and drop
+            operation. We modify the Square component to extract the{" "}
+            <code className="font-mono">coords</code> data that we attached to
+            the Piece component above and then add the{" "}
+            <code className="font-mono">monitorForElements</code> function to
+            the Chessboard component. We also replace the allPiecesData array
+            with a React state variable.
+          </p>
+
+          <Tabs defaultValue="chessboard.tsx" key={9}>
+            <TabsList>
+              <TabsTrigger value="chessboard.tsx">
+                components/chessboard.tsx
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent
+              value="chessboard.tsx"
+              className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
+            >
+              <code>
+                <CodeLine notChanged>{`// ...`}</CodeLine>
+                <CodeLine>{`import {draggable, dropTargetForElements, monitorForElements} from "@atlaskit/pragmatic-drag-and-drop/element/adapter";`}</CodeLine>
+                <CodeLine />
+                <CodeLine notChanged>{`// ...`}</CodeLine>
+                <CodeLine />
+                <CodeLine notChanged>
+                  {`function Square({coords, children}: {isDark: TCoordsArr; children: ReactNode;})`}
+                </CodeLine>
+                <CodeLine
+                  inset={1}
+                  notChanged
+                >{`type THoveredState = "idle" | "validMove" | "invalidMove";`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  inset={1}
+                  notChanged
+                >{`const squareRef = useRef<HTMLDivElement | null>(null);`}</CodeLine>
+                <CodeLine
+                  inset={1}
+                  notChanged
+                >{`const [hoveredState, setHoveredState] = useState<THoveredState>("idle");`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  inset={1}
+                  notChanged
+                >{`const isDark = (coords[0] + coords[1]) % 2 === 1;`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={1} notChanged>{`useEffect(() => {`}</CodeLine>
+                <CodeLine
+                  inset={2}
+                  notChanged
+                >{`const el = squareRef.current;`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  inset={2}
+                  notChanged
+                >{`if (el === null) return;`}</CodeLine>
+                <CodeLine />
+                <CodeLine
+                  inset={2}
+                >{`return dropTargetForElements({`}</CodeLine>
+                <CodeLine inset={3} notChanged>{`element: el,`}</CodeLine>
+                <CodeLine
+                  inset={3}
+                  notChanged
+                >{`onDragEnter: ({ source: draggedPiece }) => {`}</CodeLine>
+                <CodeLine
+                  inset={4}
+                  notChanged
+                >{`const startCoords = draggedPiece.data.coords as TCoordsArr;`}</CodeLine>
+                <CodeLine
+                  inset={4}
+                  notChanged
+                >{`const pieceName = draggedPiece.data.name as TPieceName;`}</CodeLine>
+                <CodeLine
+                  inset={4}
+                  notChanged
+                >{`if (isMoveValid(startCoords, coords, pieceName)) {`}</CodeLine>
+                <CodeLine
+                  inset={5}
+                  notChanged
+                >{`setHoveredState("validMove");`}</CodeLine>
+                <CodeLine inset={4} notChanged>{`} else {`}</CodeLine>
+                <CodeLine
+                  inset={5}
+                  notChanged
+                >{`setHoveredState("invalidMove");`}</CodeLine>
+                <CodeLine inset={4} notChanged>{`}`}</CodeLine>
+                <CodeLine inset={3} notChanged>{`},`}</CodeLine>
+                <CodeLine
+                  inset={3}
+                  notChanged
+                >{`onDragLeave: () => setHoveredState("idle"),`}</CodeLine>
+                <CodeLine
+                  inset={3}
+                  notChanged
+                >{`onDrop: () => setHoveredState("idle"),`}</CodeLine>
+                <CodeLine inset={3}>{`getData: () => ({ coords }),`}</CodeLine>
+                <CodeLine inset={2}>{`});`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`}, []);`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={1} notChanged>{`return (`}</CodeLine>
+                <CodeLine inset={2} notChanged>{`<div`}</CodeLine>
+                <CodeLine inset={3} notChanged>{`ref={squareRef}`}</CodeLine>
+                <CodeLine inset={3} notChanged>{`className={cn(`}</CodeLine>
+                <CodeLine
+                  inset={4}
+                  notChanged
+                >{`"flex items-center justify-center",`}</CodeLine>
+                <CodeLine
+                  inset={4}
+                  notChanged
+                >{`hoveredState === "validMove"`}</CodeLine>
+                <CodeLine inset={5} notChanged>{`? "bg-emerald-200"`}</CodeLine>
+                <CodeLine
+                  inset={6}
+                  notChanged
+                >{`: hoveredState === "invalidMove"`}</CodeLine>
+                <CodeLine inset={7} notChanged>{`? "bg-rose-200"`}</CodeLine>
+                <CodeLine inset={8} notChanged>{`: isDark`}</CodeLine>
+                <CodeLine inset={9} notChanged>{`? "bg-gray-200"`}</CodeLine>
+                <CodeLine inset={9} notChanged>{`: "bg-popover",`}</CodeLine>
+                <CodeLine inset={3} notChanged>{`)}`}</CodeLine>
+                <CodeLine inset={2} notChanged>{`>`}</CodeLine>
+                <CodeLine inset={3} notChanged>{`{children}`}</CodeLine>
+                <CodeLine inset={2} notChanged>{`</div>`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`);`}</CodeLine>
+                <CodeLine notChanged>{`}`}</CodeLine>
+                <CodeLine />
+                <CodeLine>{`export default function Chessboard() {`}</CodeLine>
+                <CodeLine inset={1}>{`const [allPiecesData, setAllPiecesData] = useState<TPieceData[]>([`}</CodeLine>
+                <CodeLine inset={2}>{`{ name: "king", coords: [7, 3] },`}</CodeLine>
+                <CodeLine inset={2}>{`{ name: "pawn", coords: [6, 5] },`}</CodeLine>
+                <CodeLine inset={1}>{`]);`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={1}>{`useEffect(() => {`}</CodeLine>
+                <CodeLine inset={2}>{`return monitorForElements({`}</CodeLine>
+                <CodeLine inset={3}>{`onDrop: ({ source, location }) => {`}</CodeLine>
+                <CodeLine inset={4}>{`const destination = location.current.dropTargets[0];`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={4}>{`if (!destination) return;`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={4}>{`const sourceCoords = source.data.coords as TCoordsArr;`}</CodeLine>
+                <CodeLine inset={4}>{`const destCoords = destination.data.coords as TCoordsArr;`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={4}>{`const draggedPieceData = allPiecesData.find((p) =>`}</CodeLine>
+                <CodeLine inset={5}>{`areCoordsEqual(p.coords, sourceCoords),`}</CodeLine>
+                <CodeLine inset={4}>{`);`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={4}>{`if (!draggedPieceData) return;`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={4}>{`const restOfPiecesData = allPiecesData.filter(`}</CodeLine>
+                <CodeLine inset={5}>{`(p) => p !== draggedPieceData,`}</CodeLine>
+                <CodeLine inset={4}>{`);`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={4}>{`if (isMoveValid(sourceCoords, destCoords, draggedPieceData.name)) {`}</CodeLine>
+                <CodeLine inset={5}>{`setAllPiecesData([`}</CodeLine>
+                <CodeLine inset={6}>{`{ name: draggedPieceData.name, coords: destCoords },`}</CodeLine>
+                <CodeLine inset={6}>{`...restOfPiecesData,`}</CodeLine>
+                <CodeLine inset={5}>{`]);`}</CodeLine>
+                <CodeLine inset={4}>{`}`}</CodeLine>
+                <CodeLine inset={3}>{`},`}</CodeLine>
+                <CodeLine inset={2}>{`});`}</CodeLine>
+                <CodeLine inset={1}>{`}, [allPiecesData]);`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={1} notChanged>{`const boardSquares = renderSquares(allPiecesData);`}</CodeLine>
+                <CodeLine />
+                <CodeLine inset={1} notChanged>{`return (`}</CodeLine>
+                <CodeLine inset={2} notChanged>{`<div className="grid h-80 w-80 grid-cols-8 grid-rows-8 sm:h-[500px] sm:w-[500px]">`}</CodeLine>
+                <CodeLine inset={3} notChanged>{`{boardSquares}`}</CodeLine>
+                <CodeLine inset={2} notChanged>{`</div>`}</CodeLine>
+                <CodeLine inset={1} notChanged>{`);`}</CodeLine>
+                <CodeLine>{`}`}</CodeLine>
+              </code>
+            </TabsContent>
+          </Tabs>
+
           <p>[This article is still a work in progress]</p>
         </div>
       </div>
