@@ -87,7 +87,7 @@ function AllArticlesList() {
             title={post.blogMetadata.title}
             href={`/writing/${post.slug}`}
             formattedDate={formatDate(post.blogMetadata.publishedAt, false)}
-            contentPreview={post.content}
+            contentPreview={post.blogMetadata.preview}
           />
         ))}
     </div>

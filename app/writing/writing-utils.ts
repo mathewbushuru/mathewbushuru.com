@@ -5,6 +5,7 @@ type BlogMetadata = {
   title: string;
   publishedAt: string;
   summary: string;
+  preview: string;
   image?: string;
 };
 
