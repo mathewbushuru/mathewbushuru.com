@@ -4,6 +4,8 @@ import { CalendarDaysIcon } from "lucide-react";
 import { getBlogArticles } from "@/app/writing/writing-utils";
 import { formatDate } from "@/lib/utils";
 
+import CustomMDX from "@/components/custom-mdx";
+
 export async function generateStaticParams() {
   const articles = getBlogArticles();
   return articles.map((article) => ({
@@ -45,7 +47,7 @@ export default function ArticlePage({ params }: any) {
         </div>
 
         <div className="flex flex-col gap-2 leading-7 lg:gap-4">
-          {article.content}
+          <CustomMDX source={article.content} />
         </div>
       </div>
     </>
