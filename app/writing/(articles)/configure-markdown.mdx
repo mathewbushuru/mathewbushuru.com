@@ -19,7 +19,7 @@ But not breaking things
 - the
 - way
 
-### Code 
+### Code
 
 And i need a way to quickly add code, and I already know markdown, so that's a publishedAt
 
@@ -29,3 +29,74 @@ function(){
     console.log("Testing  indent in code");
 }
 ```
+
+Let's try out some tabs - old code from before.
+
+<Tabs defaultValue="App.tsx" key={1}>
+  <TabsList>
+    <TabsTrigger value="App.tsx">App.tsx</TabsTrigger>
+    <TabsTrigger value="chessboard.tsx">components/chessboard.tsx</TabsTrigger>
+  </TabsList>
+  <TabsContent
+    value="App.tsx"
+    className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
+  >
+    <code>
+      <CodeLine>{`import Chessboard from "@/components/chessboard";`}</CodeLine>
+      <CodeLine />
+      <CodeLine>{`export default function App() {`}</CodeLine>
+      <CodeLine inset={1}>{`return (`}</CodeLine>
+      <CodeLine inset={2}>{`<div>`}</CodeLine>
+      <CodeLine inset={3}>{`<Chessboard />`}</CodeLine>
+      <CodeLine inset={2}>{`</div>`}</CodeLine>
+      <CodeLine inset={1}>{`);`}</CodeLine>
+      <CodeLine>{`}`}</CodeLine>
+    </code>
+  </TabsContent>
+  <TabsContent
+    value="chessboard.tsx"
+    className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
+  >
+    <code>
+      <CodeLine>{`export default function Chessboard() {`}</CodeLine>
+      <CodeLine inset={1}>{`return <>Chessboard</>;`}</CodeLine>
+      <CodeLine>{`}`}</CodeLine>
+    </code>
+  </TabsContent>
+</Tabs>
+
+Now with current code
+
+{" "}
+<Tabs defaultValue="App.tsx" key={1}>
+  <TabsList>
+    <TabsTrigger value="App.tsx">App.tsx</TabsTrigger>
+    <TabsTrigger value="chessboard.tsx">components/chessboard.tsx</TabsTrigger>
+  </TabsList>
+  <TabsContent
+    value="App.tsx"
+    className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
+  >
+```jsx
+import Chessboard from "@/components/chessboard";
+
+export default function App() {
+return (
+    <div>
+        <Chessboard />
+    </div>
+);
+}
+```
+  </TabsContent>
+  <TabsContent
+    value="chessboard.tsx"
+    className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
+  >
+```jsx
+export default function Chessboard() {
+  return <>Chessboard</>;
+} 
+```
+  </TabsContent>
+</Tabs>
