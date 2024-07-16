@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MDXRemote, type MDXRemoteProps } from "next-mdx-remote/rsc";
 import { highlight } from "sugar-high";
 
@@ -7,6 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 const components = {
   code: Code,
   CodeLine: Code,
+  Image,
   Link,
   Tabs,
   TabsContent,
