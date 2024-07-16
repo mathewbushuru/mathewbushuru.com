@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  transpilePackages: ["next-mdx-remote"],
   async redirects() {
     return [
       {
@@ -31,8 +32,7 @@ const nextConfig = {
       },
       {
         source: "/experiments/0001",
-        destination:
-          "https://mathew-bushuru-chess.vercel.app/",
+        destination: "https://mathew-bushuru-chess.vercel.app/",
         permanent: true,
       },
     ];
