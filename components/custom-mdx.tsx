@@ -7,7 +7,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const components = {
   code: Code,
-  CodeLine: Code,
   Image,
   Link,
   Tabs,
