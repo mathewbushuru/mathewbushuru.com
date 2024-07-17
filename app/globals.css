@@ -40,15 +40,15 @@
     --radius: 0.5rem;
 
     /* Blog code syntax highlighting */
-    --sh-class: #2d5e9d;
-    --sh-identifier: #354150;
-    --sh-sign: #8996a3;
+    --sh-class: #4993f4;
+    --sh-identifier: #bac0c8;
+    --sh-sign: #dfe5ef;
     --sh-property: #0550ae;
-    --sh-entity: #249a97;
+    --sh-entity: #06d3c2;
     --sh-jsxliterals: #6266d1;
-    --sh-string: #00a99a;
+    --sh-string: #06d3c2;
     --sh-keyword: #f47067;
-    --sh-comment: #a19595;
+    --sh-comment: #aba6a6;
   }
 
   .dark {
@@ -86,17 +86,6 @@
     --ring: 173 50% 45%;
 
     --link: 170 90% 45%;
-
-    /* Blog code syntax highlighting */
-    --sh-class: #2d5e9d;
-    --sh-identifier: #bac0c8;
-    --sh-sign: #e8eaed;
-    --sh-property: #0550ae;
-    --sh-entity: #249a97;
-    --sh-jsxliterals: #6266d1;
-    --sh-string: #00a99a;
-    --sh-keyword: #f47067;
-    --sh-comment: #aba6a6;
   }
 }
 

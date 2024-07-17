@@ -38,17 +38,18 @@ export default function ArticlePage({ params }: any) {
   return (
     <>
       <div className="p-4 pb-8">
-        <h3 className="mb-1 text-xl font-semibold sm:text-2xl lg:mb-2">
+        <h3 className="text-xl font-semibold sm:text-2xl mb-2">
           {article.blogMetadata.title}
         </h3>
-        <div className="mb-1 flex items-center text-sm text-muted-foreground/75 lg:mb-2">
+        <div className="flex items-center text-sm text-muted-foreground/75 mb-2">
           <CalendarDaysIcon className="mr-2 h-4 w-4" />
           {formatDate(article.blogMetadata.publishedAt, true)}
         </div>
 
-        <div className="flex flex-col gap-2 leading-7 lg:gap-4">
+        {/* <article className="flex flex-col gap-2 leading-7 lg:gap-4"> */}
+        <article className="prose dark:prose-invert">
           <CustomMDX source={article.content} />
-        </div>
+        </article>
       </div>
     </>
   );

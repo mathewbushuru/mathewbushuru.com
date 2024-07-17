@@ -22,9 +22,7 @@ building by the end of this article, visit{" "}
 > mathewbushuru.com/experiments/0001
 </a>.
 
-<h5 className="mb-0.5 text-lg font-semibold sm:text-xl lg:mb-1">
-Clientside Implementation
-</h5>
+### Clientside Implementation
 
 To serve as an example, we will be building a Chess application
 using React that will allow the player to drag pieces across the
@@ -34,13 +32,10 @@ shown below:
 <Tabs defaultValue="App.tsx" key={1}>
 <TabsList>
     <TabsTrigger value="App.tsx">App.tsx</TabsTrigger>
-    <TabsTrigger value="chessboard.tsx">
-    components/chessboard.tsx
-    </TabsTrigger>
+    <TabsTrigger value="chessboard.tsx">components/chessboard.tsx</TabsTrigger>
 </TabsList>
 <TabsContent
     value="App.tsx"
-    className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
 >
 ```jsx
 import Chessboard from "@/components/chessboard";
@@ -56,7 +51,6 @@ export default function App() {
 </TabsContent>
 <TabsContent
     value="chessboard.tsx"
-    className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
 >
 ```jsx
 export default function Chessboard() {
@@ -74,13 +68,10 @@ on a 500px by 500px grid (320px by 320px on mobile).
 <Tabs defaultValue="chessboard.tsx" key={2}>
 <TabsList>
     <TabsTrigger value="App.tsx">App.tsx</TabsTrigger>
-    <TabsTrigger value="chessboard.tsx">
-    components/chessboard.tsx
-    </TabsTrigger>
+    <TabsTrigger value="chessboard.tsx">components/chessboard.tsx</TabsTrigger>
 </TabsList>
 <TabsContent
     value="App.tsx"
-    className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
 >
 ```jsx
 import Chessboard from "@/components/chessboard";
@@ -96,7 +87,6 @@ export default function App() {
 </TabsContent>
 <TabsContent
     value="chessboard.tsx"
-    className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
 >
 ```jsx 
 function renderSquares() {
@@ -145,17 +135,11 @@ dark.
 <Tabs defaultValue="chessboard.tsx" key={3}>
 <TabsList>
     <TabsTrigger value="App.tsx">App.tsx</TabsTrigger>
-    <TabsTrigger value="utils.tsx">
-    <span className="hidden sm:inline">lib/</span>utils.tsx
-    </TabsTrigger>
-    <TabsTrigger value="chessboard.tsx">
-    <span className="hidden sm:inline">components</span>
-    chessboard.tsx
-    </TabsTrigger>
+    <TabsTrigger value="utils.tsx"><span className="hidden sm:inline">lib/</span>utils.tsx</TabsTrigger>
+    <TabsTrigger value="chessboard.tsx"><span className="hidden sm:inline">components</span>chessboard.tsx</TabsTrigger>
 </TabsList>
 <TabsContent
     value="App.tsx"
-    className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
 >
 ```jsx
 import Chessboard from "@/components/chessboard";
@@ -171,7 +155,6 @@ export default function App() {
 </TabsContent>
 <TabsContent
     value="utils.tsx"
-    className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
 >
 ```jsx
 import { clsx, type ClassValue } from "clsx"
@@ -184,7 +167,6 @@ export function cn(...inputs: ClassValue[]) {
 </TabsContent>
 <TabsContent
     value="chessboard.tsx"
-    className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
 >
 ```jsx
 import { type ReactNode } from "react";
@@ -256,17 +238,11 @@ relevant icon image.
 <Tabs defaultValue="chessboard.tsx" key={4}>
 <TabsList>
     <TabsTrigger value="App.tsx">App.tsx</TabsTrigger>
-    <TabsTrigger value="utils.tsx">
-    <span className="hidden sm:inline">lib/</span>utils.tsx
-    </TabsTrigger>
-    <TabsTrigger value="chessboard.tsx">
-    <span className="hidden sm:inline">components/</span>
-    chessboard.tsx
-    </TabsTrigger>
+    <TabsTrigger value="utils.tsx"><span className="hidden sm:inline">lib/</span>utils.tsx</TabsTrigger>
+    <TabsTrigger value="chessboard.tsx"><span className="hidden sm:inline">components/</span>chessboard.tsx</TabsTrigger>
 </TabsList>
 <TabsContent
     value="App.tsx"
-    className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
 >
 ```jsx 
 import Chessboard from "@/components/chessboard";
@@ -282,7 +258,6 @@ export default function App() {
 </TabsContent>
 <TabsContent
     value="utils.tsx"
-    className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
 >
 ```jsx 
 import { clsx, type ClassValue } from "clsx"
@@ -295,7 +270,6 @@ export function cn(...inputs: ClassValue[]) {
 </TabsContent>
 <TabsContent
     value="chessboard.tsx"
-    className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
 >
 ```jsx 
 import { type ReactElement, type ReactNode } from "react";
@@ -423,13 +397,10 @@ yarn add @atlaskit/pragmatic-drag-and-drop
 
 <Tabs defaultValue="chessboard.tsx" key={5}>
 <TabsList>
-    <TabsTrigger value="chessboard.tsx">
-    components/chessboard.tsx
-    </TabsTrigger>
+    <TabsTrigger value="chessboard.tsx">components/chessboard.tsx</TabsTrigger>
 </TabsList>
 <TabsContent
     value="chessboard.tsx"
-    className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
 >
 ```jsx 
 import {
@@ -494,13 +465,10 @@ provide visual feedback to the user.
 
 <Tabs defaultValue="chessboard.tsx" key={6}>
 <TabsList>
-    <TabsTrigger value="chessboard.tsx">
-    components/chessboard.tsx
-    </TabsTrigger>
+    <TabsTrigger value="chessboard.tsx">components/chessboard.tsx</TabsTrigger>
 </TabsList>
 <TabsContent
     value="chessboard.tsx"
-    className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
 >
 ```jsx 
 import {
@@ -590,13 +558,10 @@ arguments object taken by <code className="font-mono">draggable</code>.
 
 <Tabs defaultValue="chessboard.tsx" key={7}>
 <TabsList>
-    <TabsTrigger value="chessboard.tsx">
-    components/chessboard.tsx
-    </TabsTrigger>
+    <TabsTrigger value="chessboard.tsx">components/chessboard.tsx</TabsTrigger>
 </TabsList>
 <TabsContent
     value="chessboard.tsx"
-    className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
 >
 ```jsx 
 import {
@@ -729,13 +694,10 @@ the types in a certain scope.
 
 <Tabs defaultValue="chessboard.tsx" key={8}>
 <TabsList>
-    <TabsTrigger value="chessboard.tsx">
-    components/chessboard.tsx
-    </TabsTrigger>
+    <TabsTrigger value="chessboard.tsx">components/chessboard.tsx</TabsTrigger>
 </TabsList>
 <TabsContent
     value="chessboard.tsx"
-    className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
 >
 ```jsx  
 import {
@@ -886,13 +848,10 @@ with a React state variable.
 
 <Tabs defaultValue="chessboard.tsx" key={9}>
 <TabsList>
-    <TabsTrigger value="chessboard.tsx">
-    components/chessboard.tsx
-    </TabsTrigger>
+    <TabsTrigger value="chessboard.tsx">components/chessboard.tsx</TabsTrigger>
 </TabsList>
 <TabsContent
     value="chessboard.tsx"
-    className="overflow-x-auto rounded-md bg-muted p-3 text-sm"
 >
 ```jsx 
 // ...
@@ -900,7 +859,7 @@ import {draggable, dropTargetForElements, monitorForElements} from "@atlaskit/pr
  
 // ...
  
-function Square({coords, children}: {isDark: TCoordsArr; children: ReactNode;})
+function Square({coords, children}: {isDark: TCoordsArr; children: ReactNode;}){
   type THoveredState = "idle" | "validMove" | "invalidMove";
  
   const squareRef = useRef<HTMLDivElement | null>(null);
