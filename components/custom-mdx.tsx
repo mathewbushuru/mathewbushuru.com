@@ -26,5 +26,5 @@ export default function CustomMDX(props: MDXRemoteProps) {
 
 function Code({ children, ...props }: React.HTMLAttributes<HTMLElement>) {
   const codeHTML = highlight(`${children}`);
-  return <pre><code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} /></pre>;
+  return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
 }
