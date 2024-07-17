@@ -46,8 +46,7 @@ export default function ArticlePage({ params }: any) {
           {formatDate(article.blogMetadata.publishedAt, true)}
         </div>
 
-        {/* <article className="flex flex-col gap-2 leading-7 lg:gap-4"> */}
-        <article className="prose dark:prose-invert">
+        <article className="prose max-w-none dark:prose-invert">
           <CustomMDX source={article.content} />
         </article>
       </div>
