@@ -8,6 +8,7 @@ type BlogMetadata = {
   preview: string;
   published: string;
   lastModified: string;
+  featured: string;
   image?: string;
 };
 
