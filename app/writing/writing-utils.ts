@@ -10,7 +10,7 @@ type BlogMetadata = {
 };
 
 function parseFrontMatter(rawFileContent: string) {
-  const frontMatterRegex = /---\s*([\s\S]*?)\s*---/;
+  const frontMatterRegex = /----\s*([\s\S]*?)\s*----/;    // 4 dashes instead of 3 to temporarily fix 3 dashes breaking vs code syntax highlighting for mdx files
 
   const frontMatterMatchFound = frontMatterRegex.exec(rawFileContent)!;
   const frontMatterBlock = frontMatterMatchFound[1];
