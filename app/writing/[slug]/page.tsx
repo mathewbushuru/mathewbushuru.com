@@ -1,8 +1,10 @@
 import { notFound } from "next/navigation";
 
 import { getBlogArticles } from "@/app/writing/writing-utils";
+import { formatDate } from "@/lib/utils";
 
 import CustomMDX from "@/components/custom-mdx";
+import { Badge } from "@/components/ui/badge";
 import DateComponent from "@/components/ui/date-component";
 
 export async function generateStaticParams() {
@@ -40,11 +42,22 @@ export default function ArticlePage({ params }: any) {
         <h3 className="mb-2 text-xl font-semibold sm:text-2xl">
           {article.blogMetadata.title}
         </h3>
-        <DateComponent date={article.blogMetadata.publishedAt} />
+        <div className="mb-2 flex items-center gap-2">
+          <DateComponent date={article.blogMetadata.publishedAt} />
+          {article.blogMetadata.published !== "yes" && <Badge>Draft</Badge>}
+        </div>
 
         <article className="prose max-w-none dark:prose-invert">
           <CustomMDX source={article.content} />
         </article>
+
+        {article.blogMetadata.publishedAt !==
+          article.blogMetadata.lastModified && (
+          <p className="prose mt-2">
+            This article was last modified on{" "}
+            {formatDate(article.blogMetadata.lastModified)}.
+          </p>
+        )}
       </div>
     </>
   );

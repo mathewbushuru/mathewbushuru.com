@@ -18,7 +18,7 @@ export default function DateComponent({
   },[date,includeRelative])
 
   return (
-    <div className="mb-2 flex items-center text-sm text-muted-foreground/75">
+    <div className="flex items-center text-sm text-muted-foreground/75">
       <CalendarDaysIcon className="mr-2 h-4 w-4" />
       {formattedDate}
     </div>
