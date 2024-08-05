@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { CalendarDaysIcon } from "lucide-react";
 
+import { Badge } from "@/components/ui/badge";
+
 import { getBlogArticles } from "@/app/writing/writing-utils";
 import { formatDate } from "@/lib/utils";
 
@@ -45,6 +47,7 @@ function AllArticlesList() {
             href={`/writing/${post.slug}`}
             formattedDate={formatDate(post.blogMetadata.publishedAt, false)}
             contentPreview={post.blogMetadata.preview}
+            published={post.blogMetadata.published === "yes"}
           />
         ))}
     </div>
@@ -56,11 +59,13 @@ function ArticleLink({
   href,
   formattedDate,
   contentPreview,
+  published
 }: {
   title: string;
   href: string;
   formattedDate: string;
   contentPreview: string;
+  published: boolean
 }) {
   return (
     <Link href={href}>
@@ -74,6 +79,7 @@ function ArticleLink({
         <div className="flex items-center text-sm text-muted-foreground/75">
           <CalendarDaysIcon className="mr-2 h-4 w-4" />
           {formattedDate}
+          {!published && <Badge className="ml-2">Draft</Badge>}
         </div>
       </div>
     </Link>
