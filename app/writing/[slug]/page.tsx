@@ -7,6 +7,8 @@ import CustomMDX from "@/components/custom-mdx";
 import { Badge } from "@/components/ui/badge";
 import DateComponent from "@/components/ui/date-component";
 
+import "@/app/github-code.css"
+
 export async function generateStaticParams() {
   const articles = getBlogArticles();
   return articles.map((article) => ({

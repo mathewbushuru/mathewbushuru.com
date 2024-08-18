@@ -45,7 +45,7 @@ export default function RootLayout({
               <NavMenuContent />
             </div>
             {/* Page content  */}
-            <div className="scrollbar-hide w-full overflow-scroll lg:px-8">
+            <div className="scrollbar-hide w-full overflow-scroll outline-none lg:px-8">
               <div className="fixed left-0 right-0 top-0 z-50 lg:hidden">
                 <MobileNavbar />
               </div>
