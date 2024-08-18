@@ -7,6 +7,8 @@ import CustomMDX from "@/components/custom-mdx";
 import { Badge } from "@/components/ui/badge";
 import DateComponent from "@/components/ui/date-component";
 
+import "@/app/github-code.css";
+
 export async function generateStaticParams() {
   const articles = getBlogArticles();
   return articles.map((article) => ({
@@ -38,10 +40,10 @@ export default function ArticlePage({ params }: any) {
 
   return (
     <>
-      <div className="p-4 pb-8">
-        <h3 className="mb-2 text-xl font-semibold sm:text-2xl">
-          {article.blogMetadata.title}
-        </h3>
+      <div className="p-4 -mx-5 pb-8">
+        <div className="prose mb-2 dark:prose-invert">
+          <h1>{article.blogMetadata.title}</h1>
+        </div>
         <div className="mb-2 flex items-center gap-2">
           <DateComponent date={article.blogMetadata.publishedAt} />
           {article.blogMetadata.published !== "yes" && <Badge>Draft</Badge>}

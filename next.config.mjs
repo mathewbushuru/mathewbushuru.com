@@ -9,6 +9,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/writing/dsa",
+        destination: "/writing/data-structures-and-algorithms",
+        permanent: true,
+      },
+      {
         source: "/github",
         destination: "https://github.com/mathewbushuru",
         permanent: true,

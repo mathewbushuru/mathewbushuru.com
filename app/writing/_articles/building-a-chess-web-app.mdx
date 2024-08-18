@@ -1,4 +1,4 @@
-----
+---
 title: "Building a Chess Web App"
 publishedAt: "2024-07-04"
 summary: "Building a full-stack drag-and drop Chess web app using React."
@@ -6,7 +6,7 @@ preview: "In this article, we will be building a Chess application using React t
 published: "yes"
 lastModified: "2024-08-05"
 featured: "yes"
-----
+---
 
 In this article, we will be building a Chess application
 using React that will allow the player to drag pieces across the
@@ -30,7 +30,7 @@ The starting code is shown below:
 <TabsContent
     value="App.tsx"
 >
-```jsx
+```tsx
 import Chessboard from "@/components/chessboard";
  
 export default function App() {
@@ -45,7 +45,7 @@ export default function App() {
 <TabsContent
     value="chessboard.tsx"
 >
-```jsx
+```tsx
 export default function Chessboard() {
   return <>Chessboard</>;
 }
@@ -66,7 +66,7 @@ on a 500px by 500px grid (320px by 320px on mobile).
 <TabsContent
     value="App.tsx"
 >
-```jsx
+```tsx
 import Chessboard from "@/components/chessboard";
  
 export default function App() {
@@ -81,7 +81,7 @@ export default function App() {
 <TabsContent
     value="chessboard.tsx"
 >
-```jsx 
+```tsx 
 function renderSquares() {
   const squares = [];
  
@@ -134,7 +134,7 @@ dark.
 <TabsContent
     value="App.tsx"
 >
-```jsx
+```tsx
 import Chessboard from "@/components/chessboard";
  
 export default function App() {
@@ -149,7 +149,7 @@ export default function App() {
 <TabsContent
     value="utils.tsx"
 >
-```jsx
+```tsx
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
  
@@ -161,7 +161,7 @@ export function cn(...inputs: ClassValue[]) {
 <TabsContent
     value="chessboard.tsx"
 >
-```jsx
+```tsx
 import { type ReactNode } from "react";
  
 import { cn } from "@/lib/utils";
@@ -237,7 +237,7 @@ relevant icon image.
 <TabsContent
     value="App.tsx"
 >
-```jsx 
+```tsx 
 import Chessboard from "@/components/chessboard";
  
 export default function App() {
@@ -252,7 +252,7 @@ export default function App() {
 <TabsContent
     value="utils.tsx"
 >
-```jsx 
+```tsx 
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
  
@@ -264,7 +264,7 @@ export function cn(...inputs: ClassValue[]) {
 <TabsContent
     value="chessboard.tsx"
 >
-```jsx 
+```tsx 
 import { type ReactElement, type ReactNode } from "react";
  
 import { cn } from "@/lib/utils";
@@ -395,7 +395,7 @@ yarn add @atlaskit/pragmatic-drag-and-drop
 <TabsContent
     value="chessboard.tsx"
 >
-```jsx 
+```tsx 
 import {
  useRef,
  useEffect,
@@ -463,7 +463,7 @@ provide visual feedback to the user.
 <TabsContent
     value="chessboard.tsx"
 >
-```jsx 
+```tsx 
 import {
   useRef,
   useEffect,
@@ -556,7 +556,7 @@ arguments object taken by <code className="font-mono">draggable</code>.
 <TabsContent
     value="chessboard.tsx"
 >
-```jsx 
+```tsx 
 import {
   useRef,
   useEffect,
@@ -692,7 +692,7 @@ the types in a certain scope.
 <TabsContent
     value="chessboard.tsx"
 >
-```jsx  
+```tsx  
 import {
   useRef,
   useEffect,
@@ -846,7 +846,7 @@ with a React state variable.
 <TabsContent
     value="chessboard.tsx"
 >
-```jsx 
+```tsx 
 // ...
 import {draggable, dropTargetForElements, monitorForElements} from "@atlaskit/pragmatic-drag-and-drop/element/adapter";
  
