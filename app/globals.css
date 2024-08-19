@@ -38,17 +38,6 @@
     --ring: 173 46% 72%;
 
     --radius: 0.5rem;
-
-    /* Blog code syntax highlighting */
-    --sh-class: #4993f4;
-    --sh-identifier: #bac0c8;
-    --sh-sign: #dfe5ef;
-    --sh-property: #0550ae;
-    --sh-entity: #06d3c2;
-    --sh-jsxliterals: #e37fd2;
-    --sh-string: #06d3c2;
-    --sh-keyword: #f47067;
-    --sh-comment: #aba6a6;
   }
 
   .dark {
