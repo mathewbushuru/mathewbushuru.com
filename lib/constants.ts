@@ -308,7 +308,7 @@ export const featuredProjects = [
     name: "Algorithms",
     description:
       "Repository of computer science algorithms and data structures implemented in Java, C++, JavaScript, C, TypeScript and Python.",
-    websiteLink: null,
+    websiteLink: "https://dsa.mathewbushuru.com/",
     githubLink: "https://github.com/mathewbushuru/algorithms",
   },
   {
