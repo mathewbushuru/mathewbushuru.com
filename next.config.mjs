@@ -10,7 +10,7 @@ const nextConfig = {
       },
       {
         source: "/writing/dsa",
-        destination: "/writing/data-structures-and-algorithms",
+        destination: "https://dsa.mathewbushuru.com/",
         permanent: true,
       },
       {
