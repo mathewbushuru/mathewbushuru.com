@@ -3,12 +3,12 @@ title: "SQL Joins Explained"
 publishedAt: "2024-09-03"
 lastModified: "2024-09-03"
 summary: "SQL Joins Explained"
-preview: "SQL Joins are used to combine rows from two or more tables based on a related column between them. There are several types of joins, each serving a different purpose. In this article, we'll explore them using  PostgreSQL examples."
-published: "no"
+preview: "One of the most powerful tools when working with relational data in SQL is Join Queries. SQL allows us to combine data  from multiple tables into a single result set which enables us to retrieve data spread in multiple tables just using a single command. In this article, we'll explore the different types of SQL joins, focusing on how they work in PostgreSQL."
+published: "yes"
 featured: "yes"
 ---
 
-SQL Joins are used to combine rows from two or more tables based on a related column between them. There are several types of joins, each serving a different purpose. In this article, we'll explore them using  PostgreSQL examples.
+One of the most powerful tools when working with relational data in SQL is Join Queries. SQL allows us to combine data  from multiple tables into a single result set which enables us to retrieve data spread in multiple tables just using a single command. In this article, we'll explore the different types of SQL joins, focusing on how they work in PostgreSQL.
 
 ## 1. INNER JOIN
 
@@ -27,7 +27,7 @@ ON
     users.user_id = orders.fk_user_id;
 ```
 
-Inner  joins are most commonly used join operations
+Inner joins are most commonly used join operations because most of the time, we only want to retrieve data where a match exists in both tables.
 
 ## 2. LEFT JOIN (or LEFT OUTER JOIN)
 
@@ -46,6 +46,8 @@ ON
     users.user_id = orders.fk_user_id;
 ```
 
+A left join like this might be useful when generating reports. In such a case, you will want to include all users even those who have not placed an order.
+
 ## 3. RIGHT JOIN (or RIGHT OUTER JOIN)
 
 As the name suggests, `RIGHT JOIN` is the opposite of `LEFT JOIN`. It returns all the rows from the right table,  and the matched rows from the left table. If no results are found, the columns of the left table will contain `NULL`. The query below will return all the orders in the `order` table, including those which have no corresponding user in the `users` table.
@@ -63,6 +65,8 @@ ON
     users.user_id = orders.fk_user_id;
 ```
 
+Left and right outer joins are functionally equivalent. You can replace one with the other by simply switching the order of the tables around.
+
 ## 4. FULL OUTER JOIN 
 
 A `FULL OUTER JOIN` returns rows where there is a match in either table. It returns rows from both tables and fills `NULL` for non-matching rows in both sides. The query below will return all users and all orders, with `NULL` values where there is no match.
@@ -79,6 +83,8 @@ FULL OUTER JOIN
 ON  
     users.user_id = orders.fk_user_id;
 ```
+
+A full outer join is useful for those comprehensive reports where you want all possible data to be included.
 
 ## 5. CROSS JOIN 
 
@@ -116,8 +122,8 @@ ON
     e1.manager_id = e2.employee_id;
 ```
 
-##  Points to Remember
+##  Conclusion
 
 As you might have noticed, I have qualified the column names with the table names in the examples above. This is a good practice as it prevents the query from failing if we introduce duplicate columns to the tables in the future.
 
-Left and right outer joins are functionally equivalent. You can replace one with the other by simply switching the order of the tables around.
+Understanding SQL Joins is essential for working effectively with relational databases. Each type of join serves a specific purpose, and knowing how and when to use them will make working with complex datasets much easier.
