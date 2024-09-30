@@ -1,0 +1,283 @@
+---
+title: "Upgrading a Five Year Old Linux Dual Boot to Latest LTS Version"
+publishedAt: "2024-09-29"
+lastModified: "2024-09-29"
+summary: "Upgrading a Five Year Old Linux Dual Boot to Latest LTS Version"
+preview: "To upgrade from Ubuntu 16.04 to the current LTS version (22.04 at the time of writing), there are a couple of steps as there have been multiple intermediate releases since Ubuntu 16."
+published: "no"
+featured: "no"
+---
+
+## Introduction
+
+{/* Hook the Reader
+Begin with a compelling anecdote or statement about my journey with technology. */}
+
+{/* Purpose of the Article
+Explain that you'll be discussing my multi-device setup and the recent Ubuntu upgrade. */}
+
+{/* Preview
+Briefly mention what readers can expect to learn or gain from my post. */}
+
+## Overview of My Current Setup
+
+{/* MacBook Pro
+Role as your main development machine.
+Brief specs and why you prefer it for development. */}
+
+{/* HP Laptop (Dual Boot: Windows 10 & Ubuntu 16.04)
+Historical significance and why it was dual-booted.
+Its role in testing and development. */}
+
+{/* Dell Work Laptop (Windows 11)
+Its role in your professional work.
+How it complements your MacBook. */}
+
+## The Backstory: Linux (Ubuntu) and Sailbot
+
+{/* Involvement with Sailbot at UBC
+Briefly explain the project and your role. */}
+
+{/* Daily Driving Ubuntu
+Why you chose Ubuntu 16.04 for this project.
+Experiences working with ROS and Gazebo. */}
+
+{/* Lessons Learned
+Skills acquired and how this experience shaped your approach to development. */}
+
+## Need for a Linux Upgrade
+
+{/* Outdated Software and Support
+Limitations of continuing with Ubuntu 16.04.
+Security risks and lack of updates. */}
+
+I currently use my HP laptop in clamshell mode, and i have to turn the trackpad off because the pointer keeps drifting on its own. And typing on my keyboard causes the pointer to drift even further
+
+{/* Advantages of Ubuntu 22.04 LTS
+New features and improvements.
+Long-term support benefits. */}
+
+{/* Personal Motivations
+How upgrading aligns with your current projects and testing needs. */}
+
+## Preparing for the  Upgrade
+
+{/* Assessing the Current System
+Checking hardware compatibility.
+Listing necessary backups. */}
+
+To upgrade from Ubuntu 16.04 to the current LTS version (22.04 at the time of writing), there are a couple of steps as there have been multiple intermediate releases since Ubuntu 16.
+
+{/* Backing Up Data
+Tools and methods used (e.g., external drives, cloud storage). */}
+
+Of course, I would not like to lose any of my data, so a back up is a really important step in this whole process. I really would not like my lose my Gazebo simulation files that I built modeling the  Ocean's water, weather and boat dynamics like the one shown below.
+
+<Image
+    src="/writing/upgrading-linux/gazebo-screenshot.png"
+    alt=""
+    width={1920}
+    height={1080}
+    className="rounded-md shadow-md"
+/>
+
+{/* Research
+Reading official documentation.
+Looking up potential issues with upgrading from 16.04 to 22.04. */}
+
+## The Upgrade Process
+
+{/* Choosing the Upgrade Path
+Deciding between a fresh install vs. direct upgrade. */}
+
+#### Fresh Install vs Direct Upgrade
+
+I had two options. The first would be a fresh install - remove the Ubuntu 16.04 + Windows 10 dual boot from my laptop only leaving Windows 10 on the system, then creating a new dual-boot setup with Ubuntu 22.04. The second would be a direct upgrade - from 16.04 to 22.04.
+
+I ultimately went with a direct upgrade for the following reasons. A fresh install would involve me doing the same tasks I had done before -  creating a windows disk partition, installing the OS from a flash drive, etc. This would be a safe option but not a particularly interesting one because  I have done  it so many times. When I used to work on Soma, we would install a modified Debian Linux distro on the Raspberry Pis so I got enough experience with fresh Linux OS installs. What I had not done before was upgrade a five year old Linux distro so this would  be more interesting, challenging and a learning opportunity. I initially thought it couldn't be that hard, I just had to figure out how - until I learnt I could not directly upgrade from 16 to 22 but had to do in incrementally - to 18, then 20 then finally 22.
+
+{/* Step-by-Step Guide
+Detailed instructions of the upgrade process.
+Commands used and options selected. */}
+
+#### Step-by-Step Guide
+
+The next Ubuntu LTS version after 16 is 18. Before we can do this upgrade, Ubuntu requires us to do all the necessary updates for our current release.
+
+What I did was open the Ubuntu Software App, go to the Updates tabs and click 'Install' to update all apps and installed packages. Just to make sure I got everything, I fired up a terminal and did a manual update with the commands below.
+
+```sh 
+> sudo apt update
+...
+> sudo apt upgrade
+...
+```
+
+Note that  you will not be allowed to go forward with the next command to upgrade to the next LTS version until the commands above run without errors. I had a couple of issues which  popped up when running  `apt update` which I'll go further into in the next section Also just to be sure I'd  advise running the two commands again with `apt-get` instead of `apt`. If you receive a message saying any package has been kept back, manually install it with apt-get or remove it before moving to the next section.
+
+We can now upgrade from 16.04 to 18.04 using the `do-release-upgrade` command below and following the terminal prompts. Just to be on the safe side, I advise rebooting the system especially if you had over 200 packages get upgraded like me. This process can take several hours and also please make sure you're connected to power.
+
+```sh 
+> sudo do-release-upgrade
+```
+
+
+{/* Troubleshooting
+Any issues encountered during the upgrade.
+How you resolved them (e.g., dependency problems, driver issues). */}
+
+#### Issues and Troubleshooting
+
+Since  it had  been really long since  my  last update, my Chrome and the Robot Operating System (ROS) packages could not update as shown below. I had GPG errors caused by  my keys in these repositories being unsigned.
+
+```sh 
+> sudo apt-get update
+Hit:1 https://packages.microsoft.com/repos/vscode stable InRelease
+Hit:6 http://ca.archive.ubuntu.com/ubuntu xenial InRelease                     
+...
+Err:2 http://packages.ros.org/ros/ubuntu xenial InRelease                      
+  The following signatures couldn't be verified because the public key is not available: NO_PUBKEY F42ED6FBAB17C654
+W: GPG error: http://dl.google.com/linux/chrome/deb stable InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY E88979FB9B30ACF2
+W: The repository 'http://dl.google.com/linux/chrome/deb stable InRelease' is not signed.
+N: Data from such a repository can't be authenticated and is therefore potentially dangerous to use.
+W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: http://packages.ros.org/ros/ubuntu xenial InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY F42ED6FBAB17C654
+
+```
+
+The error logs show that I am missing two public keys and give me the corresponding private keys. To  fix this I just  requested them with the following commands, and then ran `apt update` after which now worked as shown below.
+
+```sh 
+> sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E88979FB9B30ACF2
+Executing: /tmp/tmp.xeYkhXUFy8/gpg.1.sh --keyserver
+keyserver.ubuntu.com
+--recv-keys
+E88979FB9B30ACF2
+gpg: requesting key 9B30ACF2 from hkp server keyserver.ubuntu.com
+gpg: key D38B4796: "Google Inc. (Linux Packages Signing Authority) <linux-packages-keymaster@google.com>" 21 new signatures
+gpg: key D38B4796: "Google Inc. (Linux Packages Signing Authority) <linux-packages-keymaster@google.com>" 4 new subkeys
+gpg: Total number processed: 1
+gpg:            new subkeys: 4
+gpg:         new signatures: 21
+> sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F42ED6FBAB17C654
+Executing: /tmp/tmp.Jdmy2cvWfb/gpg.1.sh --keyserver
+keyserver.ubuntu.com
+--recv-keys
+F42ED6FBAB17C654
+gpg: requesting key AB17C654 from hkp server keyserver.ubuntu.com
+gpg: key AB17C654: public key "Open Robotics <info@osrfoundation.org>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1  (RSA: 1)
+> sudo apt update
+Get:2 http://dl.google.com/linux/chrome/deb stable InRelease [1,825 B]         
+Hit:3 http://packages.osrfoundation.org/gazebo/ubuntu-stable xenial InRelease  
+Hit:5 http://ca.archive.ubuntu.com/ubuntu xenial InRelease                     
+Get:4 http://packages.ros.org/ros/ubuntu xenial InRelease [4,692 B]            
+Hit:6 http://ca.archive.ubuntu.com/ubuntu xenial-updates InRelease             
+Hit:1 https://packages.microsoft.com/repos/vscode stable InRelease             
+Hit:7 http://ca.archive.ubuntu.com/ubuntu xenial-backports InRelease    
+Hit:8 http://security.ubuntu.com/ubuntu xenial-security InRelease       
+Get:9 http://packages.ros.org/ros/ubuntu xenial/main amd64 Packages [854 kB]
+Hit:10 https://packagecloud.io/slacktechnologies/slack/debian jessie InRelease
+Get:11 http://packages.ros.org/ros/ubuntu xenial/main i386 Packages [625 kB]
+Fetched 1,485 kB in 1s (1,303 kB/s)                       
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+456 packages can be upgraded. Run 'apt list --upgradable' to see them.
+```
+
+A note of caution  when using this method is to be  extra careful since using the `apt-key` command is telling the system  that you trust the key  you're importing to sign software  your system will be using. I would advise not doing this unless knowing the key is really the key of the package distributor which you can always check.
+
+Another option that would work is passing the `--allow-unaunthenticated` flag for the `apt update` command.
+
+If this still doesn't work, you can try removing the keys. if any issues occur, you can just  reinstall the packages after the upgrade. To do this first list all the package keys.
+
+```sh
+> ls /etc/apt/sources.list.d
+gazebo-stable.list ros-latest.list vscode.list google-chrome.list slack.list
+```
+
+Next I just removed the keys for Chrome and ROS, I don't recommend it but it worked for me.
+
+```sh 
+> sudo rm -i /etc/apt/sources.list.d/google-chrome.list
+[sudo] password for mathewbushuru:
+rm: remove regular file '/etc/apt/sources.list.d/google-chrome.list'?
+
+> sudo rm -i /etc/apt/sources.list.d/ros-latest.list
+rm: remove regular file '/etc/apt/sources.list.d/ros-latest.list'?
+```
+
+If all these options don't work, the final option would be to remove these packages and reinstall after the upgrade. Like in my case, ROS has hundreds of packages all starting with `ros-...`.  Just run the command below to remove all of them.
+
+```sh
+> sudo apt remove ros-*
+```
+
+For Chrome, Google installs three packages: Stable, Unstable and Beta. Run the three commands below to remove all of them.
+
+```sh 
+> sudo apt remove google-chrome-beta google-chrome-stable google-chrome-unstable
+```
+Now we just have to remove all the packages that were automatically installed with these packages that  are no longer required. To do this run the autoremove command below
+
+```sh 
+> sudo apt autoremove
+```
+
+
+## Post Upgrade Impressions
+
+{/* First Impressions
+Interface changes and usability. */}
+
+{/* Performance Enhancements
+Notable speed improvements or resource management. */}
+
+{/* Compatibility with Development Tools
+Running ROS and Gazebo on the new system.
+Any adjustments needed for your workflow. */}
+
+## Testing Dev Projects Across Multiple Machines
+
+{/* Importance of Cross-Platform Testing
+Ensuring your development work runs smoothly on different systems. */}
+
+{/* Use Cases
+Examples of projects tested across devices. */}
+
+{/* Insights Gained
+How this practice improves code quality and user experience. */}
+
+## Reflection
+
+{/* Comparing Past and Present
+How the technological landscape has changed since 2018. */}
+
+{/* Personal Growth
+Skills and knowledge gained through this process. */}
+
+{/* Future Plans
+How you intend to utilize the upgraded system moving forward. */}
+
+## Conclusion
+
+{/* Summary of Key Points
+Reiterate the benefits of upgrading and maintaining a versatile setup. */}
+
+{/* Encouragement
+Motivate readers to consider updating their systems. */}
+
+{/* Call to Action
+Invite readers to share their experiences or ask questions. */}
+
+## Resources
+
+{/* Links to Official Guides
+Ubuntu's official upgrade documentation. */}
+
+{/* Recommended Tools
+Software that aided in the upgrade or enhances the Ubuntu experience. */}
+
+{/* Community Forums
+Places for readers to seek help (e.g., Ubuntu forums, Stack Overflow). */}
