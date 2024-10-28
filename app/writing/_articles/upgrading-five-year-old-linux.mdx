@@ -18,7 +18,7 @@ In this article I'll walk you through my journey upgrading from Ubuntu 16.04 to 
 
 #### Assessing the current system
 
-Before jumping into the upgrade, I needed to assess whether my HP laptop's hardware could comfortably handle the jump from Ubuntu 16.04 to 22.04. Fortunately, Ubuntu has relatively modest system requirements, and my hardware - although seven years old - was still up to the task. The most important factor was ensuring compatibility with my laptop's current dual-boot setup with Windows 10 and making sure that any critical drivers wouldn't cause issues during the upgrade. In fact, what had led me to this upgrade was an issue with my touchpad in Linux, where the pointer would randomly drift across the screen without any touch input. This was more noticeable when typing. My temporary fix was to disable the mouse on Linux and rely on an external mouse, but upgrading offered a more permanent and effective solution. 
+Before jumping into the upgrade, I needed to assess whether my HP laptop's hardware could comfortably handle the jump from Ubuntu 16.04 to 22.04. Fortunately, Ubuntu has relatively modest system requirements, and my hardware - although seven years old - was still up to the task. The most important factor was ensuring compatibility with my laptop's current dual-boot setup with Windows 10 and making sure that any critical drivers wouldn't cause issues during the upgrade. In fact, what had led me to this upgrade was an issue with my touchpad in Linux, where the pointer would randomly drift across the screen without any touch input. This was more noticeable when typing. My temporary fix was to disable the touchpad on Linux and rely on an external mouse, but upgrading offered a more permanent and effective solution. 
 
 Since Ubuntu 16.04 is now several releases behind the current LTS version, upgrading directly to 22.04 was not possible. I would first need to upgrade to 18.04, then 20.04, and finally to 22.04, which added some extra steps and potential challenges. The latest LTS version (Ubuntu 24.04) had just been released a few months prior at the time of writing this article but I ultimately decided to stop at 22 since it had been stable for longer.
 
@@ -90,7 +90,7 @@ Next we will do the  upgrade from 18.04 to 20.04 LTS. After first restarting int
 
 ###### Step 4: Upgrading to Ubuntu 22.04
 
-From here on the process, is similar to upgarde from 20.04 to 22.04, just the same  three commands. Once the upgrade is complete, we do a final reboot of the system and verify the upgrade using the command below.
+From here on the process is similar to upgrade from 20.04 to 22.04, just the same  three commands. Once the upgrade is complete, we do a final reboot of the system and verify the upgrade using the command below.
 
 ```sh 
 > lsb_release -a
@@ -209,6 +209,6 @@ Now we just have to remove all the packages that were automatically installed wi
 
 ## Conclusion
 
-Going through this process of upgrading a  five-year-old has been a really rewarding learning experience. I've always enyoyed working with Linux, but this experience deepened my understanding of Debian-based Linux systems like Ubuntu. I did spend quite a bit of time researching the errors I got at each step of this update process which improved my understanding of how Linux handles its package  dependencies.
+Going through this process of upgrading a  five-year-old Linux system has been a really rewarding learning experience. I've always enyoyed working with Linux, but this experience deepened my understanding of Debian-based Linux systems like Ubuntu. I did spend quite a bit of time researching the errors I got at each step of this update process which improved my understanding of how Linux handles its package  dependencies.
 
 Now that I'm running Ubuntu 22.04 LTS  on my dual setup, I'm planning to dive deeper into Linux for both personal and project based work. One of my next projects is to set up a home Linux server using Raspberry Pis. My goal is to self-host some of my personal projects using the numerous Raspberry Pis I have lying  around and build my own *mini* datacenter, and then explore services like Cloudflare Tunnels to make them accessible over the public internet. With this, I'll be spending more of my time on Linux and I am excited for some of the projects that I have planned. Hopefully, I'll have some time to write about them when I'm done.
