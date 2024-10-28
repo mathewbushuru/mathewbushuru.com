@@ -32,7 +32,7 @@ export const NavigationButton = ({
       break;
     case "Writing":
       Icon = PencilLineIcon;
-      isActive = pathname.startsWith("/writing");
+      isActive = pathname.startsWith("/writing") || pathname.startsWith("/drafts");
       break;
     case "Reading":
       Icon = NewspaperIcon;
