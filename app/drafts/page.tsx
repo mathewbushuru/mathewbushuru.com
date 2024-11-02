@@ -45,7 +45,7 @@ function DraftArticlesList() {
               href={`/writing/${post.slug}`}
               formattedDate={formatDate(post.blogMetadata.publishedAt, false)}
               contentPreview={post.blogMetadata.preview}
-              published={post.blogMetadata.published === "no"}
+              published={post.blogMetadata.published !== "no"}
             />
           ) : null,
         )}
